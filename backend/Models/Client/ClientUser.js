@@ -1,27 +1,34 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 
 const dataSchema = new mongoose.Schema({
+  cardClientId: {
+    type: Number,
+    unique: true,
+  },
   FName: {
     type: String,
-    required: true,
+    required: [true, "Please enter your first name"],
   },
   LName: {
     type: String,
-    required: true,
+    required: [true, "Please enter your first name"],
   },
   Image: {
     type: String,
   },
-  Email: {
+  email: {
     type: String,
-    required: true,
+    required: [true, "Please enter an email"],
+    unique: true,
+    lowercase: true,
+    validate: [validator.isEmail, "Please enter a valid email"],
   },
-  Password: {
+  password: {
     type: String,
-    required: true,
+    required: [true, "Please enter a password"],
+    minlength: 8,
   },
 });
-
-dataSchema.set("primaryKey", "CraftOwnerID"); // Set CraftOwnerID as the primary key
 
 module.exports = mongoose.model("ClientUser", dataSchema);
