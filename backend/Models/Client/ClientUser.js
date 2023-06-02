@@ -24,4 +24,4 @@ const dataSchema = new mongoose.Schema({
 
 dataSchema.set("primaryKey", "CraftOwnerID"); // Set CraftOwnerID as the primary key
 
-module.exports = mongoose.model("CraftsOwner", dataSchema);
+module.exports = mongoose.model("ClientUser", dataSchema);
