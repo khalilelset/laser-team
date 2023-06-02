@@ -29,20 +29,21 @@ const productSchema = new mongoose.Schema({
     required: true,
     
   },
-  RatingAverage: {
+  RatingAverage:{
     type: Number,
     required: true,
     
   },
-  /*
+  
   ProductImage: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'ProductImages' // Reference to the Crafts model
-  }],*/
-  CraftOwner: {
+    ref: 'ProductImages' 
+  }],
+
+  CraftOwner:{
     type: mongoose.Schema.Types.ObjectId,
-    re: 'CraftOwner' // Reference to the Crafts model
-  }
+    ref: 'CraftOwner'
+  },
 });
 
 module.exports = mongoose.model('Product', productSchema);

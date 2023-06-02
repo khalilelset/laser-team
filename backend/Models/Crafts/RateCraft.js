@@ -8,7 +8,7 @@ const rateCraftSchema = new mongoose.Schema({
   },
   Rating: {
     type: Number,
-    required: true
+    
   },
 });
 

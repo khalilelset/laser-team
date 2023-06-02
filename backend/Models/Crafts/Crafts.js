@@ -25,12 +25,11 @@ const craftSchema = new mongoose.Schema({
   },
   CraftImage: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'CraftImages' // Reference to the Crafts model
+    ref: 'CraftImages' 
   }],
-  Crafts: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Crafts' // Reference to the Crafts model
-  }]
+  CraftRate:{
+    type: Number,
+  }
 });
 
 module.exports = mongoose.model('Crafts', craftSchema);
