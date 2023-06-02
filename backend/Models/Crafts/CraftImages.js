@@ -9,11 +9,10 @@ const craftImagesSchema = new mongoose.Schema({
     ref: 'Crafts'
   },
   CraftImages: {
-    type: [String],
-    required: true
+    type: String,
   },
 });
 
-craftImagesSchema.set('primaryKey', 'CraftID');
+
 module.exports = mongoose.model('CraftImages', craftImagesSchema);
 

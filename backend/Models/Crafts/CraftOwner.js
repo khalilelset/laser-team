@@ -1,12 +1,6 @@
 const mongoose = require('mongoose');
 
 const dataSchema = new mongoose.Schema({
-  CraftOwnerID: {
-    type: Number,
-    required: true,
-    unique: true,
-    index: true
-  },
   OwnerFName: {
     type: String,
     required: true
@@ -41,9 +35,16 @@ const dataSchema = new mongoose.Schema({
   OwnerDescription: {
     type: String,
     required: true
-  }
+  },
+  Crafts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Crafts' // Reference to the Crafts model
+  }],
+  Product: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Product' // Reference to the Crafts model
+  }]
 });
 
-dataSchema.set('primaryKey', 'CraftOwnerID'); // Set CraftOwnerID as the primary key
 
 module.exports = mongoose.model('CraftsOwner', dataSchema);

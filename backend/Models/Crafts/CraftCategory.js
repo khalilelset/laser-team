@@ -9,9 +9,9 @@ const craftCategorySchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  Crafts: [{
+  RateCraft: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Crafts' // Reference to the Crafts model
+    ref: 'RateCraft' // Reference to the Crafts model
   }]
 });
 craftcatSchema.set('primaryKey', 'CategoryID');

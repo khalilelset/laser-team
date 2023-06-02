@@ -1,14 +1,8 @@
 const mongoose = require('mongoose');
 
 const craftSchema = new mongoose.Schema({
-  CraftID: {
-    type: Number,
-    required: true,
-    unique: true,
-    index: true
-  },
   CraftOwnerID: {
-    type: Number,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'CraftsOwner' // Reference to the CraftsOwner model
   },
@@ -29,15 +23,14 @@ const craftSchema = new mongoose.Schema({
     required: true,
     ref: 'CraftCategory' // Reference to the CraftCategory model
   },
-  CraftImageID: {
-    type: Number,
-    required: true
-  },
-  RateCraftID: {
-    type: Number,
-    required: true
-  }
+  CraftImage: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'CraftImages' // Reference to the Crafts model
+  }],
+  Crafts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Crafts' // Reference to the Crafts model
+  }]
 });
 
-craftSchema.set('primaryKey', 'CraftID');
 module.exports = mongoose.model('Crafts', craftSchema);
