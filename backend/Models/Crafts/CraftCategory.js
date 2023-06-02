@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-const craftcatSchema = new mongoose.Schema({
+const craftCategorySchema = new mongoose.Schema({
   CategoryID: {
     type: Number,
     required: true,
@@ -9,9 +7,12 @@ const craftcatSchema = new mongoose.Schema({
   },
   CategoryName: {
     type: String,
-    required: true,
+    required: true
   },
+  Crafts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Crafts' // Reference to the Crafts model
+  }]
 });
-
 craftcatSchema.set('primaryKey', 'CategoryID');
 module.exports = mongoose.model('RateCraft', craftcatSchema);

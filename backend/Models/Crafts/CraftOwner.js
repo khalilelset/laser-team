@@ -34,6 +34,10 @@ const dataSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  Password: {
+    type: String,
+    required: true
+  },
   OwnerDescription: {
     type: String,
     required: true
