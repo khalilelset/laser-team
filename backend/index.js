@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const mongoString = process.env.DATABASE_URL;
 const clientRouter = require("./Routes/Client/clientRouter");
 const CraftownerSingup = require("./Routes/SingUpRoute/CraftOwner");
+const CompanyRouter = require("./Routes/Company/CompanyRouter");
 
 
 //const routes = require('./route');
@@ -28,6 +29,8 @@ const router = express.Router();
 //Client Routes
 app.use("/", clientRouter);
 
+//CompanyRoutes
+app.use("/", CompanyRouter);
 
 //craft owner route singup
 app.use("/", CraftownerSingup);
