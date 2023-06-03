@@ -58,7 +58,7 @@ function NavBar() {
 
     <nav>
   <div class="logo">
-    <h1>Tripoli Craft</h1>
+  <Link to="/"> <h1>Tripoli Craft</h1></Link> 
   </div>
   <div class="links">
   {/* <a href="#">Visit Store</a>
@@ -70,7 +70,8 @@ function NavBar() {
      
     <img src={login2}/>
     {/* <a href="#" class="login-button">   Login </a> */}
-    <Link to="Login" class="login-button"> Login
+    <Link to="Login" class="login-button"> 
+    Login
     </Link>
   </div>
     </nav>
