@@ -12,7 +12,7 @@ const dataSchema = new mongoose.Schema({
   },
   LName: {
     type: String,
-    required: [true, "Please enter your first name"],
+    required: [true, "Please enter your last name"],
   },
   Image: {
     type: String,

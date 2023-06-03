@@ -1,46 +1,40 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-    /*
-  ProductCategoryID: {
-    type: Number,
+  productCategoryID: {
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'CraftsOwner' // Reference to the CraftsOwner model
-  },*/
-  ProductTitle: {
+    ref: 'ProductCategory' // Reference to the ProductCategory model
+  },
+  productTitle: {
     type: String,
     required: true
   },
-  MainProductImage: {
+  mainProductImage: {
     type: String,
     required: true
   },
-  ProductDescription: {
+  productDescription: {
     type: String,
     required: true
   },
-  Price: {
+  price: {
     type: Number,
     required: true,
-    
   },
-  ProductAvailableQuantity: {
+  productAvailableQuantity: {
     type: Number,
     required: true,
-    
   },
-  RatingAverage:{
+  ratingAverage: {
     type: Number,
     required: true,
-    
   },
-  
-  ProductImage: [{
+  productImage: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'ProductImages' 
   }],
-
-  CraftOwner:{
+  craftOwner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'CraftOwner'
   },

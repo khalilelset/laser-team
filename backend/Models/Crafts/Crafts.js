@@ -1,33 +1,33 @@
 const mongoose = require('mongoose');
 
 const craftSchema = new mongoose.Schema({
-  CraftOwnerID: {
+  craftOwnerID: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'CraftsOwner' // Reference to the CraftsOwner model
   },
-  CraftTitle: {
+  craftTitle: {
     type: String,
     required: true
   },
-  MainCraftImage: {
+  mainCraftImage: {
     type: String,
     required: true
   },
-  CraftDescription: {
+  craftDescription: {
     type: String,
     required: true
   },
-  CategoryID: {
+  categoryID: {
     type: Number,
     required: true,
     ref: 'CraftCategory' // Reference to the CraftCategory model
   },
-  CraftImage: [{
+  craftImage: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'CraftImages' 
   }],
-  CraftRate:{
+  craftRate:{
     type: Number,
   }
 });

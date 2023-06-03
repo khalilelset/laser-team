@@ -1,46 +1,52 @@
 const mongoose = require('mongoose');
+const validator = require("validator");
 
 const dataSchema = new mongoose.Schema({
-  OwnerFName: {
+  ownerFName: {
     type: String,
-    required: true
+    required: [true, "Please enter your first name"],
   },
-  OwnerLName: {
+  ownerLName: {
     type: String,
-    required: true
+    required: [true, "Please enter your last name"],
   },
-  OwnerImage: {
+  ownerImage: {
     type: String
   },
-  Email: {
+  email: {
     type: String,
-    required: true
+    unique: true,
+    lowercase: true,
+    required: true,
+    validate: [validator.isEmail, "Please enter a valid email"],
   },
-  OwnerPhNumber: {
+  ownerPhNumber: {
+    unique: true,
     type: Number,
-    required: true
+    required: [true, "Please enter your phone number"],
   },
-  OwnerLocation: {
+  ownerLocation: {
     type: String,
-    required: true
+    required: [true, "Please enter your location"],
   },
-  CraftName: {
+  craftName: {
     type: String,
-    required: true
+    required: [true, "Please enter your craft name"],
   },
-  Password: {
+  password: {
     type: String,
-    required: true
+    required: true,
+    required: [true, "Please enter your password"],
   },
-  OwnerDescription: {
+  ownerDescription: {
     type: String,
-    required: true
+   
   },
-  Crafts: [{
+  crafts: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Crafts' // Reference to the Crafts model
   }],
-  Product: [{
+  product: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Product' // Reference to the Crafts model
   }]
