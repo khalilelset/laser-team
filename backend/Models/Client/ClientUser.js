@@ -31,4 +31,5 @@ const dataSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("ClientUser", dataSchema);
+const Client = mongoose.model("Client", dataSchema);
+module.exports = Client;
