@@ -6,15 +6,15 @@ const dataSchema = new mongoose.Schema({
     type: Number,
     unique: true,
   },
-  FName: {
+  fname: {
     type: String,
     required: [true, "Please enter your first name"],
   },
-  LName: {
+  lname: {
     type: String,
     required: [true, "Please enter your first name"],
   },
-  Image: {
+  image: {
     type: String,
   },
   email: {
