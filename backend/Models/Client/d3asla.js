@@ -1,1 +1,0 @@
-const oussi =jib3alam

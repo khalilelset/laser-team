@@ -1,18 +1,11 @@
 const craftCategorySchema = new mongoose.Schema({
-  CategoryID: {
-    type: Number,
-    required: true,
-    unique: true,
-    index: true
-  },
-  CategoryName: {
+  categoryName: {
     type: String,
     required: true
   },
-  RateCraft: [{
+  crafts: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'RateCraft' // Reference to the Crafts model
+    ref: 'Crafts' // Reference to the Crafts model
   }]
 });
-craftcatSchema.set('primaryKey', 'CategoryID');
-module.exports = mongoose.model('RateCraft', craftcatSchema);
+module.exports = mongoose.model('CraftCategory', craftCategorySchema);
