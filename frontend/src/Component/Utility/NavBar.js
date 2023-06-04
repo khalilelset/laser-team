@@ -66,7 +66,7 @@ function NavBar() {
     <a href="#">Contact</a>  */}
      <Link to="/#/kaa">Visit Store</Link>
      <Link to="/#">Our Team</Link>
-     <Link to="/#">Contact</Link>
+     <Link to="/contact">Contact</Link>
      
     <img src={login2}/>
     {/* <a href="#" class="login-button">   Login </a> */}

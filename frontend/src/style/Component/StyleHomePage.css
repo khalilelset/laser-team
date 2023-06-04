@@ -1,6 +1,8 @@
 
 /* navBar */
 nav {
+  position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +62,8 @@ margin-right: 20px;
 
     display: flex;
     flex-direction: column;
-    background-color: #448AFF;
+    /* background-color: #448AFF; */
+    background:linear-gradient(#007bff,#bdeecf);
     height: 690px;
     border-radius: 0px 0px 200px 200px;
     padding-top: 90px;
@@ -93,7 +96,7 @@ margin-right: 20px;
   } 
 
   /* team card */
-  .profile-card {
+  /* .profile-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,23 +144,51 @@ margin-right: 20px;
     text-decoration: none;
     color: #0077B5;
   }
-  .ContainerTeamCard{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    
-    align-items: normal;
-    gap: 10px;
-  }
+ 
 
   .textTeam{
 text-align: center;
 margin-top: 30px;
 font-size: 20px;
-/* background-image: url('../../images/19362653.jpg');
-background-repeat: no-repeat;
-background-position: center top; */
+
+  } */
+
+  /**/
+  .img-item{
+    /* height:100px;
+    width: 100px;
+    border-radius: 5px; */
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+  
   }
+  
+  .item-description{
+    color: rgb(136, 143, 148);
+    font-family: Almarai;
+    font-size: 16px;
+  
+    letter-spacing: 0;
+    line-height: 20px;
+    }
+  
+    .item-title{
+      
+        color: rgb(184, 200, 213);
+        font-family: Almarai;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 20px;
+        
+    }
+  
+    .card-color{
+  background-color: #f7f7f7;
+  
+    }
+
   
    /*Features*/
    .mainFeatures{
@@ -251,4 +282,39 @@ background-position: center top; */
   
   .contact button[type="submit"]:hover {
     background-color: #2e59d9;
+  }
+
+
+  /*footer*/
+  .blk1{
+    /* background:linear-gradient(#007bff,#5f6a61); */
+   background-color: #007bff;
+  }
+  .blk2{
+    background:linear-gradient(#007bff,#bdeecf);
+    
+  
+  }
+  .blk3{
+    /* background:linear-gradient(#007bff,#5f6a61); */
+    background-color: #bdeecf;
+  }
+  /* footer { background-color: #448AFF; 
+       background:linear-gradient(#007bff,#5f6a61);
+   
+  } */
+  
+  footer:not(:first-child) {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  footer .input-group-text {
+    background-color: #232f3e;
+    color: white;
+    padding: 8px 17px;
+  }
+  .decoration{
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    
   }
