@@ -7,7 +7,7 @@ const mongoString = process.env.DATABASE_URL;
 const clientRouter = require("./Routes/Client/clientRouter");
 const CraftownerSingup = require("./Routes/SingUpRoute/CraftOwner");
 const CompanyRouter = require("./Routes/Company/CompanyRouter");
-
+const CraftownerPostProduct = require("./Routes/post page/OwnerPostProduct");
 
 //const routes = require('./route');
 var cors = require("cors");
@@ -35,6 +35,9 @@ app.use("/", CompanyRouter);
 //craft owner route singup
 app.use("/", CraftownerSingup);
 
+
+//craft owner route post product
+app.use("/", CraftownerPostProduct);
 
 app.listen(4000, () => {
   console.log(`Server Started at \${4000}`);

@@ -12,7 +12,7 @@ const productSchema = new mongoose.Schema({
   },
   mainProductImage: {
     type: String,
-    required: true
+    //required: true
   },
   productDescription: {
     type: String,
@@ -28,7 +28,7 @@ const productSchema = new mongoose.Schema({
   },
   ratingAverage: {
     type: Number,
-    required: true,
+    
   },
   productImage: [{
     type: mongoose.Schema.Types.ObjectId,

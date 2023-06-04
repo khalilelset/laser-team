@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const productImagesSchema = new mongoose.Schema({
-  CraftID: {
+  ProductID: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     unique: true,
