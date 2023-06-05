@@ -1,5 +1,6 @@
 const Client = require("./../Models/Client/ClientUser");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const { createTokens } = require("../JWT");
 //REGISTER
 const register = async (req, res) => {
@@ -52,4 +53,5 @@ const login = async (req, res) => {
 module.exports = {
   register,
   login,
+  profile,
 };

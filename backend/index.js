@@ -31,9 +31,9 @@ const router = express.Router();
 
 //Client Routes
 app.use("/", clientRouter);
-app.get("/profile", validateToken, (req, res) => {
-  res.json("profile");
-});
+// app.get("/profile", validateToken, (req, res) => {
+//   res.json("profile");
+// });
 
 //CompanyRoutes
 app.use("/", CompanyRouter);
