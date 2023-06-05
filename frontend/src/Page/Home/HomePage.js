@@ -4,8 +4,10 @@ import Footer from '../../Component/Utility/Footer'
 import HeroSection from '../../Component/Home/HeroSection'
 import TeamCard from '../../Component/Home/TeamCard'
  import '../../style/Component/StyleHomePage.css'
+ import '../../style/Component/StyleContactPage.css'
 import ContainerTeamCard from '../../Component/Home/ContainerTeamCard'
 import Features from '../../Component/Home/Features'
+import ContactBox from '../../Component/Contact/ContactBox'
 
 const HomePage = () => {
   return (
@@ -14,6 +16,7 @@ const HomePage = () => {
       <HeroSection/>
       <Features/>
       <ContainerTeamCard/>
+      <ContactBox/>
       <Footer/>
      
     </div>
