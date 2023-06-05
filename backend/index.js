@@ -8,6 +8,7 @@ const clientRouter = require("./Routes/Client/clientRouter");
 const CraftownerSingup = require("./Routes/SingUpRoute/CraftOwner");
 const CompanyRouter = require("./Routes/Company/CompanyRouter");
 const CraftownerPostProduct = require("./Routes/post page/OwnerPostProduct");
+const cookieParser = require("cookie-parser");
 
 //const routes = require('./route');
 var cors = require("cors");
@@ -25,6 +26,7 @@ database.once("connected", () => {
 });
 
 app.use(express.json());
+app.use(cookieParser());
 const router = express.Router();
 
 //Client Routes
