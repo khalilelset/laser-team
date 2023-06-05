@@ -8,12 +8,14 @@ const postProduct = async (req, res) => {
       productDescription,
       price,
       productAvailableQuantity,
+      
       category, // Assuming the category is passed as a string or ID
     } = req.body;
 
-    // Find the craft owner
+  
 // Find the craft owner
 const craftOwner = await CraftOwner.findById(req.session);
+console.log(req.session)
     // Create a new product instance
     const product = new Product({
       productTitle,
@@ -28,8 +30,8 @@ const craftOwner = await CraftOwner.findById(req.session);
     const savedProduct = await product.save();
 
     // Add the product to the craft owner's list of products
-    craftOwner.products.push(savedProduct);
-    await craftOwner.save();
+   // craftOwner.products.push(savedProduct);
+   // await craftOwner.save();
 
     res.status(201).json(savedProduct);
   } catch (error) {
