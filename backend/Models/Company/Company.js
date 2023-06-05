@@ -28,26 +28,19 @@ const CompanySchema = new mongoose.Schema({
         required: true,
     },
     CompanyPhoneNumber: {
-        type: Number,
+        type: String,
         required: true,
-        validate: [validator.isMobilePhone, "Enter a valid phone number"],
     },
     CompanyLocation: {
         type: String,
         required: true,
     },
-    OpportunityID: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-        index: true,
-        ref: 'Opportunity'
-    },
+    // OpportunityID: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Opportunity'
+    // },
     RatingCraftID: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-        index: true,
         ref: 'CraftRating'
     },
 })
