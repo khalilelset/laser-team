@@ -1,41 +1,55 @@
 const Client = require("./../Models/Client/ClientUser");
-exports.signup = async (req, res, next) => {
-  const { fname, lname, image, email, password, cardClientId } = req.body;
-
-  // Check if the email is already taken
-  // const existingClient = Client.find((u) => u.email === email);
-  // if (existingClient) {
-  //   return res.status(409).json({ error: "Email is already taken" });
-  // }
-
-  // Hash the password using bcrypt
-  // const hashedPassword = bcrypt.hashSync(password, 10);
-
-  // Generate a unique ID for the new user
-  // const clientId = Math.max(...Client.map((u) => u.id)) + 1;
-
-  // Create the new user object
-  const newClient = {
-    fname,
-    lname,
-    image,
-    email,
-    password,
-    cardClientId,
-  };
-
-  // Add the new user to the database
-  const clientUser = await Client.create(newClient);
-
-  // Generate a JWT token for the new user
-  // const token = jwt.sign({ clientId: newClient.id }, secretKey);
-
-  // Return the token and user information
-  // res.json({ token, client: newClient });
-  res.status(201).json({
-    status: "success",
-    data: {
-      user: clientUser,
-    },
+const bcrypt = require("bcrypt");
+const { createTokens } = require("../JWT");
+//REGISTER
+const register = async (req, res) => {
+  const newClient = new Client({
+    fname: req.body.fname,
+    lname: req.body.lname,
+    image: req.body.image,
+    email: req.body.email,
+    password: (await bcrypt.hash(req.body.password, 10)).toString(),
+    cardClientId: Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
   });
+  try {
+    const savedClient = await newClient.save();
+    res.status(201).json({
+      msg: "Client Added Successfully",
+      data: {
+        client: savedClient,
+      },
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
+//LOGIN
+const login = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const client = await Client.findOne({ email: email });
+    if (!client) {
+      return res.status(401).json({ msg: "Something Wrong" });
+    } else {
+      const dbPassword = client.password;
+      bcrypt.compare(password, dbPassword).then((match) => {
+        if (!match) {
+          return res.status(400).json({ msg: "Something wrong" });
+        }
+        const accessToken = createTokens(client);
+        res.cookie("access-token", accessToken, {
+          maxAge: 60 * 60 * 24 * 30 * 1000,
+        });
+        res.status(200).json({ msg: "You are Logged In", token: accessToken });
+      });
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
+module.exports = {
+  register,
+  login,
 };
