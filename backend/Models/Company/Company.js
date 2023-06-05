@@ -38,16 +38,16 @@ const CompanySchema = new mongoose.Schema({
     },
     OpportunityID: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-        index: true,
+       // required: true,
+        //unique: true,
+        //index: true,
         ref: 'Opportunity'
     },
     RatingCraftID: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-        index: true,
+        //required: true,
+        //unique: true,
+        //index: true,
         ref: 'CraftRating'
     },
 })

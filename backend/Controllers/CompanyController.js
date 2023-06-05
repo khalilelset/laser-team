@@ -1,4 +1,4 @@
-const Company = require("../models/Company/Company");
+const Company = require("../Models/Company/Company");
 
 exports.signup = async (req, res, next) => {
     const newCompany = await Company.create(req.body);
