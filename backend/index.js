@@ -8,6 +8,7 @@ const clientRouter = require("./Routes/Client/clientRouter");
 const CraftownerSingup = require("./Routes/SingUpRoute/CraftOwner");
 const CompanyRouter = require("./Routes/Company/CompanyRouter");
 const CraftownerPostProduct = require("./Routes/post page/OwnerPostProduct");
+const CraftownerPostCraft = require("./Routes/post page/OwnerPostCraft");
 const cookieParser = require("cookie-parser");
 
 //const routes = require('./route');
@@ -43,6 +44,10 @@ app.use("/", CraftownerSingup);
 
 //craft owner route post product
 app.use("/", CraftownerPostProduct);
+
+
+//craft owner route post craft
+app.use("/", CraftownerPostCraft);
 
 app.listen(4000, () => {
   console.log(`Server Started at \${4000}`);

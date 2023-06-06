@@ -36,7 +36,9 @@ const signUp = async (req, res) => {
 /*
     // Save the Craft Owner's ID in the session or token
     session.craftOwnerId = savedCraftsOwner._id;*/
-
+    res.cookie("session", session, {
+      maxAge: 60 * 60 * 24 * 30 * 1000,
+    });
     // Return the saved CraftsOwner and the session or token in the response
     res.status(201).json({
       craftsOwner: savedCraftsOwner,
