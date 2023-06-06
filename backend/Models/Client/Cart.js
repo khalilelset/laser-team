@@ -7,6 +7,9 @@ const cartSchema = new mongoose.Schema({
       ref: "productsInCart",
     },
   ],
+  totalPrice: {
+    type: Number,
+  },
 });
 
 const Cart = mongoose.model("Cart", cartSchema);

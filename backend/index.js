@@ -5,6 +5,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoString = process.env.DATABASE_URL;
 const clientRouter = require("./Routes/Client/clientRouter");
+const cartRouter = require("./Routes/Client/cartRouter");
 const CraftownerSingup = require("./Routes/SingUpRoute/CraftOwner");
 const CraftownerPostProduct = require("./Routes/post page/OwnerPostProduct");
 const CraftownerPostCraft = require("./Routes/post page/OwnerPostCraft");
@@ -34,6 +35,9 @@ app.use("/", clientRouter);
 // app.get("/profile", validateToken, (req, res) => {
 //   res.json("profile");
 // });
+
+//Cart Routes
+app.use("/", cartRouter);
 
 //craft owner route singup
 app.use("/", CraftownerSingup);

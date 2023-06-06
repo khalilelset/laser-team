@@ -1,5 +1,5 @@
-const Product = require('../../Models/Crafts/Product');
-const CraftOwner = require('../../Models/Crafts/CraftOwner');
+const Product = require("../../Models/Crafts/Product");
+const CraftOwner = require("../../Models/Crafts/CraftOwner");
 
 const postProduct = async (req, res) => {
   try {
@@ -8,13 +8,12 @@ const postProduct = async (req, res) => {
       productDescription,
       price,
       productAvailableQuantity,
-      
+
       category, // Assuming the category is passed as a string or ID
     } = req.body;
 
-  
-// Find the craft owner
-const craftOwner = await CraftOwner.findById(req.cookies.session);
+    // Find the craft owner
+    const craftOwner = await CraftOwner.findById(req.cookies.session);
 
     // Create a new product instance
     const product = new Product({
