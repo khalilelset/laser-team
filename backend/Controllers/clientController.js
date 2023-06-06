@@ -50,8 +50,16 @@ const login = async (req, res) => {
   }
 };
 
+//LOGOUT
+const logout = (req, res) => {
+  if (req.headers && req.headers.authorization) {
+    console.log(req.headers.authorization);
+    res.send("ok");
+  }
+};
+
 module.exports = {
   register,
   login,
-  profile,
+  logout,
 };
