@@ -35,7 +35,6 @@ const CompanySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-<<<<<<< HEAD
     OpportunityID: {
         type: mongoose.Schema.Types.ObjectId,
        // required: true,
@@ -48,14 +47,6 @@ const CompanySchema = new mongoose.Schema({
         //required: true,
         //unique: true,
         //index: true,
-=======
-    // OpportunityID: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Opportunity'
-    // },
-    RatingCraftID: {
-        type: mongoose.Schema.Types.ObjectId,
->>>>>>> 95735415ea08909fc82e10d6b25ea79d79d99530
         ref: 'CraftRating'
     },
 })

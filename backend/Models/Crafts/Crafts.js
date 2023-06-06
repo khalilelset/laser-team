@@ -12,15 +12,15 @@ const craftSchema = new mongoose.Schema({
   },
   mainCraftImage: {
     type: String,
-    required: true
+    // required: true
   },
   craftDescription: {
     type: String,
     required: true
   },
   categoryID: {
-    type: Number,
-    required: true,
+    type: mongoose.Schema.Types.ObjectId,
+    
     ref: 'CraftCategory' // Reference to the CraftCategory model
   },
   craftImage: [{
