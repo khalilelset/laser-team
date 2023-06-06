@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 
 const dataSchema = new mongoose.Schema({
-  cardClientId: {
-    type: Number,
-    unique: true,
+  cartClientId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Cart",
   },
   fname: {
     type: String,

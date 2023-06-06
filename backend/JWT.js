@@ -17,6 +17,7 @@ const validateToken = (req, res, next) => {
     const validToken = verify(accessToken, process.env.JWT_SECRET_KEY);
     if (validToken) {
       req.authenticated = true;
+      req.user = user;
       return next();
     }
   } catch (err) {

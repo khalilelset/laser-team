@@ -1,23 +1,14 @@
 const mongoose = require("mongoose");
 
 const cartSchema = new mongoose.Schema({
-  clientId: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-  },
-  productId: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "Product",
-  },
-  numOfProduct: {
+  productsInCart: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "productsInCart",
+    },
+  ],
+  totalPrice: {
     type: Number,
-    required: true,
-  },
-  status: {
-    type: Number,
-    required: true,
-    default: 0, //  0:Payed Incompleted    1:Payed completed
   },
 });
 

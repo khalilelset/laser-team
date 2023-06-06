@@ -1,16 +1,20 @@
 const Client = require("./../Models/Client/ClientUser");
+const Cart = require("./../Models/Client/Cart");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { createTokens } = require("../JWT");
 //REGISTER
 const register = async (req, res) => {
+  const clientCart = new Cart();
+  clientCart.save();
+
   const newClient = new Client({
     fname: req.body.fname,
     lname: req.body.lname,
     image: req.body.image,
     email: req.body.email,
     password: (await bcrypt.hash(req.body.password, 10)).toString(),
-    cardClientId: Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
+    cardClientId: clientCart._id,
   });
   try {
     const savedClient = await newClient.save();
@@ -50,8 +54,14 @@ const login = async (req, res) => {
   }
 };
 
+//LOGOUT
+const logout = (req, res) => {
+  res.clearCookie("access-token");
+  res.status(200).json({ msg: "Please Login First" });
+};
+
 module.exports = {
   register,
   login,
- 
+  logout,
 };

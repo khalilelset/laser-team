@@ -5,11 +5,13 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoString = process.env.DATABASE_URL;
 const clientRouter = require("./Routes/Client/clientRouter");
+const cartRouter = require("./Routes/Client/cartRouter");
 const CraftownerSingup = require("./Routes/SingUpRoute/CraftOwner");
-const CompanyRouter = require("./Routes/Company/CompanyRouter");
 const CraftownerPostProduct = require("./Routes/post page/OwnerPostProduct");
 const CraftownerPostCraft = require("./Routes/post page/OwnerPostCraft");
 const cookieParser = require("cookie-parser");
+
+const companyRouter = require("./Routes/company/companyRouter");
 
 //const routes = require('./route');
 var cors = require("cors");
@@ -36,8 +38,8 @@ app.use("/", clientRouter);
 //   res.json("profile");
 // });
 
-//CompanyRoutes
-app.use("/", CompanyRouter);
+//Cart Routes
+app.use("/", cartRouter);
 
 //craft owner route singup
 app.use("/", CraftownerSingup);
@@ -45,9 +47,11 @@ app.use("/", CraftownerSingup);
 //craft owner route post product
 app.use("/", CraftownerPostProduct);
 
-
 //craft owner route post craft
 app.use("/", CraftownerPostCraft);
+
+//Company Routes
+app.use("/", companyRouter);
 
 app.listen(4000, () => {
   console.log(`Server Started at \${4000}`);
