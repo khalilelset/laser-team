@@ -11,6 +11,8 @@ const CraftownerPostProduct = require("./Routes/post page/OwnerPostProduct");
 const CraftownerPostCraft = require("./Routes/post page/OwnerPostCraft");
 const cookieParser = require("cookie-parser");
 
+const companyRouter = require("./Routes/company/companyRouter");
+
 //const routes = require('./route');
 var cors = require("cors");
 const { validateToken } = require("./JWT");
@@ -47,6 +49,9 @@ app.use("/", CraftownerPostProduct);
 
 //craft owner route post craft
 app.use("/", CraftownerPostCraft);
+
+//Company Routes
+app.use("/", companyRouter);
 
 app.listen(4000, () => {
   console.log(`Server Started at \${4000}`);
