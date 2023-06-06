@@ -6,7 +6,6 @@ const bodyParser = require("body-parser");
 const mongoString = process.env.DATABASE_URL;
 const clientRouter = require("./Routes/Client/clientRouter");
 const CraftownerSingup = require("./Routes/SingUpRoute/CraftOwner");
-const CompanyRouter = require("./Routes/Company/CompanyRouter");
 const CraftownerPostProduct = require("./Routes/post page/OwnerPostProduct");
 const CraftownerPostCraft = require("./Routes/post page/OwnerPostCraft");
 const cookieParser = require("cookie-parser");
@@ -36,15 +35,11 @@ app.use("/", clientRouter);
 //   res.json("profile");
 // });
 
-//CompanyRoutes
-app.use("/", CompanyRouter);
-
 //craft owner route singup
 app.use("/", CraftownerSingup);
 
 //craft owner route post product
 app.use("/", CraftownerPostProduct);
-
 
 //craft owner route post craft
 app.use("/", CraftownerPostCraft);

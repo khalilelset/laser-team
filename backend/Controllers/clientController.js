@@ -63,9 +63,5 @@ const logout = (req, res) => {
 module.exports = {
   register,
   login,
-<<<<<<< HEAD
   logout,
-=======
- 
->>>>>>> 432f7518b2df75c7a05f1ac636d710bfd39fe939
 };
