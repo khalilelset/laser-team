@@ -15,7 +15,7 @@ const dataSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    unique: true,
+    //unique: true,
     lowercase: true,
     required: true,
     validate: [validator.isEmail, "Please enter a valid email"],
