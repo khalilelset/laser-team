@@ -4,7 +4,7 @@ const validator = require("validator");
 const CompanySchema = new mongoose.Schema({
     CompanyID: {
         type: Number,
-        unique: true,
+        // unique: true,
     },
     CompanyName: {
         type: String,
@@ -40,8 +40,9 @@ const CompanySchema = new mongoose.Schema({
         required: true,
     },
     OpportunityId: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Opportunity"
+        type: Number,
+        unique: true,
+        ref: "Opportunity",
     }],
     RatingCraftId: [{
         type: mongoose.Schema.Types.ObjectId,
