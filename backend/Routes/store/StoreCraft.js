@@ -4,11 +4,22 @@ const router = express.Router();
 
 router.get('/store/Craft', async (req, res) => {
     try {
-    const data = await Product.find();
+    const data = await Craft.find();
     res.json(data)
     }
     catch (error) {
     res.status(500).json({ message: error.message })
     }
-    })
+    });
+
+    router.get('/store/craft/getOne/:id', async (req, res) => {
+        try {
+        const data = await Craft.findById(req.params.id);
+        res.json(data)
+        }
+        catch (error) {
+        res.status(500).json({ message: error.message })
+        }
+        })
+
     module.exports = router;
