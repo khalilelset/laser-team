@@ -1,29 +1,34 @@
-const Client = require("./../Models/Client/ClientUser");
+const Client = require("./../Models/Client/Client");
 const Cart = require("./../Models/Client/Cart");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { createTokens } = require("../JWT");
 //REGISTER
 const register = async (req, res) => {
-  const clientCart = new Cart();
-  clientCart.save();
-
-  const newClient = new Client({
-    fname: req.body.fname,
-    lname: req.body.lname,
-    image: req.body.image,
-    email: req.body.email,
-    password: (await bcrypt.hash(req.body.password, 10)).toString(),
-    cardClientId: clientCart._id,
-  });
   try {
-    const savedClient = await newClient.save();
-    res.status(201).json({
-      msg: "Client Added Successfully",
-      data: {
-        client: savedClient,
-      },
-    });
+    const oldClient = await Client.findOne({ email: req.body.email });
+    if (oldClient) {
+      res.status(201).json({ msg: "Email Already Used By Another Client" });
+    } else {
+      const clientCart = new Cart();
+      clientCart.save();
+      const newClient = new Client({
+        fname: req.body.fname,
+        lname: req.body.lname,
+        image: req.body.image,
+        email: req.body.email,
+        password: (await bcrypt.hash(req.body.password, 10)).toString(),
+        cartClientId: clientCart._id,
+      });
+
+      const savedClient = await newClient.save();
+      res.status(201).json({
+        msg: "Client Added Successfully",
+        data: {
+          client: savedClient,
+        },
+      });
+    }
   } catch (err) {
     res.status(500).json(err);
   }
