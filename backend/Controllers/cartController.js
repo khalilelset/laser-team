@@ -6,7 +6,7 @@ const { extractIdFromToken } = require("./../JWT");
 const jwt = require("jsonwebtoken");
 
 const addProductToCart = async (req, res) => {
-  const { productId } = req.params.id;
+  const productId = req.params.id;
   try {
     const addedProduct = Product.findById(productId);
     if (!addedProduct) {
@@ -52,6 +52,25 @@ const addProductToCart = async (req, res) => {
   }
 };
 
+const getProductsFromCart = async (req, res) => {
+  const cartId = req.params.id;
+  try {
+    console.log(cartId);
+    const cart = await Cart.findById(cartId);
+    if (!cart) {
+      return res.status(404).json({ msg: "Cart Not Found" });
+    }
+    const productsInCart = cart.productsInCart;
+    if (!productsInCart) {
+      return res.status(404).json({ msg: "No Products Into this cart" });
+    }
+    res.status(200).json({ data: productsInCart });
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+};
+
 module.exports = {
   addProductToCart,
+  getProductsFromCart,
 };
