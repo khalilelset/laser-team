@@ -22,6 +22,10 @@ const register = async (req, res) => {
       });
 
       const savedClient = await newClient.save();
+      const accessToken = createTokens(savedClient);
+      res.cookie("access-token", accessToken, {
+        maxAge: 60 * 60 * 24 * 30 * 1000,
+      });
       res.status(201).json({
         msg: "Client Added Successfully",
         data: {
