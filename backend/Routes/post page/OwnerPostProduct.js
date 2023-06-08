@@ -3,6 +3,6 @@ const router = express.Router();
 const PostProductController = require('../../Controllers/crafts/Ownerpostproduct');
 
 // Signup route
-router.post('/post/product', PostProductController.postProduct);
+router.post('/api/post/product', PostProductController.postProduct);
 
 module.exports = router;

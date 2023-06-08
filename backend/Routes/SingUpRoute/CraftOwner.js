@@ -3,6 +3,6 @@ const router = express.Router();
 const signupController = require('../../Controllers/crafts/SingUpController');
 
 // Signup route
-router.post('/signup/craftowner', signupController.signUp);
+router.post('/api/signup/craftowner', signupController.signUp);
 
 module.exports = router;

@@ -2,7 +2,7 @@ const Craft = require("../../Models/Crafts/Crafts");
 const express = require('express');
 const router = express.Router();
 
-router.get('/store/Craft', async (req, res) => {
+router.get('/api/store/Craft', async (req, res) => {
     try {
     const data = await Craft.find();
     res.json(data)

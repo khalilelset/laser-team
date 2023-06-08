@@ -2,7 +2,7 @@ const Product = require("../../Models/Crafts/Product");
 const express = require('express');
 const router = express.Router();
 
-router.get('/store/product', async (req, res) => {
+router.get('/api/store/product', async (req, res) => {
     try {
     const data = await Product.find();
     res.json(data)
