@@ -2,7 +2,7 @@ const Client = require("./../Models/Client/Client");
 const Cart = require("./../Models/Client/Cart");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { createTokens } = require("../JWT");
+const { createTokens, extractIdFromToken } = require("../JWT");
 //REGISTER
 const register = async (req, res) => {
   try {
@@ -69,8 +69,25 @@ const logout = (req, res) => {
   res.status(200).json({ msg: "Please Login First" });
 };
 
+// Get Info
+const getUserInfo = async (req, res) => {
+  try {
+    const token = req.cookies && req.cookies["access-token"];
+    if (!token) {
+      return res.status(400).json({ error: "User Not Authenticated!" });
+    }
+    const userInfo = extractIdFromToken(token);
+    const { id } = userInfo;
+    const client = await Client.findById(id);
+    res.status(200).json({ data: client });
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};
+
 module.exports = {
   register,
   login,
   logout,
+  getUserInfo,
 };

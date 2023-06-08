@@ -5,6 +5,7 @@ const Client = require("./../Models/Client/Client");
 const { extractIdFromToken } = require("./../JWT");
 const jwt = require("jsonwebtoken");
 
+// ADD PRODUCT TO CART
 const addProductToCart = async (req, res) => {
   const productId = req.params.id;
   try {
@@ -52,11 +53,19 @@ const addProductToCart = async (req, res) => {
   }
 };
 
+// GET PRODUCTS FROM CART
 const getProductsFromCart = async (req, res) => {
-  const cartId = req.params.id;
+  // const cartId = req.params.id;
   try {
-    console.log(cartId);
-    const cart = await Cart.findById(cartId);
+    const token = req.cookies && req.cookies["access-token"];
+    if (!token) {
+      return res.status(400).json({ error: "User Not Authenticated!" });
+    }
+    const userInfo = extractIdFromToken(token);
+    const { id } = userInfo;
+    const client = await Client.findById(id);
+    console.log(client.cartClientId);
+    const cart = await Cart.findById(client.cartClientId);
     if (!cart) {
       return res.status(404).json({ msg: "Cart Not Found" });
     }
