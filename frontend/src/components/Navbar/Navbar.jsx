@@ -35,7 +35,7 @@ const Navbar = () => {
                 Features
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="#portfolio">
                 Portfolio
               </a>
@@ -44,24 +44,24 @@ const Navbar = () => {
               <a className="nav-link" href="#pricing">
                 Pricing
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a className="nav-link" href="#team">
                 Team
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="#blog">
                 Blog
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a className="nav-link" href="#contact">
                 Contact
               </a>
             </li>
           </ul>
-          <button className="btn btn-primary ms-lg-3">Join Us</button>
+          <button className="btn btn-primary ms-lg-3">login</button>
         </div>
       </div>
     </nav>
