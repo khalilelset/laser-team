@@ -1,5 +1,4 @@
 import React from "react";
-import ProfileImage from "../../assets/images/navbar/ProfileImage.png"
 
 const Navbar = () => {
   return (
