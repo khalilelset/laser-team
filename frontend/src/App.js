@@ -3,7 +3,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
 import React from "react";
 
-import HomePage from "./Page/home/HomePage";
+import HomePage from "./Page/HomePage/HomePage";
 import { Route, Routes } from "react-router-dom";
 import AllProductsCards from "./components/AllProductsCards/AllProductsCards";
 import Footer from "./components/Footer/Footer";

@@ -54,15 +54,7 @@ const Team = () => {
                 <h5 class="mb-0 mt-4">Khalil ElSet</h5>
                 <p>Web Developer</p>
                 <div class="social-icons">
-                  {/* <a href="#">
-                    <i class="bx bxl-facebook"></i>
-                  </a>
-                  <a href="#">
-                    <i class="bx bxl-twitter"></i>
-                  </a>
-                  <a href="#">
-                    <i class="bx bxl-instagram-alt"></i>
-                  </a> */}
+                 
                 </div>
               </div>
             </div>
