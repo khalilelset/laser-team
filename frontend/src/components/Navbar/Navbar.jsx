@@ -61,11 +61,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-<<<<<<< HEAD
           <button className="btn btn-primary ms-lg-3 button">Join Us</button>
-=======
-          <button className="btn btn-primary ms-lg-3">login</button>
->>>>>>> 48cf31029cc72aecfa2ea49d58abe53aca4db178
         </div>
       </div>
     </nav>
