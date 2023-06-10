@@ -54,7 +54,7 @@ img {
 }
 
 .hero {
-    background-image: url(../img/photo-1523275335684-37898b6baf30.jpg);
+    background-image: url(../img);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -140,7 +140,7 @@ section {
 }
 
 .col-img {
-    background-image: url(../img/cover2.jpg);
+    background-image: url(../img/photo-1523275335684-37898b6baf30.jpg);
     background-position: center;
     background-size: cover;
     min-height: 500px;
