@@ -73,13 +73,13 @@ const Footer = () => {
               <div class="col-md-6">
                 <div class="social-icons">
                   <a href="#">
-                    <i class="bx bxl-facebook"></i>
+                    <img src={process.env.PUBLIC_URL + '/img/face.png'} style={{borderRadius:'100%' , height:'100%'}}/>
                   </a>
                   <a href="#">
-                    <i class="bx bxl-twitter"></i>
+                  <img src={process.env.PUBLIC_URL + '/img/insta.png'} style={{borderRadius:'100%' , height:'100%'}}/>
                   </a>
                   <a href="#">
-                    <i class="bx bxl-instagram-alt"></i>
+                  <img src={process.env.PUBLIC_URL + '/img/twitter.png'} style={{borderRadius:'100%' , height:'100%'}}/>
                   </a>
                 </div>
               </div>

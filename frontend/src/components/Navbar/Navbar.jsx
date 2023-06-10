@@ -35,7 +35,7 @@ const Navbar = () => {
                 Features
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="#portfolio">
                 Portfolio
               </a>
@@ -44,24 +44,28 @@ const Navbar = () => {
               <a className="nav-link" href="#pricing">
                 Pricing
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a className="nav-link" href="#team">
                 Team
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="#blog">
                 Blog
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a className="nav-link" href="#contact">
                 Contact
               </a>
             </li>
           </ul>
+<<<<<<< HEAD
           <button className="btn btn-primary ms-lg-3 button">Join Us</button>
+=======
+          <button className="btn btn-primary ms-lg-3">login</button>
+>>>>>>> 48cf31029cc72aecfa2ea49d58abe53aca4db178
         </div>
       </div>
     </nav>
