@@ -1,4 +1,5 @@
 import React from "react";
+import ProfileImage from "../../assets/images/navbar/ProfileImage.png"
 
 const Navbar = () => {
   return (
@@ -62,6 +63,12 @@ const Navbar = () => {
             </li>
           </ul>
           <button className="btn btn-primary ms-lg-3 button">Join Us</button>
+          <a>
+            <img src={ProfileImage}
+              alt="Profile iamge"
+              style={{ maxWidth: '30%' , marginLeft: '16px'}}
+            ></img>
+          </a>
         </div>
       </div>
     </nav>

@@ -7,7 +7,7 @@ import HomePage from "./Page/HomePage/HomePage";
 import { Route, Routes } from "react-router-dom";
 import AllProductsCards from "./components/AllProductsCards/AllProductsCards";
 import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/HomePageNavBar/Navbar";
 
 export default function App() {
   return (
