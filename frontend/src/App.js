@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import AllProductsCards from "./components/AllProductsCards/AllProductsCards";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/HomePageNavBar/Navbar";
+import SignUp from "./Page/signup&login/SignUp";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="AllCards" element={<AllProductsCards />} />
+        <Route path="SignUp" element={<SignUp />} />
       </Routes>
       <Footer />
     </div>

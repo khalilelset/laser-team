@@ -1,0 +1,24 @@
+input::placeholder {
+    color: white;
+    
+  }
+  h2{
+    color: white;
+  }
+  
+  button.btn-primary:hover {
+    color: black;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) ;
+  }
+ 
+
+
+ 
+button{
+  margin-top: 30px;
+  background-color: transparent;
+  color: white;
+  
+  
+}
