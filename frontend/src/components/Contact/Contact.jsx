@@ -12,7 +12,6 @@ const Contact = () => {
   const success = useSelector((state) => state.contact.success);
   const error = useSelector((state) => state.contact.error);
   const dispatch = useDispatch();
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = {

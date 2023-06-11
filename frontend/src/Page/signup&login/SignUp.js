@@ -31,8 +31,6 @@ const SignUp = () => {
               <h4 style={{ marginBottom: "20px"  ,textShadow: "2px 2px 4px rgba(0, 0, 0, 0.9)", color:"white" }}>Are you?</h4>
               
               
-              
-              
               <button
   type="button"
   style={{
