@@ -8,9 +8,9 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  const loading = useSelector((state) => state.loading);
-  const success = useSelector((state) => state.success);
-  const error = useSelector((state) => state.error);
+  const loading = useSelector((state) => state.contact.loading);
+  const success = useSelector((state) => state.contact.success);
+  const error = useSelector((state) => state.contact.error);
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {

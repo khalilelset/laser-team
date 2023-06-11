@@ -6,9 +6,10 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import ContactReducer from "./redux/reducers/ContactReducer";
+// import ContactReducer from "./redux/reducers/ContactReducer";
+import rootReducer from "./redux/rootReducer";
 
-const store = createStore(ContactReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>

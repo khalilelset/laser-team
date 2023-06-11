@@ -10,12 +10,18 @@ const Card = ({ product }) => {
       <div className="card" key={product.id}>
         <img src={productImage} className="card-img-top img-fluid" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{product.title}</h5>
-          <p className="card-text">{product.description}</p>
+          <h5 className="card-title">{product.productTitle} </h5>
+          <p className="card-text">{product.productDescription}</p>
           <h5>{product.price}</h5>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
+          <p>{product.productAvailableQuantity} pieces</p>
+          <div className="">
+            <a href="#" className="btn btn-primary">
+              Add to cart
+            </a>
+            <a href="#" className="btn btn-outline-secondary">
+              More Details
+            </a>
+          </div>
         </div>
       </div>
       {/* </div>
