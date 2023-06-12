@@ -16,11 +16,11 @@ export default function SignUpClient() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = {
-      FName,
-      LName,
+      fname: FName,
+      lname: LName,
       email,
-      Password,
-      photo,
+      password: Password,
+      image: photo,
     };
     dispatch(signupaction(formData));
   };

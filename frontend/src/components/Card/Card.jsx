@@ -1,6 +1,7 @@
 import React from "react";
 import "./Card.css";
 import productImage from "../../assets/images/products/Apple_watch-series7_hero_09142021_big.jpg.slideshow-medium.jpg";
+import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
   return (
@@ -12,16 +13,14 @@ const Card = ({ product }) => {
         <div className="card-body">
           <h5 className="card-title">{product.productTitle} </h5>
           <p className="card-text">{product.productDescription}</p>
-          <h5>{product.price}</h5>
+          <h5>{product.price}$</h5>
           <p>{product.productAvailableQuantity} pieces</p>
-          <div className="">
-            <a href="#" className="btn btn-primary">
-              Add to cart
-            </a>
-            <a href="#" className="btn btn-outline-secondary">
-              More Details
-            </a>
-          </div>
+          <Link to="#" className="btn btn-primary">
+            Add to cart
+          </Link>
+          <Link to="#" className="ms-4 mt-3">
+            More Details
+          </Link>
         </div>
       </div>
       {/* </div>
