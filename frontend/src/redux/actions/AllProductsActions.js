@@ -1,9 +1,7 @@
-// Action Types
 const GET_PRODUCTS_REQUEST = "GET_PRODUCTS_REQUEST";
 const GET_PRODUCTS_SUCCESS = "GET_PRODUCTS_SUCCESS";
 const GET_PRODUCTS_FAILURE = "GET_PRODUCTS_FAILURE";
 
-// Action Creators
 const getProductsRequest = () => ({
   type: GET_PRODUCTS_REQUEST,
 });
@@ -18,7 +16,6 @@ const getProductsFailure = (error) => ({
   payload: error,
 });
 
-// Thunk Function
 const getProducts = () => {
   return (dispatch) => {
     dispatch(getProductsRequest());

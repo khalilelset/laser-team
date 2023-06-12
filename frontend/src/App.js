@@ -9,6 +9,7 @@ import AllProductsCards from "./components/AllProductsCards/AllProductsCards";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/HomePageNavBar/Navbar";
 import SignUp from "./Page/signup&login/SignUp";
+import AllCraftsCards from "./components/AllCraftsCards/AllCraftsCards";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="AllCards" element={<AllProductsCards />} />
+        <Route path="AllCrafts" element={<AllCraftsCards />} />
         <Route path="SignUp" element={<SignUp />} />
       </Routes>
       <Footer />
