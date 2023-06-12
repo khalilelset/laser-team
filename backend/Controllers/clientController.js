@@ -6,18 +6,22 @@ const { createTokens, extractIdFromToken } = require("../JWT");
 //REGISTER
 const register = async (req, res) => {
   try {
-    const oldClient = await Client.findOne({ email: req.body.email });
+    const { fname, lname, email, password, image , cartClientId} = req.body;
+    const oldClient = await Client.findOne({ email: email });
     if (oldClient) {
       res.status(201).json({ msg: "Email Already Used By Another Client" });
     } else {
       const clientCart = new Cart();
       clientCart.save();
+      //3am 2a3mela encryption 
+     /* const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);*/
       const newClient = new Client({
-        fname: req.body.fname,
-        lname: req.body.lname,
-        image: req.body.image,
-        email: req.body.email,
-        password: (await bcrypt.hash(req.body.password, 10)).toString(),
+        fname: fname,
+        lname: lname,
+        email: email,
+        password: password,
+        image: image,       
         cartClientId: clientCart._id,
       });
 
@@ -26,15 +30,14 @@ const register = async (req, res) => {
       res.cookie("access-token", accessToken, {
         maxAge: 60 * 60 * 24 * 30 * 1000,
       });
-      res.status(201).json({
+      res.status(200).json({
         msg: "Client Added Successfully",
-        data: {
-          client: savedClient,
-        },
+        data:savedClient,
       });
     }
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    
+    res.status(500).json({ error: error });
   }
 };
 
@@ -91,3 +94,6 @@ module.exports = {
   logout,
   getUserInfo,
 };
+
+
+
