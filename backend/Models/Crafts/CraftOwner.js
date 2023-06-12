@@ -15,7 +15,7 @@ const dataSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    //unique: true,
+    required: [true, "Please enter your email"],
     lowercase: true,
     required: true,
     validate: [validator.isEmail, "Please enter a valid email"],
@@ -40,7 +40,7 @@ const dataSchema = new mongoose.Schema({
   },
   ownerDescription: {
     type: String,
-   
+    required: [true, "Please tell as somthing about yourself"],
   },
   crafts: [{
     type: mongoose.Schema.Types.ObjectId,

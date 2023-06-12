@@ -32,14 +32,14 @@ export default function SignUpClient() {
       <div className="form-group animate__animated animate__fadeInLeft">
 
       {success && (
-    <div className="alert alert-success" role="alert">
-    Form submitted successfully   </div>
+      <div className="alert alert-success" role="alert">
+      Form submitted successfully   </div>
+       )}
+      {error && (
+     <div className="alert alert-danger" role="alert">
+     {error.message.split(",")[0]}
+      </div>
     )}
-       {error && (
-       <div className="alert alert-danger" role="alert">
-       {error._message}
-       </div>
-      )}
 
         <label htmlFor="firstName" style={{ marginBottom: "10px"}}>First Name</label>
         <input type="text" id="firstName" className="form-control"

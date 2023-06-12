@@ -2,11 +2,11 @@ const REGISTER_REQUEST = "REGISTER_REQUEST";
 const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 const REGISTER_FAILURE = "REGISTER_FAILURE";
 
-const signupaction = (formData) => {
+const signupcoaction = (formData) => {
   return async (dispatch) => {
     dispatch({ type: REGISTER_REQUEST });
     try {
-      fetch("http://localhost:4000/api/client/register", {
+      fetch("http://localhost:4000/api/signup/craftowner", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,4 +35,4 @@ const signupaction = (formData) => {
   };
 };
 
-export { REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE, signupaction };
+export { REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE, signupcoaction };

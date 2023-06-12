@@ -9,7 +9,8 @@ const register = async (req, res) => {
     const { fname, lname, email, password, image , cartClientId} = req.body;
     const oldClient = await Client.findOne({ email: email });
     if (oldClient) {
-      res.status(201).json({ msg: "Email Already Used By Another Client" });
+      res.status(500).json({ error :
+        {message:"Email Already Used By Another Client"}});
     } else {
       const clientCart = new Cart();
       clientCart.save();

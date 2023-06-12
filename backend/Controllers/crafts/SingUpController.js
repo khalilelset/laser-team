@@ -18,7 +18,7 @@ const signUp = async (req, res) => {
     } = req.body;
     const oldCraft = await CraftsOwner.findOne({ email: email });
     // Create a new CraftsOwner instance
-    if(oldCraft){ res.status(201).json({ msg: "Email Already Used By Another Craft Owner" });}
+    if(oldCraft){ res.status(500).json({ error: {message:"Email Already Used By Another Craft owner"}});}
     else{
       const craftsOwner = new CraftsOwner({
       ownerFName,
@@ -39,8 +39,8 @@ const signUp = async (req, res) => {
       craftsOwner: savedCraftsOwner,
     });
   }} catch (error) {
-    res.status(400).json({ error: error.message });
-    console.log("controller sign up error");
+    res.status(500).json({ error: error });
+    
   }
 };
 
