@@ -29,6 +29,13 @@ const dataSchema = new mongoose.Schema({
     required: [true, "Please enter a password"],
     minlength: 8,
   },
+
+  status: {
+    type: String,
+    default:"client"
+    
+  },
+
 });
 
 module.exports = mongoose.model("client", dataSchema);

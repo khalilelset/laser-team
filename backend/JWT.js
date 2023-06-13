@@ -2,7 +2,7 @@ const { sign, verify } = require("jsonwebtoken");
 const jwt = require("jsonwebtoken");
 
 const createTokens = (user) => {
-  const accessToken = sign({ id: user._id }, process.env.JWT_SECRET_KEY);
+  const accessToken = sign({ id: user._id ,status: user.status }, process.env.JWT_SECRET_KEY);
   return accessToken;
 };
 
@@ -37,8 +37,8 @@ const getTokenPayload = (token) => {
 const extractIdFromToken = (token) => {
   const payload = getTokenPayload(token);
   if (payload) {
-    const { id } = payload;
-    return { id };
+    const { id , status } = payload;
+    return { id , status };
   } else {
     return null;
   }
