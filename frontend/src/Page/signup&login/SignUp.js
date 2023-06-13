@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'animate.css';
+import { Link } from 'react-router-dom';
 import SignUpClient from './SignUpClient';
 import SignUpCraftOwner from './SignUpCraftOwner';
 import backgroundImage1 from './../../assets/images/background sign&log/c1.jpeg';
@@ -25,6 +26,13 @@ const SignUp = () => {
     <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover' , color:"white"}}>
 
       <div className="container py-5">
+      
+      <Link to="/login" className={`btn btn-primary }`} 
+      style={{ border: '1px primary blue',boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)' }}>
+  i have account
+</Link>
+
+
         <div className="row justify-content-center">
           <div className="col-md-4">
             <div className="text-center mb-4">

@@ -21,7 +21,7 @@ const dataSchema = new mongoose.Schema({
     validate: [validator.isEmail, "Please enter a valid email"],
   },
   ownerPhNumber: {
-    unique: true,
+    //unique: true,
     type: Number,
     required: [true, "Please enter your phone number"],
   },
@@ -41,6 +41,11 @@ const dataSchema = new mongoose.Schema({
   ownerDescription: {
     type: String,
     required: [true, "Please tell as somthing about yourself"],
+  },
+  status: {
+    type: String,
+    default:"client"
+    
   },
   crafts: [{
     type: mongoose.Schema.Types.ObjectId,
