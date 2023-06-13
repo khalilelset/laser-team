@@ -9,19 +9,19 @@ const register = async (req, res) => {
     const { fname, lname, email, password, image , cartClientId} = req.body;
     const oldClient = await Client.findOne({ email: email });
     if (oldClient) {
-      res.status(409).json({ error :
-        {message:"Email Already Used By Another Client"}});
+      res.status(409).json({
+         error :{message:"Email Already Used By Another Client"}});
     } else {
       const clientCart = new Cart();
       clientCart.save();
       //3am 2a3mela encryption 
-     /* const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(password, salt);*/
+     const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);
       const newClient = new Client({
         fname: fname,
         lname: lname,
         email: email,
-        password: password,
+        password: hashedPassword,
         image: image,       
         cartClientId: clientCart._id,
       });
@@ -48,12 +48,12 @@ const login = async (req, res) => {
   try {
     const client = await Client.findOne({ email: email });
     if (!client) {
-      return res.status(401).json({ msg: "Something Wrong" });
+      return res.status(401).json({ error :{message:"Email Faild"}});
     } else {
       const dbPassword = client.password;
       bcrypt.compare(password, dbPassword).then((match) => {
         if (!match) {
-          return res.status(400).json({ msg: "Something wrong" });
+          return res.status(400).json({ error :{message:"password faild"}});
         }
         const accessToken = createTokens(client);
         res.cookie("access-token", accessToken, {
@@ -63,7 +63,8 @@ const login = async (req, res) => {
       });
     }
   } catch (err) {
-    res.status(500).json(err);
+        
+res.status(500).json({ error: error });
   }
 };
 

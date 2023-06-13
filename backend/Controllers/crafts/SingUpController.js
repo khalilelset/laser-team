@@ -28,6 +28,8 @@ const signUp = async (req, res) => {
     }
     
     else{
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);
       const craftsOwner = new CraftsOwner({
       ownerFName,
       ownerLName,
@@ -35,7 +37,7 @@ const signUp = async (req, res) => {
       ownerPhNumber,
       ownerLocation,
       craftName,
-      password,
+      password: hashedPassword,
       ownerDescription,
       ownerImage
     });
@@ -63,12 +65,12 @@ const login = async (req, res) => {
   try {
     const CraftsOwner = await CraftsOwner.findOne({ email: email });
     if (!CraftsOwner) {
-      return  res.status(401).json({ error: { message: "Email not found" } });
+      return  res.status(401).json({ error: { message: "Email Faild" } });
     } else {
       const dbPassword = CraftsOwner.password;
       bcrypt.compare(password, dbPassword).then((match) => {
         if (!match) {
-          return res.status(401).json({ error: { message: "false password" } });
+          return res.status(401).json({ error: { message: "password Faild" } });
         }
         const accessToken = createTokens(CraftsOwner);
         res.cookie("access-token", accessToken, {

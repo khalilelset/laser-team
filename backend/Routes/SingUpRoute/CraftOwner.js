@@ -7,10 +7,10 @@ router.post('/api/signup/craftowner', signupController.signUp);
 
 // login route
 
-router.post('/api/signup/craftowner', signupController.login);
+router.post('/api/login/craftowner', signupController.login);
 
 // logout route
-router.post('/api/signup/craftowner', signupController.logout);
+router.post('/api/logout/craftowner', signupController.logout);
 
 
 module.exports = router;
