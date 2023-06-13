@@ -17,11 +17,11 @@ export default function LoginCraftOwner() {
     password: Password,
   };
   dispatch(loginaction(formData));
-  
+ 
 };
   return (
     <>
-     <h2 className="mb-4 animate__animated animate__fadeInDown ">Client Login</h2>
+     <h2 className="mb-4 animate__animated animate__fadeInDown ">Craft Owner Login</h2>
  <div className="form-group animate__animated animate__fadeInLeft"></div>
 
  {success && (
@@ -30,7 +30,7 @@ export default function LoginCraftOwner() {
    )}
   {error && (
  <div className="alert alert-danger" role="alert">
- {error.message.split(",")[0]}
+ {error.message}
   </div>
 )}
 
@@ -46,7 +46,7 @@ className="form-control" placeholder="Enter your password"  value={Password} onC
       
 
       <button onClick={handleSubmit} type="submit" className="btn btn-primary" disabled={loading}>
-        {loading ? "loading..." : "Sign Up"}
+        {loading ? "loading..." : "Login"}
         </button>
         <div style={{ height: '300px' }}></div>
         </>)

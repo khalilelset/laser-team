@@ -47,7 +47,7 @@ className="form-control" placeholder="Enter your password"  value={Password} onC
       
 
       <button onClick={handleSubmit} type="submit" className="btn btn-primary" disabled={loading}>
-        {loading ? "loading..." : "Sign Up"}
+        {loading ? "loading..." : "Login"}
         </button>
         <div style={{ height: '300px' }}></div>
     </>
