@@ -23,7 +23,7 @@ const HeroSection = () => {
                 Get Started
               </a> */}
               <a href="#" className="btn btn-outline-light">
-                My Portfolio
+                Go to Store
               </a>
             </div>
           </div>

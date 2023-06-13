@@ -62,25 +62,30 @@ const signUp = async (req, res) => {
 
 const login = async (req, res) => {
   const { email, password } = req.body;
+  
+  
   try {
-    const CraftsOwner = await CraftsOwner.findOne({ email: email });
-    if (!CraftsOwner) {
-      return  res.status(401).json({ error: { message: "Email Faild" } });
+    console.log("hello try");
+    const owner = await CraftsOwner.findOne({ email: email });
+
+    if (!owner) {
+      return res.status(401).json({ error: { message: "Email Faild" } });
     } else {
-      const dbPassword = CraftsOwner.password;
+      const dbPassword = owner.password;
+
       bcrypt.compare(password, dbPassword).then((match) => {
         if (!match) {
           return res.status(401).json({ error: { message: "password Faild" } });
         }
-        const accessToken = createTokens(CraftsOwner);
+        const accessToken = createTokens(owner);
         res.cookie("access-token", accessToken, {
           maxAge: 60 * 60 * 24 * 30 * 1000,
         });
         res.status(200).json({ msg: "You are Logged In", token: accessToken });
       });
     }
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    res.status(500).json({ error: error });
   }
 };
 

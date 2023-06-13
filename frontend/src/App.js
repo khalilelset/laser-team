@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import AllProductsCards from "./components/AllProductsCards/AllProductsCards";
 import Navbar from "./components/Navbar/UserNavBar/Navbar";
 import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/HomePageNavBar/Navbar";
 import SignUp from "./Page/signup&login/SignUp";
 import AllCraftsCards from "./components/AllCraftsCards/AllCraftsCards";
 import CardDetails from "./components/CardDetails/CardDetails";
