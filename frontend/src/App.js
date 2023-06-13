@@ -8,7 +8,6 @@ import { Route, Routes } from "react-router-dom";
 import AllProductsCards from "./components/AllProductsCards/AllProductsCards";
 import Navbar from "./components/Navbar/UserNavBar/Navbar";
 import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/HomePageNavBar/Navbar";
 import SignUp from "./Page/signup&login/SignUp";
 import AllCraftsCards from "./components/AllCraftsCards/AllCraftsCards";
 import CardDetails from "./components/CardDetails/CardDetails";
@@ -26,6 +25,8 @@ export default function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="slider" element={<Slider />} />
         <Route path="SignUp" element={<SignUp />} />
+        <Route path="login" element={<Login />} />
+
         <Route path="CardDetails" element={<CardDetails />} />
       </Routes>
       <Footer />
