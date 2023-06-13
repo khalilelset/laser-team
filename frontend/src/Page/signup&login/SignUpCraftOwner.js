@@ -32,7 +32,9 @@ const handleSubmit = (event) => {
     ownerDescription,
     ownerImage
   };
+  
   dispatch(signupcoaction(formData));
+  
 };
 
   return (
@@ -46,9 +48,9 @@ const handleSubmit = (event) => {
  )}
   {error && (
   <div className="alert alert-danger" role="alert">
-    {error.message.split(",")[0]}
-  </div>
-)}
+    {error.message}
+    
+  </div>)}
 
 
   <label htmlFor="firstName" style={{marginBottom:"10px"}}>First Name</label>
