@@ -74,17 +74,34 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#services">
-                Store
+                Services
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#features">
-                Crafts
+                Features
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <a className="nav-link" href="#team">
+                Team
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <a className="nav-link" href="#contact">
+                Contact
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#team">
-                Vendors
+              <a className="nav-link" href="#store">
+                Store
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#crafts">
+                Crafts
               </a>
             </li>
 
@@ -123,8 +140,8 @@ const Navbar = () => {
 
 
           {/* NavBar avatar */}
-          <button className="btn btn-primary ms-lg-3 button">Join Us</button>
-          <div style={{ maxWidth: "70px" }}>
+          <button className="btn btn-primary ms-lg-3 button">Sign in</button>
+          <div style={{ maxWidth: "60px" }}>
             <img
               className="img"
               src={require("../../../assets/images/navbar/ProfileImage.png")}

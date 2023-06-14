@@ -44,7 +44,7 @@ const dataSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    default:"client"
+    default:"Craft Owner"
     
   },
   crafts: [{
