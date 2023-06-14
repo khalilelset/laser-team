@@ -1,27 +1,30 @@
 import React from 'react'
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
-
+import mobile2 from '../../assets/img/mobile2.png'
+import labtop from '../../assets/img/labtop.png'
+import edit from '../../assets/img/edit.png'
 import LeftButton from './LeftButton';
 import RightButton from './RightButton';
-import productImage from "../../assets/images/products/Apple_watch-series7_hero_09142021_big.jpg.slideshow-medium.jpg";
-const CardImages = () => {
+
+
+const ProductGallery = () => {
     const images = [
         {
-            original: `${productImage}`,
+            original: `${mobile2}`,
         },
         {
-            original: `${productImage}`,
+            original: `${mobile2}`,
         },
         {
-            original: `${productImage}`,
+            original: `${mobile2}`,
         },
     ];
     return (
         <div className="product-gallary-card d-flex justfiy-content-center  align-items-center
-        pt-2">
+        pt-2" style={{marginTop:'150px'}}>
             <ImageGallery items={images}
-                defaultImage={productImage}
+                defaultImage={mobile2}
                 showFullscreenButton={false}
                 isRTL={true}
                 showPlayButton={false}
@@ -30,7 +33,7 @@ const CardImages = () => {
                 // renderLeftNav={LeftButton}
             />
         </div>
-  )
+    )
 }
 
-export default CardImages
+export default ProductGallery

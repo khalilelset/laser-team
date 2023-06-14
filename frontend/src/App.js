@@ -10,10 +10,17 @@ import Navbar from "./components/Navbar/UserNavBar/Navbar";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./Page/signup&login/SignUp";
 import AllCraftsCards from "./components/AllCraftsCards/AllCraftsCards";
-import CardDetails from "./components/CardDetails/CardDetails";
+
+// import CardDetails from "./components/CardDetails/CardDetails";
+import StorePage from "./Page/StoreProduct/StorePage";
+import AllCategoryPage from "./Page/Category/AllCategoryPage";
+import ProductDetalisPage from "./Page/Products/ProductDetalisPage";
+import ShopProductsPage from "./Page/Products/ShopProductsPage";
+
+// import CardDetails from "./components/CardDetails/CardDetails";
 import Profile from "./components/Profile/Profile";
 import Slider from "./components/Slider/Slider";
-import Postproduct from "./components/PostProduct/Postproduct";
+
 export default function App() {
   return (
     <div>
@@ -25,10 +32,19 @@ export default function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="slider" element={<Slider />} />
         <Route path="SignUp" element={<SignUp />} />
+
+        {/* <Route path="CardDetails" element={<CardDetails/>} /> */}
+        <Route path="login" element={<Login/>} />
+        <Route path="StorePage" element={<StorePage/>} />
+        <Route path="/allcategory" element={<AllCategoryPage/>}/>
+        <Route path="/products/:id" element={<ProductDetalisPage />} />
+        <Route path="/products" element={<ShopProductsPage/>}/>
+
         <Route path="login" element={<Login />} />
        <Route path="postproduct" element={<Postproduct />}/> 
 
-        <Route path="CardDetails" element={<CardDetails />} />
+        {/* <Route path="CardDetails" element={<CardDetails />} /> */}
+
       </Routes>
       <Footer />
     </div>

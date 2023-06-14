@@ -1,14 +1,14 @@
 import React from 'react'
-
+import prev from '../../assets/img/prev.png'
 const RightButton = ( onClick, onDisable ) => {
     return (
         <img
-            src={process.env.PUBLIC_URL + '/img/prev.png'}
+            src={prev}
             alt=""
-            width="25px"
+            width="35px"
             onClick={onClick}
             onDisable={onDisable}
-            height="25px"
+            height="35px"
             style={{ float: "right", marginTop: "220px", cursor: "pointer" }}
         />
     )

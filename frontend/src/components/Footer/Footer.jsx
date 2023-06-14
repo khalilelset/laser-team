@@ -1,4 +1,5 @@
 import React from "react";
+import lg from '../../assets/img/lg1.png'
 
 const Footer = () => {
   return (
@@ -8,7 +9,8 @@ const Footer = () => {
           <div class="container">
             <div class="row gy-4">
               <div class="col-lg-4">
-                <img class="logo" src="img/logo-white.svg" alt="" />
+                {/* <img class="logo" src="img/logo-white.svg" alt="" /> */}
+                <img className="logo" src={lg} alt="" />
               </div>
               <div class="col-lg-2">
                 <h5 class="text-white">Brand</h5>
