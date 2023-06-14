@@ -62,13 +62,13 @@ const Footer = () => {
             <div class="row">
               <div class="col-md-6">
                 <p class="mb-0">
-                  © 2020 copyright all right reserved | Designed with{" "}
+                  © 2023 copyright all right reserved | Designed with{" "}
                   <i class="bx bx-heart text-danger"></i> by
                   <a
                     href="https://www.youtube.com/channel/UCYMEEnLzGGGIpQQ3Nu_sBsQ"
                     class="text-white"
                   >
-                    SA7MAN
+                    KHALED
                   </a>
                 </p>
               </div>

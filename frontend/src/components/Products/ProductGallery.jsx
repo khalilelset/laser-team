@@ -22,7 +22,7 @@ const ProductGallery = () => {
     ];
     return (
         <div className="product-gallary-card d-flex justfiy-content-center  align-items-center
-        pt-2" style={{marginTop:'150px'}}>
+        pt-2" style={{marginTop:'50px'}}>
             <ImageGallery items={images}
                 defaultImage={mobile2}
                 showFullscreenButton={false}

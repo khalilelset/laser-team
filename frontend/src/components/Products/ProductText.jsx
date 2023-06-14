@@ -20,7 +20,7 @@ const ProductText = () => {
           <div className="barnd-text d-inline mx-1">huwawi </div>
         </Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col md="8" className="mt-1 d-flex">
           <div
             className="color ms-2 border"
@@ -32,7 +32,7 @@ const ProductText = () => {
             className="color ms-2 border"
             style={{ backgroundColor: "black" }}></div>
         </Col>
-      </Row>
+      </Row> */}
 
       <Row className="mt-4">
         <div className="cat-text">specificatin :</div>

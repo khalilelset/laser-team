@@ -14,6 +14,12 @@ const CardProductsContainer = ({title,btntitle,pathText}) => {
      <ProductCard/>
      <ProductCard/>
      </Row>
+     <Row className='my-2 d-flex justify-content-between'>
+     <ProductCard/>
+     <ProductCard/>
+     <ProductCard/>
+     <ProductCard/>
+     </Row>
     </Container>
   )
 }
