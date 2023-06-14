@@ -65,7 +65,7 @@ const login = async (req, res) => {
   
   
   try {
-    console.log("hello try");
+   
     const owner = await CraftsOwner.findOne({ email: email });
 
     if (!owner) {
