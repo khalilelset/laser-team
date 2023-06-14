@@ -1,4 +1,5 @@
 import React from "react";
+import im from '../../assets/img/lg2.png'
 
 const Features = () => {
   return (

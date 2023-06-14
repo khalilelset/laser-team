@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './Navbar.css';
+import lg from '../../../assets/img/lg1.png'
 
 
 const Navbar = () => {
@@ -7,7 +8,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
       <div className="container">
         <a className="navbar-brand" href="#">
-          <img className="logo" src="img/logo-dark.svg" alt="" />
+          <img className="logo" src={lg} alt="" />
         </a>
         <button
           className="navbar-toggler"

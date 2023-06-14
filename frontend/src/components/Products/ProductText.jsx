@@ -1,9 +1,9 @@
 import React from 'react'
 import { Row,Col } from 'react-bootstrap'
 
-const CardText = () => {
-  return (
-    <div>
+const ProductText = () => {
+    return (
+        <div style={{marginTop:'100px'}}>
       <Row className="mt-2">
         <div className="cat-text">phone :</div>
       </Row>
@@ -51,12 +51,11 @@ const CardText = () => {
       <Row className="mt-4">
         <Col md="12">
           <div className="product-price d-inline px-3 py-3 border">33$</div>
-                       {/* product-cart-add px-3 py-3 d-inline mx-3 */}
-          <div className=" btn btn-primary ms-lg-3 button" >add to </div>
+          <div className="product-cart-add px-3 py-3 d-inline mx-3">add to </div>
         </Col>
       </Row>
     </div>
-  )
+    )
 }
 
-export default CardText
+export default ProductText
