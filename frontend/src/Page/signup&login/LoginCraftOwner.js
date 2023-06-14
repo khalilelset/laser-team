@@ -2,8 +2,10 @@ import"./signup.css"
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginaction } from "../../redux/actions/LoginCOAction";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginCraftOwner() {
+  const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
     const loading = useSelector((state) => state.loginco.loading);
@@ -24,10 +26,8 @@ export default function LoginCraftOwner() {
      <h2 className="mb-4 animate__animated animate__fadeInDown ">Craft Owner Login</h2>
  <div className="form-group animate__animated animate__fadeInLeft"></div>
 
- {success && (
-  <div className="alert alert-success" role="alert">
-  Form submitted successfully   </div>
-   )}
+ {success && ( navigate("/AllCards"))}
+
   {error && (
  <div className="alert alert-danger" role="alert">
  {error.message}

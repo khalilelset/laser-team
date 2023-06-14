@@ -1,9 +1,10 @@
 import"./signup.css"
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signupaction } from "../../redux/actions/SignUpAction";
-
 export default function SignUpClient() {
+  const navigate = useNavigate();
   const [FName, setFName] = useState("");
   const [LName, setLName] = useState("");
   const [email, setEmail] = useState("");
@@ -23,19 +24,14 @@ export default function SignUpClient() {
       image: photo,
     };
     dispatch(signupaction(formData));
-    
   };
-
 
   return (
     <>
-      <h2 className="mb-4 animate__animated animate__fadeInDown ">Client Sign Up</h2>
+      <h2 className="mb-4 animate__animated animate__fadeInDown ">Client Sign Up </h2>
       <div className="form-group animate__animated animate__fadeInLeft">
 
-      {success && (
-      <div className="alert alert-success" role="alert">
-      Form submitted successfully   </div>
-       )}
+      {success && (navigate("/AllCards"))}
       {error && (
      <div className="alert alert-danger" role="alert">
      {error.message.split(",")[0]}
