@@ -8,6 +8,7 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 // import ContactReducer from "./redux/reducers/ContactReducer";
 import rootReducer from "./redux/rootReducer";
+// import Navbar from "./components/Navbar/UserNavBar/Navbar";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
