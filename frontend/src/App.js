@@ -13,7 +13,7 @@ import AllCraftsCards from "./components/AllCraftsCards/AllCraftsCards";
 import CardDetails from "./components/CardDetails/CardDetails";
 import Profile from "./components/Profile/Profile";
 import Slider from "./components/Slider/Slider";
-
+import Postproduct from "./components/PostProduct/Postproduct";
 export default function App() {
   return (
     <div>
@@ -26,6 +26,7 @@ export default function App() {
         <Route path="slider" element={<Slider />} />
         <Route path="SignUp" element={<SignUp />} />
         <Route path="login" element={<Login />} />
+       <Route path="postproduct" element={<Postproduct />}/> 
 
         <Route path="CardDetails" element={<CardDetails />} />
       </Routes>
