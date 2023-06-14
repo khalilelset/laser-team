@@ -1,4 +1,4 @@
-const craftCategorySchema = new mongoose.Schema({
+const productCategorySchema = new mongoose.Schema({
     categoryName: {
       type: String,
       required: true
@@ -8,5 +8,5 @@ const craftCategorySchema = new mongoose.Schema({
       ref: 'Product' // Reference to the Crafts model
     }]
   });
-  module.exports = mongoose.model('ProductCategory', craftCategorySchema);
+  module.exports = mongoose.model('ProductCategory', productCategorySchema);
   

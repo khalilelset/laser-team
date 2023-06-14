@@ -21,7 +21,6 @@ import ShopProductsPage from "./Page/Products/ShopProductsPage";
 import Profile from "./components/Profile/Profile";
 import Slider from "./components/Slider/Slider";
 
-
 export default function App() {
   return (
     <div>
@@ -42,6 +41,7 @@ export default function App() {
         <Route path="/products" element={<ShopProductsPage/>}/>
 
         <Route path="login" element={<Login />} />
+       <Route path="postproduct" element={<Postproduct />}/> 
 
         {/* <Route path="CardDetails" element={<CardDetails />} /> */}
 
