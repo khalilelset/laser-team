@@ -140,7 +140,9 @@ const Navbar = () => {
 
 
           {/* NavBar avatar */}
+
           <button className="btn btn-primary ms-lg-3 button">Sign in</button>
+          
           <div style={{ maxWidth: "60px" }}>
             <img
               className="img"
