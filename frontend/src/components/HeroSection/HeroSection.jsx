@@ -22,7 +22,7 @@ const HeroSection = () => {
               {/* <a href="#" className="btn me-2 btn-primary">
                 Get Started
               </a> */}
-              <a href="#" className="btn btn-outline-light">
+              <a href="/StorePage" className="btn btn-outline-light">
                 Go to Store
               </a>
             </div>

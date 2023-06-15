@@ -6,6 +6,7 @@ import craftsReducer from "./reducers/AllCraftsReducer";
 import SignUpCOReducer from "./reducers/SignUpCOReducer";
 import LoginReducer from "./reducers/LoginReducer";
 import LoginCOReducer from "./reducers/LoginCOReducer";
+import AddProductReducer from "./reducers/AddProductReducer";
 
 const rootReducer = combineReducers({
   contact: ContactReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   crafts: craftsReducer,
   login: LoginReducer,
   loginco: LoginCOReducer,
+  addProduct: AddProductReducer,
 });
 
 export default rootReducer;

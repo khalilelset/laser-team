@@ -34,6 +34,28 @@ ul {
     display: none;
 }
 
+.HomeDropDown {
+    position: absolute;
+    top: 4rem;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: white;
+}
+
+.HomeDropDown-content {
+    display: none;
+    /* Hide the dropdown content by default */
+}
+
+.nav-item:hover .HomeDropDown-content {
+    display: inline;
+    /* Show the dropdown content on hover */
+}
+
+
 @media (max-width: 991px) {
     .img {
         margin-left: 0px;
