@@ -1,6 +1,6 @@
-const CONTACT_REQUEST = "CONTACT_CONTACT_REQUEST";
+const CONTACT_REQUEST = "CONTACT_REQUEST";
 const CONTACT_SUCCESS = "CONTACT_SUCCESS";
-const CONTACT_FAILURE = "CONTACT_CONTACT_FAILURE";
+const CONTACT_FAILURE = "CONTACT_FAILURE";
 
 const submitContactForm = (formData) => {
   return async (dispatch) => {
