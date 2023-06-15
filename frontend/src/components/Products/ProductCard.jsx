@@ -9,7 +9,7 @@ import { getProducts } from "../../redux/actions/AllProductsActions";
 const ProductCard = ({ product }) => {
   return (
     <>
-      <Col xs="6" sm="6" md="4" lg="3" className="d-flex">
+      <Col xs="12" sm="12" md="4" lg="3" className="d-flex">
         <Card
           className="my-2"
           style={{
@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
           }}
         >
           <Link to="/products/:id" style={{ textDecoration: "none" }}>
-            <Card.Img style={{ height: "228px", width: "100%" }} src={prod4} />
+            <Card.Img className="im" src={prod4} />
           </Link>
           <div className="d-flex justify-content-end mx-2">
             {/* <img

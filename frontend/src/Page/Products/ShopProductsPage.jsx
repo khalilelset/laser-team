@@ -11,16 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/actions/AllProductsActions";
 
 const ShopProductsPage = () => {
-  const dispatch = useDispatch();
-  const productsData = useSelector((state) => state.products);
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
-
-  useEffect(() => {
-    setProducts(productsData.products ?? []);
-  }, [productsData.products]);
   return (
     <div style={{ minHeight: "670px" }}>
       <CategoryHeader />
@@ -32,7 +22,7 @@ const ShopProductsPage = () => {
             <SideFilter />
           </Col>
           <Col sm="10" xs="10" md="11">
-            <CardProductsContainer title="" btntitle="" products={products} />
+            <CardProductsContainer title="" btntitle="" />
           </Col>
         </Row>
         <Pagination />

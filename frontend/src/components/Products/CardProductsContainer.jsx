@@ -4,6 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import SubTitre from "../Utility/SubTitre";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/actions/AllProductsActions";
+import Card from "../../components/Card/Card";
 
 const CardProductsContainer = ({ title, btntitle, pathText }) => {
   const dispatch = useDispatch();
@@ -31,7 +32,8 @@ const CardProductsContainer = ({ title, btntitle, pathText }) => {
      <ProductCard/>
      <ProductCard/> */}
         {products.slice(0, 8).map((product) => (
-          <ProductCard product={product} />
+          // <ProductCard product={product} />
+          <Card product={product} />
         ))}
       </Row>
     </Container>
