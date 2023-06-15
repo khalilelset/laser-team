@@ -9,13 +9,14 @@ const postProduct = async (req, res) => {
       productDescription,
       price,
       productAvailableQuantity,
-      productCategory, // Assuming the category is passed as a string or ID
+      productCategory,
+       // Assuming the category is passed as a string or ID
     } = req.body;
 
     // Find the craft owner
     const craftOwnerEmail = req.locals.email;
-    const craftOwner = await CraftOwner.findOne({ email: craftOwnerEmail });
-    const craftOwnerId = craftOwner._id;
+    const CraftOwnerem = await CraftOwner.findOne({ email: craftOwnerEmail });
+    const craftOwner = CraftOwnerem._id;
     // Create a new product instance
     const product = new Product({
       productTitle,
@@ -23,7 +24,7 @@ const postProduct = async (req, res) => {
       price,
       productAvailableQuantity,
       productCategory,
-      craftOwner: craftOwnerId,
+      craftOwner,
     });
 
     // Save the product to the database

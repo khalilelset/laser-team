@@ -16,12 +16,31 @@ import StorePage from "./Page/StoreProduct/StorePage";
 import AllCategoryPage from "./Page/Category/AllCategoryPage";
 import ProductDetalisPage from "./Page/Products/ProductDetalisPage";
 import ShopProductsPage from "./Page/Products/ShopProductsPage";
-
-// import CardDetails from "./components/CardDetails/CardDetails";
-import Profile from "./components/Profile/Profile";
 import Slider from "./components/Slider/Slider";
-import AddProduct from "./components/AddProduct/AddProduct";
+
+
+
+
+//import profile
+
+
+import AdminAllOrdersPage from "./Page/Admin/AdminAllOrdersPage";
+import AdminOrderDetalisPage from "./Page/Admin/AdminOrderDetalisPage";
+import AdminAddBrandPage from "./Page/Admin/AdminAddBrandPage";
+import AdminAddCategoryPage from "./Page/Admin/AdminAddCategoryPage";
+import AdminAddSubCategoryPage from "./Page/Admin/AdminAddSubCategoryPage";
+import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
+import AdminAddProductsPage from "./Page/Admin/AdminAddProductsPage";
+import UserAllOrdersPage from "./Page/User/UserAllOrdersPage";
+import UserFavoriteProductsPage from "./Page/User/UserFavoriteProductsPage";
+import UserAllAddresPage from "./Page/User/UserAllAddresPage";
+import UserAddAddressPage from "./Page/User/UserAddAddressPage";
+import UserEditAddressPage from "./Page/User/UserEditAddressPage";
 import UserProfilePage from "./Page/User/UserProfilePage";
+
+
+
+//------------------------------------------------------------
 
 export default function App() {
   return (
@@ -46,6 +65,25 @@ export default function App() {
        
 
         {/* <Route path="CardDetails" element={<CardDetails />} /> */}
+
+
+
+        <Route path="/admin/allproducts" element={<AdminAllProductsPage />} />
+        <Route path="/admin/allorders" element={<AdminAllOrdersPage />} />
+        <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage />} />
+        <Route path="/admin/addbrand" element={<AdminAddBrandPage/>} />
+        <Route path="/admin/addcategory" element={<AdminAddCategoryPage />} />
+        <Route path="/admin/addsubcategory" element={<AdminAddSubCategoryPage />} />
+        <Route path="/admin/addproduct" element={<AdminAddProductsPage />} />
+        <Route path="/user/allorders" element={<UserAllOrdersPage />} />
+        <Route path="/user/favoriteproducts" element={<UserFavoriteProductsPage />} />
+        <Route path="/user/addresses" element={<UserAllAddresPage/>} />
+        <Route path="/user/add-address" element={<UserAddAddressPage />} />
+        <Route path="/user/edit-address" element={<UserEditAddressPage />} />
+        <Route path="/user/profile" element={<UserProfilePage />} />
+
+
+
 
       </Routes>
       <Footer />
