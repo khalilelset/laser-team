@@ -16,11 +16,15 @@ const signupaction = (formData) => {
         .then((response) => response.json())
         .then((data) => {
           if (data.error) {
+            console.log("data error");
             
+            console.log(data);
             // If there is an error in the response
-            dispatch({ type: REGISTER_FAILURE, payload: data.error });
+            dispatch(
+              { type: REGISTER_FAILURE, payload: data.error });
           } else {
-            
+            localStorage.setItem("email", JSON.stringify(formData.email));
+            localStorage.setItem("status", "client");
             // If the request was successful
             dispatch({ type: REGISTER_SUCCESS });
             

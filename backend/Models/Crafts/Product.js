@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-  productCategoryID: {
-    type: mongoose.Schema.Types.ObjectId,
+  productCategory: {
+    type: String,
     required: true,
     ref: 'ProductCategory' // Reference to the ProductCategory model
   },
@@ -12,7 +12,7 @@ const productSchema = new mongoose.Schema({
   },
   mainProductImage: {
     type: String,
-    //required: true
+    
   },
   productDescription: {
     type: String,

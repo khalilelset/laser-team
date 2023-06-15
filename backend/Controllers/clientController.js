@@ -90,11 +90,31 @@ const getUserInfo = async (req, res) => {
   }
 };
 
+// Get Info
+/*
+const getInfo = async (req, res) => {
+  try {
+    const token = req.cookies && req.cookies["access-token"];
+    if (!token) {
+      return res.status(400).json({ error: "User Not Authenticated!" });
+    }
+    const userInfo = extractIdFromToken(token);
+    const { id , status } = userInfo;
+    
+    res.status(200).json({ data: userInfo });
+    console.log(data)
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};*/
+
+
 module.exports = {
   register,
   login,
   logout,
   getUserInfo,
+ 
 };
 
 

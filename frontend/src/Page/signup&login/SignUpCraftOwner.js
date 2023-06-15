@@ -2,10 +2,12 @@ import"./signup.css"
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signupcoaction } from "../../redux/actions/SignUpCOAction";
+import { useNavigate } from "react-router-dom";
 
 
 function SignUpCraftOwner() {
-  const [ownerFName, setownerFName] = useState("");
+const navigate = useNavigate();
+const [ownerFName, setownerFName] = useState("");
 const [ownerLName,  setownerLName] = useState("");
 const [email, setEmail] = useState("");
 const [ownerPhNumber, setownerPhNumber,] = useState("");
@@ -42,10 +44,8 @@ const handleSubmit = (event) => {
     <h2 className="mb-4 animate__animated animate__fadeInDown">CraftOwner Sign Up</h2>
   <div className="form-group animate__animated animate__fadeInLeft">
 
-  {success && (
- <div className="alert alert-success" role="alert">
- Form submitted successfully   </div>
- )}
+  {success && ( navigate("/AllCards"))}
+
   {error && (
   <div className="alert alert-danger" role="alert">
     {error.message}

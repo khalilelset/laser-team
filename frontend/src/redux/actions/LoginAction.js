@@ -20,7 +20,8 @@ const loginaction = (formData) => {
             // If there is an error in the response
             dispatch({ type: REGISTER_FAILURE, payload: data.error });
           } else {
-            
+            localStorage.setItem("email", JSON.stringify(formData.email));
+            localStorage.setItem("status", "client");
             // If the request was successful
             dispatch({ type: REGISTER_SUCCESS });
             
