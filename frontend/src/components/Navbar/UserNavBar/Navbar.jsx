@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import DropDownProfile from "./dropDownMenu";
 import { Link } from "react-router-dom";
+import HomeDropDown from "../UserNavBar/HomeDropDown";
 
 const Navbar = () => {
   const [shouldDisplayAdditionalElement, setShouldDisplayAdditionalElement] = useState(false);
@@ -72,29 +73,41 @@ const Navbar = () => {
               <a className="nav-link" href="/">
                 Home
               </a>
+              <div className="HomeDropDown-content">
+                <HomeDropDown />
+              </div>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/#services">
-                Services
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/#features">
-                Features
-              </a>
-            </li>
+            {shouldDisplayAdditionalElement && (
+              <>
+                <li className="nav-item">
+                  <a className="nav-link" href="/#services">
+                    Services
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/#features">
+                    Features
+                  </a>
+                </li>
 
-            <li className="nav-item">
-              <a className="nav-link" href="/#team">
-                Team
-              </a>
-            </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/#team">
+                    Team
+                  </a>
+                </li>
 
-            <li className="nav-item">
-              <a className="nav-link" href="/#contact">
-                Contact
-              </a>
-            </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/#contact">
+                    Contact
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/profile">
+                    Profile
+                  </a>
+                </li>
+              </>
+            )}
             <li className="nav-item">
               <a className="nav-link" href="/StorePage">
                 Store
@@ -110,11 +123,6 @@ const Navbar = () => {
             {/* To add elements from the avatar dropdown list in the menu on mobile screen (<991px) */}
             {shouldDisplayAdditionalElement && (
               <>
-                <li className="nav-item">
-                  <a className="nav-link" href="/profile">
-                    Profile
-                  </a>
-                </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/MyCard">
                     My Card
