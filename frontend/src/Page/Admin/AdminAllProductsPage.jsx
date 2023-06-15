@@ -1,22 +1,26 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import AdminSideBar from '../../components/Admin/AdminSideBar'
-import AdminAllOrders from '../../components/Admin/AdminAllOrders'
+
+
+import AdminAllProducts from '../../components/Admin/AdminAllProducts'
 import Pagination from '../../components/Utility/Pagination'
-const AdminAllOrdersPage = () => {
+import AdminSideBar from '../../components/Admin/AdminSideBar'
+const AdminAllProductsPage = () => {
     return (
         <Container >
             <Row className='py-3'>
                 <Col sm="3" xs="2" md="2">
-                    <AdminSideBar />
+                    <AdminSideBar/>
                 </Col>
 
                 <Col sm="9" xs="10" md="10">
-                    <AdminAllOrders />
-                    <Pagination/>
+                    <AdminAllProducts />
+                    <Pagination />
                 </Col>
             </Row>
+            
         </Container>
     )
 }
-export default AdminAllOrdersPage
+
+export default AdminAllProductsPage

@@ -11,7 +11,7 @@ import Footer from "./components/Footer/Footer";
 import SignUp from "./Page/signup&login/SignUp";
 import AllCraftsCards from "./components/AllCraftsCards/AllCraftsCards";
 
-// import CardDetails from "./components/CardDetails/CardDetails";
+
 import StorePage from "./Page/StoreProduct/StorePage";
 import AllCategoryPage from "./Page/Category/AllCategoryPage";
 import ProductDetalisPage from "./Page/Products/ProductDetalisPage";
@@ -26,17 +26,20 @@ import Slider from "./components/Slider/Slider";
 
 import AdminAllOrdersPage from "./Page/Admin/AdminAllOrdersPage";
 import AdminOrderDetalisPage from "./Page/Admin/AdminOrderDetalisPage";
-import AdminAddBrandPage from "./Page/Admin/AdminAddBrandPage";
-import AdminAddCategoryPage from "./Page/Admin/AdminAddCategoryPage";
-import AdminAddSubCategoryPage from "./Page/Admin/AdminAddSubCategoryPage";
+// import AdminAddBrandPage from "./Page/Admin/AdminAddBrandPage";
+// import AdminAddCategoryPage from "./Page/Admin/AdminAddCategoryPage";
+// import AdminAddSubCategoryPage from "./Page/Admin/AdminAddSubCategoryPage";
 import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
+// import Khhh from "./Page/Admin/Khhh";
 import AdminAddProductsPage from "./Page/Admin/AdminAddProductsPage";
 import UserAllOrdersPage from "./Page/User/UserAllOrdersPage";
-import UserFavoriteProductsPage from "./Page/User/UserFavoriteProductsPage";
+
 import UserAllAddresPage from "./Page/User/UserAllAddresPage";
 import UserAddAddressPage from "./Page/User/UserAddAddressPage";
 import UserEditAddressPage from "./Page/User/UserEditAddressPage";
-import UserProfilePage from "./Page/User/UserProfilePage";
+ import UserProfilePage from "./Page/User/UserProfilePage";
+
+import AdminProfilePage from "./Page/Admin/AdminProfile";
 
 
 
@@ -50,7 +53,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="AllCards" element={<AllProductsCards />} />
         <Route path="AllCrafts" element={<AllCraftsCards />} />
-        <Route path="profile" element={<UserProfilePage />} />
+        {/* <Route path="profile" element={<UserProfilePage />} /> */}
         <Route path="slider" element={<Slider />} />
         <Route path="SignUp" element={<SignUp />} />
 
@@ -64,26 +67,26 @@ export default function App() {
         <Route path="login" element={<Login />} />
        
 
-        {/* <Route path="CardDetails" element={<CardDetails />} /> */}
+        
 
 
-
-        <Route path="/admin/allproducts" element={<AdminAllProductsPage />} />
-        <Route path="/admin/allorders" element={<AdminAllOrdersPage />} />
+        {/* <Route path="/kh/test" element={<Khhh/>} />  */}
+        <Route path="/adminallproducts" element={<AdminAllProductsPage />} />
+        <Route path="/adminallorders" element={<AdminAllOrdersPage />} />
         <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage />} />
-        <Route path="/admin/addbrand" element={<AdminAddBrandPage/>} />
-        <Route path="/admin/addcategory" element={<AdminAddCategoryPage />} />
-        <Route path="/admin/addsubcategory" element={<AdminAddSubCategoryPage />} />
-        <Route path="/admin/addproduct" element={<AdminAddProductsPage />} />
-        <Route path="/user/allorders" element={<UserAllOrdersPage />} />
-        <Route path="/user/favoriteproducts" element={<UserFavoriteProductsPage />} />
-        <Route path="/user/addresses" element={<UserAllAddresPage/>} />
-        <Route path="/user/add-address" element={<UserAddAddressPage />} />
-        <Route path="/user/edit-address" element={<UserEditAddressPage />} />
-        <Route path="/user/profile" element={<UserProfilePage />} />
+        {/* <Route path="/adminaddbrand" element={<AdminAddBrandPage/>} />
+        <Route path="/adminaddcategory" element={<AdminAddCategoryPage />} />
+        <Route path="/adminaddsubcategory" element={<AdminAddSubCategoryPage />} /> */}
+        <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
+        <Route path="/userallorders" element={<UserAllOrdersPage />} />
+        
+        <Route path="/useraddresses" element={<UserAllAddresPage/>} />
+        <Route path="/useradd-address" element={<UserAddAddressPage />} />
+        <Route path="/useredit-address" element={<UserEditAddressPage />} />
+        <Route path="/userprofile" element={<UserProfilePage />} />
 
-
-
+        <Route path="/adminprofile" element={<AdminProfilePage/>} />
+       
 
       </Routes>
       <Footer />

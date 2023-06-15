@@ -8,9 +8,9 @@ const AdminAllProducts = () => {
         <div>
             <div className='admin-content-text'>Manage all products</div>
             <Row className='justify-content-start'>
-                <AdminAllProductsCard />
-                <AdminAllProductsCard />
-                <AdminAllProductsCard />
+              
+                 <AdminAllProductsCard />
+                 <AdminAllProductsCard />
                 <AdminAllProductsCard />
                 <AdminAllProductsCard />
                 <AdminAllProductsCard />

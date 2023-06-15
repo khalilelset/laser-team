@@ -9,7 +9,7 @@ const AdminAddBrand = () => {
                 <div className="admin-content-text pb-4">add new mark(brand ) </div>
                 <Col sm="8">
                     <div className="text-form pb-2" style={{textAlign:'left'}}> image brand</div>
-                    <img src={avatar} alt="" height="100px" width="120px" />
+                    <img src={avatar} alt="" height="100px" width="120px" style={{height:"100px", width:"120px" }} />
                     <input
                         type="text"
                         className="input-form d-block mt-3 px-3"

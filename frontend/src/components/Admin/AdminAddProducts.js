@@ -24,7 +24,7 @@ const AdminAddProducts = () => {
                 <div className="admin-content-text pb-4">   add new product</div>
                 <Col sm="8">
                     <div className="text-form pb-2"  style={{textAlign:'left'}}> product photo </div>
-                    <img src={avatar} alt="" height="100px" width="120px" />
+                    <img src={avatar} alt="" height="100px" width="120px" style={{height:"100px", width:"120px" }}/>
                     <input
                         type="text"
                         className="input-form d-block mt-3 px-3"
@@ -75,7 +75,7 @@ const AdminAddProducts = () => {
                         <option value="val2">secondary brand  </option>
                         <option value="val2"> third brand</option>
                     </select>
-                    <div className="text-form mt-3 " style={{textAlign:'left'}}> color pf product  </div>
+                    {/* <div className="text-form mt-3 " style={{textAlign:'left'}}> color pf product  </div>
                     <div className="mt-1 d-flex">
                         <div
                             className="color ms-2 border  mt-1"
@@ -87,12 +87,12 @@ const AdminAddProducts = () => {
                             className="color ms-2 border  mt-1"
                             style={{ backgroundColor: "black" }}></div>
                         <img src={add} alt="" width="30px" height="35px" className="" />
-                    </div>
+                    </div> */}
                 </Col>
             </Row>
             <Row>
-                <Col sm="8" className="d-flex justify-content-end ">
-                    <button className="btn-save d-inline mt-2 ">save modification </button>
+                <Col sm="8" className="d-flex justify-content-start ">
+                    <button className="btn-save d-inline mt-2 ">save modif </button>
                 </Col>
             </Row>
         </div>

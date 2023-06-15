@@ -30,7 +30,6 @@ const ShopProductsPage = () => {
 
 
 
-
   
   return (
     <div style={{ minHeight: "670px" }}>
@@ -41,13 +40,16 @@ const ShopProductsPage = () => {
       <Container>
         <Row>
           <Col className="d-flex justify-content-start py-2 flex-wrap">
-            <div className="cat-text-header">All</div>
+            {/* <div className="cat-text-header">All</div>
             <div className="cat-text-header">Pride</div>
             <div className="cat-text-header">Cloth</div>
             <div className="cat-text-header">Soap</div>
             <div className="cat-text-header">Wood</div>
             <div className="cat-text-header">Accessor</div>
-            <div className="cat-text-header">Art</div>
+            <div className="cat-text-header">Art</div> */}
+            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >ff</button>
+            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >fvddf</button>
+            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >dvsdvs</button>
       
           </Col>
         </Row>
