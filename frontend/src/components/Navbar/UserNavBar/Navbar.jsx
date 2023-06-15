@@ -77,19 +77,6 @@ const Navbar = () => {
                 <HomeDropDown />
               </div>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/StorePage">
-                Store
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/AllCrafts">
-                Crafts
-              </a>
-            </li>
-
-
-            {/* To add elements from the avatar dropdown list in the menu on mobile screen (<991px) */}
             {shouldDisplayAdditionalElement && (
               <>
                 <li className="nav-item">
@@ -119,6 +106,23 @@ const Navbar = () => {
                     Profile
                   </a>
                 </li>
+              </>
+            )}
+            <li className="nav-item">
+              <a className="nav-link" href="/StorePage">
+                Store
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/AllCrafts">
+                Crafts
+              </a>
+            </li>
+
+
+            {/* To add elements from the avatar dropdown list in the menu on mobile screen (<991px) */}
+            {shouldDisplayAdditionalElement && (
+              <>
                 <li className="nav-item">
                   <a className="nav-link" href="/MyCard">
                     My Card
