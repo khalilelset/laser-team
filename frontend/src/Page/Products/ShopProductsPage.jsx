@@ -28,33 +28,50 @@ const ShopProductsPage = () => {
     setProducts(productsData.products ?? []);
   }, [productsData.products]);
 
-
-
+  const allCategory =   ['all',...new Set( products.map((i)=> i.productCategory))]
+// filter by category
+  const filterbyCategory=(cat)=>{
+    if(cat==="all"){
+      setProducts(products)
+    
+    }
+    else{ 
+    
+    const newArr=products.filter((item)=> item.productCategory === cat)
+    setProducts(newArr)
+    }
+    }
+// end filterbyCategory
   
   return (
     <div style={{ minHeight: "670px" }}>
 
 
-      {/* <CategoryHeader /> */}
-      <div className="cat-header">
+      <CategoryHeader filterbyCategory={filterbyCategory} allCategory={allCategory} />
+      {/* <div className="cat-header">
       <Container>
         <Row>
           <Col className="d-flex justify-content-start py-2 flex-wrap">
-            {/* <div className="cat-text-header">All</div>
+            <div className="cat-text-header">All</div>
             <div className="cat-text-header">Pride</div>
             <div className="cat-text-header">Cloth</div>
             <div className="cat-text-header">Soap</div>
             <div className="cat-text-header">Wood</div>
             <div className="cat-text-header">Accessor</div>
-            <div className="cat-text-header">Art</div> */}
-            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >ff</button>
-            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >fvddf</button>
-            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >dvsdvs</button>
-      
+            <div className="cat-text-header">Art</div>
+
+            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >All</button>
+            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Pride</button>
+            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Cloth</button>
+            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Soap</button>
+            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Wood</button>
+            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Accessor</button>
+            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Art</button>
+
           </Col>
         </Row>
       </Container>
-    </div>
+    </div> */}
 
 
       <Container>
