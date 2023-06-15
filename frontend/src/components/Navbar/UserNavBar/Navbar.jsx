@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import DropDownProfile from "./dropDownMenu";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [shouldDisplayAdditionalElement, setShouldDisplayAdditionalElement] = useState(false);
@@ -68,39 +69,39 @@ const Navbar = () => {
 
             {/* To add an element to the NavBar */}
             <li className="nav-item">
-              <a className="nav-link" href="#home">
-                Home Page
+              <a className="nav-link" href="/">
+                Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#services">
+              <a className="nav-link" href="/#services">
                 Services
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#features">
+              <a className="nav-link" href="/#features">
                 Features
               </a>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#team">
+              <a className="nav-link" href="/#team">
                 Team
               </a>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#contact">
+              <a className="nav-link" href="/#contact">
                 Contact
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#store">
+              <a className="nav-link" href="/StorePage">
                 Store
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#crafts">
+              <a className="nav-link" href="/AllCrafts">
                 Crafts
               </a>
             </li>
@@ -110,27 +111,27 @@ const Navbar = () => {
             {shouldDisplayAdditionalElement && (
               <>
                 <li className="nav-item">
-                  <a className="nav-link" href="#Profile">
+                  <a className="nav-link" href="/profile">
                     Profile
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#MyCard">
+                  <a className="nav-link" href="/MyCard">
                     My Card
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#MyProducts">
+                  <a className="nav-link" href="/MyProducts">
                     My Products
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#MyCrafts">
+                  <a className="nav-link" href="/MyCrafts">
                     My Crafts
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#Login">
+                  <a className="nav-link" href="/Logout">
                     Log out
                   </a>
                 </li>
@@ -140,7 +141,9 @@ const Navbar = () => {
 
 
           {/* NavBar avatar */}
-          <button className="btn btn-primary ms-lg-3 button">Sign in</button>
+          <Link to="/login">
+            <button className="btn btn-primary ms-lg-3 button">Sign in</button>
+          </Link>
           <div style={{ maxWidth: "60px" }}>
             <img
               className="img"

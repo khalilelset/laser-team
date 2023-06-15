@@ -8,11 +8,11 @@ const DropDownProfile = () => {
 
 
                 {/* To add an element to the DropDown menu */}
-                <li><a className='Profile' href='#Profile'>Profile</a></li>
-                <li><a className='MyCard' href='#MyCard'>My Card</a></li>
-                <li><a className='MyProducts' href='#MyProducts'>My Products</a></li>
-                <li><a className='MyCrafts' href='#MyCrafts'>My Crafts</a></li>
-                <li><a className='Logout' href='#Logout'>Log out</a></li>
+                <li><a className='Profile' href='/Profile'>Profile</a></li>
+                <li><a className='MyCard' href='/MyCard'>My Card</a></li>
+                <li><a className='MyProducts' href='/MyProducts'>My Products</a></li>
+                <li><a className='MyCrafts' href='/MyCrafts'>My Crafts</a></li>
+                <li><a className='Logout' href='/Logout'>Log out</a></li>
             </ul>
         </div>
     )
