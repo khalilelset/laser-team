@@ -13,6 +13,8 @@ import AllCraftsCards from "./components/AllCraftsCards/AllCraftsCards";
 import CardDetails from "./components/CardDetails/CardDetails";
 import Profile from "./components/Profile/Profile";
 import Slider from "./components/Slider/Slider";
+import AddProduct from "./components/AddProduct/AddProduct";
+import UserProfilePage from "./Page/User/UserProfilePage";
 
 export default function App() {
   return (
@@ -22,7 +24,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="AllCards" element={<AllProductsCards />} />
         <Route path="AllCrafts" element={<AllCraftsCards />} />
-        <Route path="profile" element={<Profile />} />
+        <Route path="profile" element={<UserProfilePage />} />
         <Route path="slider" element={<Slider />} />
         <Route path="SignUp" element={<SignUp />} />
         <Route path="login" element={<Login />} />
