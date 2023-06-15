@@ -39,4 +39,47 @@ const postProduct = async (req, res) => {
   }
 };
 
-module.exports = { postProduct };
+// Update product
+const updateProduct = async (req, res) => {
+try {
+  const id = req.params.id;
+  const updatedData = req.body;
+  const options = { new: true };
+  const result = await Product.findByIdAndUpdate(
+  id, updatedData, options
+  )
+  res.send(result)
+  }
+  catch (error) {
+  res.status(400).json({ message: error.message })
+  }
+}
+      
+// delete product
+
+const deleteProduct = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const craftOwnerEmail = req.locals.email;
+    const craftOwner = await CraftOwner.findOne({ email: craftOwnerEmail });
+
+    // Remove the product from the craft owner's list of products
+    craftOwner.products.pull(productId);
+    await craftOwner.save();
+    
+    const result = await Product.findByIdAndDelete(id)
+    res.send(result)
+    }
+    catch (error) {
+    res.status(400).json({ message: error.message })
+    }
+  }
+
+
+
+
+
+
+
+
+module.exports = { postProduct ,updateProduct ,deleteProduct };

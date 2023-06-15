@@ -41,7 +41,7 @@ export default function App() {
         <Route path="/products" element={<ShopProductsPage/>}/>
 
         <Route path="login" element={<Login />} />
-       <Route path="postproduct" element={<Postproduct />}/> 
+       
 
         {/* <Route path="CardDetails" element={<CardDetails />} /> */}
 
