@@ -4,7 +4,7 @@ const productSchema = new mongoose.Schema({
   productCategory: {
     type: String,
     required: true,
-    //ref: 'ProductCategory'  Reference to the ProductCategory model
+    ref: 'ProductCategory'  //Reference to the ProductCategory model
   },
   productTitle: {
     type: String,
