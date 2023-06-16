@@ -18,7 +18,9 @@ const getCraftOwnerInfo = async (req, res) => {
   
   const updateCraftOwnerInfo = async (req, res) => {
     try {
-      const craftOwnerEmail = req.locals.email;
+      const craftOwnerEmail = req.params.email; // Retrieve email from URL parameters
+          
+    
       const craftOwner = await CraftOwner.findOneAndUpdate(
         { email: craftOwnerEmail },
         { $set: req.body },

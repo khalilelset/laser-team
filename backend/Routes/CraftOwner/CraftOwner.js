@@ -4,7 +4,7 @@ const CraftOwner=require("../../Controllers/crafts/CraftOwner")
 
 router.get('/api/craftowner/getprofile/:email', CraftOwner.getCraftOwnerInfo);
 
-router.patch('/api/craftowner/updateprofile',CraftOwner.updateCraftOwnerInfo)
+router.patch('/api/craftowner/updateprofile/:email',CraftOwner.updateCraftOwnerInfo)
 
 module.exports = router;
 
