@@ -2,14 +2,16 @@ import React from 'react'
 
 import sort from '../../assets/img/sort.png'
 import UnopDropdown from 'unop-react-dropdown'
-const SearchCountResult = ({title}) => {
-    const handler=()=> {
+import { FormControl } from 'react-bootstrap'
+const SearchCountResult = ({ title }) => {
+    const handler = () => {
 
     }
     return (
-        <div className="d-flex justify-content-between pt-3 px-2">
+        <div className="d-flex justify-content-between pt-3 px-2 search-box">
+             {/* justify-content-between */}
             <div className="sub-tile">{title}</div>
-            <div className="search-count-text d-flex ">
+            {/* <div className="search-count-text d-flex ">
                 <UnopDropdown
                     onAppear={handler}
                     onDisappearStart={handler}
@@ -29,7 +31,7 @@ const SearchCountResult = ({title}) => {
                     hover>
                     <div className="card-filter">
                         <div className="border-bottom card-filter-item">best seller</div>
-                        {/* <div onClick={} className="border-bottom card-filter-item">best seller</div> */}
+                        <div onClick={} className="border-bottom card-filter-item">best seller</div>
                         <div className="border-bottom card-filter-item">The highest rated</div>
                         <div className="border-bottom card-filter-item">
                         $ from low to high
@@ -37,7 +39,27 @@ const SearchCountResult = ({title}) => {
                         <div className=" card-filter-item">$ from high to low</div>
                     </div>
                 </UnopDropdown>
-            </div>
+            </div> */}
+          <div className="d-flex">
+          <form action="/action_page.php">
+    {/* <div class="input-group mb-3">
+      <span class="input-group-text">@</span>
+      <input type="text" class="form-control" placeholder="Username" name="usrname"/>
+    </div> */}
+
+    <div class="input-group mb-3" style={{marginTop:"-25px"}}>
+      <input type="text" class="form-control" placeholder="shearch..." name="email"/>
+      <span class="input-group-text btkk" style={{cursor:'pointer'}} >seharch</span>
+    </div>
+    
+  
+  </form>
+
+            
+
+        
+</div>
+
         </div>
     )
 }

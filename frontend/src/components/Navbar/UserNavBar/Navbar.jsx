@@ -7,7 +7,7 @@ const Navbar = () => {
   const [shouldDisplayAdditionalElement, setShouldDisplayAdditionalElement] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
   const dropdownRef = useRef(null);
-
+  const user =window.localStorage.getItem("email");
   useEffect(() => {
     const handleResize = () => {
       setShouldDisplayAdditionalElement(window.innerWidth <= 991);
@@ -22,6 +22,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    
     const handleClickOutside = (event) => {
       if (
         dropdownRef.current &&
@@ -149,9 +150,12 @@ const Navbar = () => {
 
 
           {/* NavBar avatar */}
-          <Link to="/login">
+          {!user ? 
+          (<Link to="/login">
             <button className="btn btn-primary ms-lg-3 button">Sign in</button>
-          </Link>
+          </Link>): (<span></span>)}
+
+
           <div style={{ maxWidth: "60px" }}>
             <img
               className="img"
