@@ -11,16 +11,17 @@ const postCraft = async (req, res) => {
     } = req.body;
 
  // Find the craft owner
- const craftOwnerEmail = req.locals.email;
- const craftOwner = await CraftOwner.findOne({ email: craftOwnerEmail });
- const craftOwnerId = craftOwner._id;
+ const craftOwnerEmail = req.params.email; // Retrieve email from URL parameters
+ const CraftOwnerem = await CraftOwner.findOne({ email: craftOwnerEmail });
+    
+const craftOwner = CraftOwnerem._id;
 
     // Create a new craft instance
     const craft = new Crafts({
       craftTitle,
       craftDescription,
       categoryID: category,
-      craftOwnerID: craftOwnerId,
+      craftOwnerID: craftOwner,
     });
 
 

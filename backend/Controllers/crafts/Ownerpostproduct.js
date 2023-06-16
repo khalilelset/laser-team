@@ -14,8 +14,9 @@ const postProduct = async (req, res) => {
     } = req.body;
 
     // Find the craft owner
-    const craftOwnerEmail = req.locals.email;
-    const CraftOwnerem = await CraftOwner.findOne({ email: craftOwnerEmail });
+    const craftOwnerEmail = req.params.email; // Retrieve email from URL parameters
+     const CraftOwnerem = await CraftOwner.findOne({ email: craftOwnerEmail });
+    
     const craftOwner = CraftOwnerem._id;
     // Create a new product instance
     const product = new Product({
@@ -31,8 +32,8 @@ const postProduct = async (req, res) => {
     const savedProduct = await product.save();
 
     // Add the product to the craft owner's list of products
-    craftOwner.product.push(savedProduct);
-    await craftOwner.save();
+    //craftOwner.product.push(savedProduct._id);
+    //await craftOwner.save();
 
     res.status(201).json(savedProduct);
   } catch (error) {
