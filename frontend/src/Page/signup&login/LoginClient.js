@@ -5,6 +5,7 @@ import { loginaction } from "../../redux/actions/LoginAction";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginClient() {
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
@@ -21,6 +22,9 @@ export default function LoginClient() {
   };
   dispatch(loginaction(formData));
 };
+function togglePasswordVisibility() {
+  setShowPassword(!showPassword);
+}
   return (
     <>
      <h2 className="mb-4 animate__animated animate__fadeInDown ">Client Login </h2>
@@ -40,12 +44,18 @@ export default function LoginClient() {
  className="form-control" placeholder="example@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} />
 
 <label htmlFor="password" style={{ marginBottom: "10px",}}>Password</label>
-<input type="password" id="password"   style={{ marginBottom: "20px",backgroundColor:"rgb(0,0,0,0.5)"
-,boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',color:"white" }} 
+<input  type={showPassword ? "text" : "password"} id="password"   style={{ backgroundColor:"rgb(0,0,0,0.5)"
+,boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',color:"white" , marginBottom:"40px"}} 
 className="form-control" placeholder="Enter your password"  value={Password} onChange={(e) => setPassword(e.target.value)} />
-      
 
-      <button onClick={handleSubmit} type="submit" className="btn btn-primary" disabled={loading}>
+<div>
+       <input
+          type="checkbox" style={{ width: "20px", height: "20px", color: 'white' }}
+        onClick={togglePasswordVisibility}
+      />   show password 
+</div>
+
+      <button onClick={handleSubmit}  type="submit" className="btn btn-primary" disabled={loading}>
         {loading ? "loading..." : "Login"}
         </button>
         <div style={{ height: '300px' }}></div>
