@@ -98,7 +98,6 @@ const AdminProfile = () => {
         setShowModal(true);
       };
       
-
      
     return (
         <>

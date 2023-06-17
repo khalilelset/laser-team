@@ -1,7 +1,5 @@
-
 const Product = require("../../Models/Crafts/Product");
-const CraftOwner = require("../../Models/Crafts/CraftOwner");
-
+const CraftOwnerr = require("../../Models/Crafts/CraftOwner");
 const postProduct = async (req, res) => {
   try {
     const {
@@ -10,21 +8,26 @@ const postProduct = async (req, res) => {
       price,
       productAvailableQuantity,
       productCategory,
-       // Assuming the category is passed as a string or ID
-    } = req.body;
+      mainProductImage,
+      productImage,
+   
+       } = req.body;
+   
 
     // Find the craft owner
-    const craftOwnerEmail = req.params.email; // Retrieve email from URL parameters
-     const CraftOwnerem = await CraftOwner.findOne({ email: craftOwnerEmail });
-    
-    const craftOwner = CraftOwnerem._id;
+    const craftOwnerEmail = req.params.email;
+    const craftOwnerObj = await CraftOwnerr.findOne({ email: craftOwnerEmail });
+
+    const craftOwner = craftOwnerObj._id;
     // Create a new product instance
     const product = new Product({
       productTitle,
       productDescription,
+      mainProductImage,
       price,
       productAvailableQuantity,
       productCategory,
+      productImage,
       craftOwner,
     });
 
@@ -32,14 +35,14 @@ const postProduct = async (req, res) => {
     const savedProduct = await product.save();
 
     // Add the product to the craft owner's list of products
-    //craftOwner.product.push(savedProduct._id);
-    //await craftOwner.save();
+    craftOwnerObj.product.push(savedProduct);
+    await craftOwnerObj.save();
 
     res.status(201).json(savedProduct);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
-};
+}
 
 // Update product
 const updateProduct = async (req, res) => {
