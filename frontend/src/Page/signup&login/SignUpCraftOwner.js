@@ -47,7 +47,7 @@ function togglePasswordVisibility() {
     <h2 className="mb-4 animate__animated animate__fadeInDown">CraftOwner Sign Up</h2>
   <div className="form-group animate__animated animate__fadeInLeft">
 
-  {success && ( navigate("/AllCards"))}
+  {success && ( navigate("/StorePage"))}
 
   {error && (
   <div className="alert alert-danger" role="alert">

@@ -5,7 +5,7 @@ import React from "react";
 import Login from "./Page/signup&login/Login";
 import HomePage from "./Page/HomePage/HomePage";
 import { Route, Routes } from "react-router-dom";
-import AllProductsCards from "./components/AllProductsCards/AllProductsCards";
+
 import Navbar from "./components/Navbar/UserNavBar/Navbar";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./Page/signup&login/SignUp";
@@ -54,15 +54,15 @@ if (status === "owner"){access = true}
      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="AllCards" element={<AllProductsCards />} />
-        <Route path="AllCrafts" element={<AllCraftsCards />} />
+      
+        <Route path="/AllCrafts" element={<AllCraftsCards />} />
         {/* <Route path="profile" element={<UserProfilePage />} /> */}
         <Route path="slider" element={<Slider />} />
-        <Route path="SignUp" element={<SignUp />} />
+        <Route path="/SignUp" element={<SignUp />} />
 
         {/* <Route path="CardDetails" element={<CardDetails/>} /> */}
-        <Route path="login" element={<Login/>} />
-        <Route path="StorePage" element={<StorePage/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/StorePage" element={<StorePage/>} />
         <Route path="/allcategory" element={<AllCategoryPage/>}/>
         <Route path="/products/:id" element={<ProductDetalisPage />} />
         <Route path="/products" element={<ShopProductsPage/>}/>
