@@ -7,6 +7,7 @@ import SignUpCOReducer from "./reducers/SignUpCOReducer";
 import LoginReducer from "./reducers/LoginReducer";
 import LoginCOReducer from "./reducers/LoginCOReducer";
 import AddProductReducer from "./reducers/AddProductReducer";
+import productByIdReducer from "./reducers/ProductByIdReducer";
 
 const rootReducer = combineReducers({
   contact: ContactReducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   login: LoginReducer,
   loginco: LoginCOReducer,
   addProduct: AddProductReducer,
+  product: productByIdReducer,
 });
 
 export default rootReducer;

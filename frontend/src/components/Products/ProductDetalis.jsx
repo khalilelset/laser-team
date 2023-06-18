@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import ProductGallery from "./ProductGallery";
 import ProductText from "./ProductText";
 
-const ProductDetalis = ({ product }) => {
+const ProductDetalis = () => {
   return (
     <div>
       <Row className="py-3">
@@ -12,7 +12,7 @@ const ProductDetalis = ({ product }) => {
         </Col>
 
         <Col lg="8">
-          <ProductText product={product} />
+          <ProductText />
         </Col>
       </Row>
     </div>
