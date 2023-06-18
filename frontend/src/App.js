@@ -38,7 +38,7 @@ import UserEditAddressPage from "./Page/User/UserEditAddressPage";
 
 import AdminProfilePage from "./Page/Admin/AdminProfile";
 
-
+const user =window.localStorage.getItem("status");
 
 //------------------------------------------------------------
 
@@ -64,10 +64,11 @@ export default function App() {
         <Route path="login" element={<Login />} />
        
 
-        
+
+        ()
 
         <Route path="/adminallproducts" element={<AdminAllProductsPage />} />
-        {/*<Route path="/adminallorders" element={<AdminAllOrdersPage />} />*/}
+       
         <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage />} />
         <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
         <Route path="/userallorders" element={<UserAllOrdersPage />} />

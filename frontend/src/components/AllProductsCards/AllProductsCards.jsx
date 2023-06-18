@@ -26,6 +26,6 @@ const AllCards = () => {
       </div>
     </div>
   );
-};
+};     
 
 export default AllCards;

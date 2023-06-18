@@ -160,8 +160,8 @@ const AdminProfile = () => {
                 
                 <Row className="">
                   <Col xs="12" className="d-flex">
-                     <div className="p-2">Description:</div>
-                      <div className="p-1 item-delete-edit">{craftOwner.ownerDescription}</div>
+                     <div className="p-1">Description:</div>
+                      <div className="p-8 item-delete-edit">{craftOwner.ownerDescription}</div>
                    </Col>
                 </Row>
                 

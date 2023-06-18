@@ -5,6 +5,7 @@ import { useDropzone } from 'react-dropzone';
 import Imagesproduct from './Imagesproduct';
 
 const AdminAddProducts = () => {
+
   const [uploadedFile, setUploadedFile] = useState(null);
   const [productTitle, setProductName] = useState('');
   const [productDescription, setProductDescription] = useState('');
@@ -47,8 +48,7 @@ const AdminAddProducts = () => {
   const handleProductCategoryChange = (event) => {
     setProductCategory(event.target.value);
   };
-
-
+ 
   return (
     <div>
       <Row className="justify-content-start ">
@@ -59,9 +59,10 @@ const AdminAddProducts = () => {
           </div>
 
           <div {...getRootProps()} style={{ marginBottom: '30px' }}>
-            <input {...getInputProps()} />
+            <input {...getInputProps()} type="file" />
             {uploadedFile ? (
-              <img src={URL.createObjectURL(uploadedFile)} alt="" onClick={onSelect} />
+              <img src={URL.createObjectURL(uploadedFile)} alt="" onClick={onSelect}  />
+             
             ) : isDragActive ? (
               <span></span>
             ) : (

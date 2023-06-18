@@ -18,18 +18,23 @@ const craftSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  craftImage: [{
+    type: String,
+    ref: 'CraftImages' 
+  }],
+
+  /*
+  craftRate:{
+    type: Number,
+  },
+
   categoryID: {
     type: mongoose.Schema.Types.ObjectId,
     
     ref: 'CraftCategory' // Reference to the CraftCategory model
-  },
-  craftImage: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'CraftImages' 
-  }],
-  craftRate:{
-    type: Number,
-  }
+  },*/
+
+
 });
 
 module.exports = mongoose.model('Crafts', craftSchema);

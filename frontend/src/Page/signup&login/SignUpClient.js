@@ -11,10 +11,13 @@ export default function SignUpClient() {
   const [email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [photo, setphoto] = useState("");
+  console.log(photo)
   const loading = useSelector((state) => state.signup.loading);
   const success = useSelector((state) => state.signup.success);
   const error = useSelector((state) => state.signup.error);
   const dispatch = useDispatch();
+
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = {
