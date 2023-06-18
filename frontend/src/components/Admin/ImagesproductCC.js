@@ -1,9 +1,10 @@
 import { useDropzone } from 'react-dropzone';
 import { Row, Col } from 'react-bootstrap';
+
 import add from '../../images/add.png';
 import React, { useCallback, useState } from 'react';
 
-export default function ImagesProduct({ productTitle, productDescription, productAvailableQuantity, price, productCategory, mainProductImage }) {
+export default function ImagesProduct({ craftTitle, craftDescription, mainCraftImage }) {
   const emailL = window.localStorage.getItem("email");
   const email = emailL.slice(1, -1);
   const [uploadedFiles, setUploadedFiles] = useState([]);
@@ -11,18 +12,15 @@ export default function ImagesProduct({ productTitle, productDescription, produc
   const handleAddProduct = () => {
     // Create an object with the form data
     const formData = {
-      productTitle,
-      productDescription,
-      productAvailableQuantity,
-      price,
-      productCategory,
-      mainProductImage: mainProductImage.path,
-      productImage: uploadedFilesp,
+        craftTitle,
+        craftDescription,
+        mainCraftImage: mainCraftImage.path,
+        craftImage: uploadedFilesp,
     };
     console.log(formData);
 
     // Perform API fetch here with the formData
-    fetch(`http://localhost:4000/api/post/product/${email}`, {
+    fetch(`http://localhost:4000/api/post/craft/${email}`, {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
@@ -42,7 +40,7 @@ export default function ImagesProduct({ productTitle, productDescription, produc
 
   const onDrop = useCallback((acceptedFiles) => {
     // Handle the uploaded files here
-    const newFiles = [...uploadedFiles, ...acceptedFiles.slice(0, 3 - uploadedFiles.length)];
+    const newFiles = [...uploadedFiles, ...acceptedFiles.slice(0, 4 - uploadedFiles.length)];
     setUploadedFiles(newFiles);
 
     const newFileNames = [...uploadedFilesp, ...acceptedFiles.map((file) => file.name)];
@@ -65,7 +63,7 @@ export default function ImagesProduct({ productTitle, productDescription, produc
   return (
     <div>
       <div className="text-form pb-2" style={{ textAlign: 'left', marginBottom: '30px', marginTop: '50px', color: "black", fontSize: "20px", fontFamily: "inherit" }}>
-        Add more photos for your product
+        Add more photos for your Crafts
       </div>
 
       <Row className="justify-content-start">
@@ -79,13 +77,13 @@ export default function ImagesProduct({ productTitle, productDescription, produc
                       src={URL.createObjectURL(file)}
                       alt=""
                       onClick={onSelect}
-                      style={{ height: '200px', width: '250px' }}
+                      style={{ height: '200px', width: '300px' }}
                     />
                   </div>
                 </Col>
               ))}
 
-              {uploadedFiles.length < 3 && (
+              {uploadedFiles.length < 4 && (
                 <Col sm="4">
                   <img
                     src={add}

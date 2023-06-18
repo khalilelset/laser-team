@@ -24,13 +24,13 @@ import Slider from "./components/Slider/Slider";
 //import profile
 
 
-import AdminAllOrdersPage from "./Page/Admin/AdminAllOrdersPage";
+
 import AdminOrderDetalisPage from "./Page/Admin/AdminOrderDetalisPage";
 import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
 // import Khhh from "./Page/Admin/Khhh";
 import AdminAddProductsPage from "./Page/Admin/AdminAddProductsPage";
 import UserAllOrdersPage from "./Page/User/UserAllOrdersPage";
-
+import AdminAddCraft from "./Page/Admin/AdminAddCrafts";
 import UserAllAddresPage from "./Page/User/UserAllAddresPage";
 import UserAddAddressPage from "./Page/User/UserAddAddressPage";
 import UserEditAddressPage from "./Page/User/UserEditAddressPage";
@@ -38,7 +38,7 @@ import UserEditAddressPage from "./Page/User/UserEditAddressPage";
 
 import AdminProfilePage from "./Page/Admin/AdminProfile";
 
-const user =window.localStorage.getItem("status");
+
 
 //------------------------------------------------------------
 
@@ -71,6 +71,7 @@ export default function App() {
        
         <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage />} />
         <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
+        <Route path="/adminaddcraft" element={<AdminAddCraft />} />
         <Route path="/userallorders" element={<UserAllOrdersPage />} />
         <Route path="/useraddresses" element={<UserAllAddresPage/>} />
         <Route path="/useradd-address" element={<UserAddAddressPage />} />
