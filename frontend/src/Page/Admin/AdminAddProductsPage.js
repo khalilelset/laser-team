@@ -5,7 +5,7 @@ import AdminSideBar from '../../components/Admin/AdminSideBar'
 import AdminAddProducts from '../../components/Admin/AdminAddProducts'
 const AdminAddProductsPage = () => {
     return (
-        <Container >
+        <Container style={{marginBottom:"100px", marginTop:"100px"}} >
             <Row className='py-3'>
                 <Col sm="3" xs="2" md="2">
                     <AdminSideBar />

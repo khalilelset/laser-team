@@ -13,9 +13,5 @@ router.post('/api/login/craftowner', signupController.login);
 router.post('/api/logout/craftowner', signupController.logout);
 
 
-//update profile craft owner
-
-router.patch('/ownerprofile/editeprofile/:id', signupController.updateowner);
-
 
 module.exports = router;

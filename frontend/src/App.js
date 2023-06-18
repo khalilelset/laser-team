@@ -26,9 +26,6 @@ import Slider from "./components/Slider/Slider";
 
 import AdminAllOrdersPage from "./Page/Admin/AdminAllOrdersPage";
 import AdminOrderDetalisPage from "./Page/Admin/AdminOrderDetalisPage";
-// import AdminAddBrandPage from "./Page/Admin/AdminAddBrandPage";
-// import AdminAddCategoryPage from "./Page/Admin/AdminAddCategoryPage";
-// import AdminAddSubCategoryPage from "./Page/Admin/AdminAddSubCategoryPage";
 import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
 // import Khhh from "./Page/Admin/Khhh";
 import AdminAddProductsPage from "./Page/Admin/AdminAddProductsPage";
@@ -48,7 +45,7 @@ import AdminProfilePage from "./Page/Admin/AdminProfile";
 export default function App() {
   return (
     <div>
-      <Navbar />
+     <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="AllCards" element={<AllProductsCards />} />
@@ -69,17 +66,11 @@ export default function App() {
 
         
 
-
-        {/* <Route path="/kh/test" element={<Khhh/>} />  */}
         <Route path="/adminallproducts" element={<AdminAllProductsPage />} />
-        <Route path="/adminallorders" element={<AdminAllOrdersPage />} />
+        {/*<Route path="/adminallorders" element={<AdminAllOrdersPage />} />*/}
         <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage />} />
-        {/* <Route path="/adminaddbrand" element={<AdminAddBrandPage/>} />
-        <Route path="/adminaddcategory" element={<AdminAddCategoryPage />} />
-        <Route path="/adminaddsubcategory" element={<AdminAddSubCategoryPage />} /> */}
         <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
         <Route path="/userallorders" element={<UserAllOrdersPage />} />
-        
         <Route path="/useraddresses" element={<UserAllAddresPage/>} />
         <Route path="/useradd-address" element={<UserAddAddressPage />} />
         <Route path="/useredit-address" element={<UserEditAddressPage />} />

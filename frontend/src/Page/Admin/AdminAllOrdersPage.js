@@ -5,7 +5,7 @@ import AdminAllOrders from '../../components/Admin/AdminAllOrders'
 import Pagination from '../../components/Utility/Pagination'
 const AdminAllOrdersPage = () => {
     return (
-        <Container >
+        <Container style={{marginBottom:"100px", marginTop:"100px"}}>
             <Row className='py-3'>
                 <Col sm="3" xs="2" md="2">
                     <AdminSideBar />

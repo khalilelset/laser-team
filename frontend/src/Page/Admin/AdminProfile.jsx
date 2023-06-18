@@ -5,7 +5,7 @@ import AdminProfile from '../../components/Admin/AdminProfile'
 
 const AdminProfilePage = () => {
   return (
-    <Container >
+    <Container style={{marginBottom:"100px", marginTop:"100px"}} >
             <Row className='py-3'>
                 <Col sm="3" xs="2" md="2">
                     <AdminSideBar />
