@@ -43,8 +43,14 @@ import AdminProfilePage from "./Page/Admin/AdminProfile";
 //------------------------------------------------------------
 
 export default function App() {
+  var access=false;
+const status =window.localStorage.getItem("status");
+if (status === "owner"){access = true}
+
+
   return (
     <div>
+      
      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -62,27 +68,27 @@ export default function App() {
         <Route path="/products" element={<ShopProductsPage/>}/>
 
         <Route path="login" element={<Login />} />
-       
 
 
-        ()
-
+        {access ? (<>
+        <Route path="/adminprofile" element={<AdminProfilePage/>} />
         <Route path="/adminallproducts" element={<AdminAllProductsPage />} />
-       
         <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage />} />
         <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
-        <Route path="/adminaddcraft" element={<AdminAddCraft />} />
+        <Route path="/adminaddcraft" element={<AdminAddCraft />} /> </>)
+           :(
+            <>
         <Route path="/userallorders" element={<UserAllOrdersPage />} />
         <Route path="/useraddresses" element={<UserAllAddresPage/>} />
         <Route path="/useradd-address" element={<UserAddAddressPage />} />
         <Route path="/useredit-address" element={<UserEditAddressPage />} />
-        <Route path="/userprofile" element={<UserProfilePage />} />
-
-        <Route path="/adminprofile" element={<AdminProfilePage/>} />
-       
+        <Route path="/userprofile" element={<UserProfilePage />} /></>)}
+        
+        
 
       </Routes>
       <Footer />
     </div>
   );
 }
+ 
