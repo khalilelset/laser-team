@@ -10,8 +10,8 @@
     border: 4px solid #f3f3f3;
     border-top: 4px solid #3498db;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     animation: spin 1s linear infinite;
     margin-bottom: 10px;
   }
@@ -23,5 +23,39 @@
     100% {
       transform: rotate(360deg);
     }
+  }
+  .remove-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+   
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .alert-box {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .message {
+    font-size: 18px;
+    color: #333;
   }
   
