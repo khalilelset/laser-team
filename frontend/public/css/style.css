@@ -59,7 +59,7 @@ img {
 
 .hero {
     /* background-image: url(../img/AI-E-commerce-01.jpg); */
-    background-image: url(../img/bgd2.png);
+    background-image: url(../img/bgd1.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -145,7 +145,7 @@ section {
 }
 
 .col-img {
-    background-image: url(../img/lg2.png);
+    background-image: url(../img/kk.jpg);
     background-position: center;
     background-size: cover;
     min-height: 500px;

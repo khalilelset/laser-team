@@ -49,6 +49,7 @@ const CatPage = () => {
       },[category,products])
 
       const [pro, setPro] = useState(products);
+      
    const [searchVal, setSearchVal] = useState('');
 
 //   useEffect(()=>{
@@ -57,10 +58,10 @@ const CatPage = () => {
 const filterByTitle=(tit)=>{
     if (tit !=="")
       {
-      const newArr=products.filter((item)=> item.productTitle.includes(tit))
+      const newArr=products.filter((item)=> item.productTitle.includes(tit) && item.productCategory === category)
       setPro(newArr)
      }
-      else{setPro(products)}
+      else{setPro(products.filter((item)=> item.productCategory === category))}
      }
 
   //pag
