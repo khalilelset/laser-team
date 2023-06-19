@@ -10,6 +10,15 @@ export default function ImagesProduct({ craftTitle, craftDescription, mainCraftI
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [uploadedFilesp, setUploadedFilesp] = useState([]);
   const handleAddProduct = () => {
+    if( mainCraftImage==null || uploadedFiles==null){
+      return alert("you can not add product without main photo  ")
+     }
+ 
+     if(craftTitle===""|| craftDescription ===""  ){
+      return alert("All field should be require")
+     }
+ 
+
     // Create an object with the form data
     const formData = {
         craftTitle,

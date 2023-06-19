@@ -65,15 +65,14 @@ try {
 const deleteProduct = async (req, res) => {
   try {
     const id = req.params.id;
-    const craftOwnerEmail = req.locals.email;
-    const craftOwner = await CraftOwner.findOne({ email: craftOwnerEmail });
+    const craftOwnerEmail = req.params.email;
+    const craftOwner = await CraftOwnerr.findOne({ email: craftOwnerEmail });
 
     // Remove the product from the craft owner's list of products
-    craftOwner.products.pull(productId);
+    craftOwner.product.pull(id);
     await craftOwner.save();
-    
     const result = await Product.findByIdAndDelete(id)
-    res.send(result)
+    res.send("Your product has been successfully deleted")
     }
     catch (error) {
     res.status(400).json({ message: error.message })
