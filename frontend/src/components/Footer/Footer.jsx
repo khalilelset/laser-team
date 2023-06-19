@@ -49,9 +49,9 @@ const Footer = () => {
               <div class="col-lg-4">
                 <h5 class="text-white">Contact</h5>
                 <ul class="list-unstyled">
-                  <li>Address: 2715 Ash Dr. San Jose, South Dakota 83475</li>
-                  <li>Email: jackson.graham@example.com</li>
-                  <li>Phone: (603) 555-0123</li>
+                  <li>Address:223 , LaSer , Azme , 3345</li>
+                  <li>Email: TripoliStore1@gmail.com</li>
+                  <li>Phone: (961) 71-740318</li>
                 </ul>
               </div>
             </div>
@@ -65,7 +65,7 @@ const Footer = () => {
                   © 2023 copyright all right reserved | Designed with{" "}
                   <i class="bx bx-heart text-danger"></i> by
                   <a
-                    href="https://www.youtube.com/channel/UCYMEEnLzGGGIpQQ3Nu_sBsQ"
+                    href=""
                     class="text-white"
                   >
                     KHALED

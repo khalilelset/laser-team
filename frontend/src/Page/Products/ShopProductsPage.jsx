@@ -7,10 +7,12 @@ import Pagination from "../../components/Utility/Pagination";
 import SideFilter from "../../components/Utility/SideFilter";
 import SearchCountResult from "../../components/Utility/SearchCountResult";
 import CategoryHeader from "../../components/Categorie/CategoryHeader";
-import {  useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/actions/AllProductsActions";
 import Card from "../../components/Card/Card";
 import { useEffect, useState } from "react";
+import {  useDispatch, useSelector } from "react-redux";
+import ReactPaginate from "react-paginate";
+// import { getCategorys } from "../../redux/actions/AllCategorysAction";
 
 
 
@@ -18,6 +20,7 @@ const ShopProductsPage = () => {
 
 
   const dispatch = useDispatch();
+  const itemsPerPage = 4;
   const productsData = useSelector((state) => state.products);
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -28,56 +31,77 @@ const ShopProductsPage = () => {
     setProducts(productsData.products ?? []);
   }, [productsData.products]);
 
-  const allCategory =   ['all',...new Set( products.map((i)=> i.productCategory))]
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
+  const [pro, setPro] = useState(products);
+  const [searchVal, setSearchVal] = useState('');
+  // useEffect(() => {
+  //   setPro(products);
+  // }, []);
 // filter by category
+
+useEffect(()=>{
+  setPro(productsData.products);
+},[productsData])
+
   const filterbyCategory=(cat)=>{
-    if(cat==="all"){
-      setProducts(products)
+    if(cat === "all" || cat === ""){
+      setPro(products)
     
     }
     else{ 
     
     const newArr=products.filter((item)=> item.productCategory === cat)
-    setProducts(newArr)
+    setPro(newArr)
     }
     }
 // end filterbyCategory
+//filter by searche
+ const filterByTitle=(tit)=>{
+   if (tit !=="")
+     {
+     const newArr=products.filter((item)=> item.productTitle.includes(tit))
+     setPro(newArr)
+    }
+     else{setPro(products)}
+    }
+
+    
+    // useEffect((searchVal) => {
+    //    if (searchVal !=="")
+    //  {
+    //  const newArr=products.filter((item)=> item.productTitle === searchVal)
+    //  setPro(newArr)
+    // }
+    //  else{setPro(products)}
+    // }, [searchVal]);
   
+
+
+const [itemOffset, setItemOffset] = useState(0);
+const endOffset = itemOffset + itemsPerPage;
+const currentItems = pro.slice(itemOffset, endOffset);
+const pageCount = Math.ceil(pro.length / itemsPerPage);
+const handlePageClick = (event) => {
+const newOffset = (event.selected * itemsPerPage) % pro.length;
+setItemOffset(newOffset);
+// end filterbysearch   
+};
+
   return (
     <div style={{ minHeight: "670px" }}>
 
 
-      <CategoryHeader filterbyCategory={filterbyCategory} allCategory={allCategory} />
-      {/* <div className="cat-header">
-      <Container>
-        <Row>
-          <Col className="d-flex justify-content-start py-2 flex-wrap">
-            <div className="cat-text-header">All</div>
-            <div className="cat-text-header">Pride</div>
-            <div className="cat-text-header">Cloth</div>
-            <div className="cat-text-header">Soap</div>
-            <div className="cat-text-header">Wood</div>
-            <div className="cat-text-header">Accessor</div>
-            <div className="cat-text-header">Art</div>
-
-            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >All</button>
-            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Pride</button>
-            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Cloth</button>
-            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Soap</button>
-            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Wood</button>
-            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Accessor</button>
-            <button className='btn mx-2' style={{border : "1px solid #b45b35" }} >Art</button>
-
-          </Col>
-        </Row>
-      </Container>
-    </div> */}
+      <CategoryHeader filterbyCategory={filterbyCategory}/>
+     
 
 
       <Container>
 
 
-        <SearchCountResult title="500 search value" />
+        <SearchCountResult title={`${pro.length}`} setSearch={setSearchVal} filterByTitle={filterByTitle}/>
 
 
 
@@ -86,10 +110,10 @@ const ShopProductsPage = () => {
 
        
 
-            
-            <Row className="my-2 d-flex justify-content-between">
+                                       {/* justify-content-between */}
+            <Row className="my-2 d-flex ">
    
-        {products.map((product) => (
+        {currentItems.map((product) => (
           // <ProductCard product={product} />
           <Card product={product} />
         ))}
@@ -99,7 +123,30 @@ const ShopProductsPage = () => {
 
           {/* </Col> */}
         </Row>
-        <Pagination />
+        {/* <Pagination /> */}
+
+{pageCount > 0 && <ReactPaginate
+        breakLabel="..."
+        nextLabel="next"
+        onPageChange={handlePageClick}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={2}
+        pageCount={pageCount}
+        previousLabel="prev"
+        containerClassName={"pagination justify-content-center p-3"}
+        pageClassName={"page-item"}
+        pageLinkClassName={"page-link"}
+        previousClassName={"page-item"}
+        nextClassName={"page-item"}
+        previousLinkClassName={"page-link"}
+        nextLinkClassName={"page-link"}
+        breakClassName={"page-item"}
+        breakLinkClassName={"page-link"}
+        activeClassName={"active"}
+      />
+
+}
+        
       </Container>
     </div>
   );

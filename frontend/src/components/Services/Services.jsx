@@ -24,9 +24,10 @@ const Services = () => {
                 <div class="iconbox">
                 <img src={process.env.PUBLIC_URL + '/img/serv1.webp'} style={{borderRadius:'100%'}}/>
                 </div>
-                <h5 class="mt-4 mb-2">Custom Craft Kits for Events and Parties</h5>
+                <h5 class="mt-4 mb-2">Custom Craft Kits for Events </h5>
                 <p>
                 We offer custom craft kits that are perfect for events and parties! 
+                Offer supplies for guests to decorate their own gift bags, jewelry bags, or clutches.
                 </p>
               </div>
             </div>
@@ -37,7 +38,7 @@ const Services = () => {
                   {/* <i class="bx bxs-comment-detail"><img src={process.env.PUBLIC_URL + '/img/serv1.webp'} style={{borderRadius:'100%'}}/></i> */}
                   <img src={process.env.PUBLIC_URL + '/img/serv2.jpg'} style={{borderRadius:'100%' , height:'100%'}}/>
                 </div>
-                <h5 class="mt-4 mb-2">Personalized Gifts for Any Occasion</h5>
+                <h5 class="mt-4 mb-2">Personalized Gifts for Occasion</h5>
                 <p>
                 Looking for a unique and thoughtful gift? Our personalized gifts are perfect for any occasion! From custom embroidery to laser engraving
                 </p>
@@ -66,6 +67,7 @@ const Services = () => {
                 <h5 class="mt-4 mb-2">Craft Supplies for DIY Projects</h5>
                 <p>
                 Looking for high-quality craft supplies and materials? 
+                Paper is great for crafts like origami, paper flowers, collages
                 </p>
               </div>
             </div>

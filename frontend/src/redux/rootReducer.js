@@ -7,6 +7,9 @@ import SignUpCOReducer from "./reducers/SignUpCOReducer";
 import LoginReducer from "./reducers/LoginReducer";
 import LoginCOReducer from "./reducers/LoginCOReducer";
 import AddProductReducer from "./reducers/AddProductReducer";
+import categoryReducer from "./reducers/AllCaregorysReducer";
+
+
 import productByIdReducer from "./reducers/ProductByIdReducer";
 
 const rootReducer = combineReducers({
@@ -18,6 +21,8 @@ const rootReducer = combineReducers({
   login: LoginReducer,
   loginco: LoginCOReducer,
   addProduct: AddProductReducer,
+  categorys: categoryReducer,
+
   product: productByIdReducer,
 });
 

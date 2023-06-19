@@ -34,6 +34,8 @@ import UserEditAddressPage from "./Page/User/UserEditAddressPage";
  import UserProfilePage from "./Page/User/UserProfilePage";
 
 import AdminProfilePage from "./Page/Admin/AdminProfile";
+import CatPage from "./Page/Category/CatPage";
+
 
 
 
@@ -66,21 +68,30 @@ if (status === "owner"){access = true}
 
         <Route path="login" element={<Login />} />
 
+       
+       
+
+        
+
 
         {access ? (<>
         <Route path="/adminprofile" element={<AdminProfilePage/>} />
         <Route path="/adminallproducts" element={<AdminAllProductsPage />} />
         <Route path="/adminallCrafts" element={<AdminAllCraftsPage />} />
         <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
-        <Route path="/adminaddcraft" element={<AdminAddCraft />} /> </>)
+        <Route path="/adminaddcraft" element={<AdminAddCraft />} />
+        <Route path="/adminprofile" element={<AdminProfilePage/>} /> </>)
            :(
             <>
         <Route path="/userallorders" element={<UserAllOrdersPage />} />
         <Route path="/useraddresses" element={<UserAllAddresPage/>} />
         <Route path="/useradd-address" element={<UserAddAddressPage />} />
         <Route path="/useredit-address" element={<UserEditAddressPage />} />
+        <Route path="/userprofile" element={<UserProfilePage />} />
+
         <Route path="/userprofile" element={<UserProfilePage />} /></>)}
         
+        <Route path="/CatPage" element={<CatPage/>} />
         
 
       </Routes>
