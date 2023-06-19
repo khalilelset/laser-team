@@ -12,10 +12,11 @@ const CraftownerPostCraft = require("./Routes/post page/OwnerPostCraft");
 const GetProducts = require("./Routes/store/StoreProduct");
 const GetCraft = require("./Routes/store/StoreCraft");
 const Contact = require("./Routes/Contact/contactRouter");
+const profileOwner = require("./Routes/CraftOwner/CraftOwner")
 const cookieParser = require("cookie-parser");
 
 const companyRouter = require("./Routes/company/companyRouter");
-
+const ProductOfOwner=require("./Routes/CraftOwner/CraftOwner")
 //const routes = require('./route');
 var cors = require("cors");
 const { validateToken } = require("./JWT");
@@ -64,6 +65,15 @@ app.use("/", GetCraft);
 
 //Contact
 app.use("/", Contact);
+
+
+//profileOwner
+
+app.use("/", profileOwner);
+
+
+//ProductOfOwner
+app.use("/", ProductOfOwner);
 
 app.listen(4000, () => {
   console.log(`Server Started at \${4000}`);

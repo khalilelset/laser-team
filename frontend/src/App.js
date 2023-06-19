@@ -5,7 +5,7 @@ import React from "react";
 import Login from "./Page/signup&login/Login";
 import HomePage from "./Page/HomePage/HomePage";
 import { Route, Routes } from "react-router-dom";
-import AllProductsCards from "./components/AllProductsCards/AllProductsCards";
+
 import Navbar from "./components/Navbar/UserNavBar/Navbar";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./Page/signup&login/SignUp";
@@ -24,16 +24,13 @@ import Slider from "./components/Slider/Slider";
 //import profile
 
 
-import AdminAllOrdersPage from "./Page/Admin/AdminAllOrdersPage";
+
 import AdminOrderDetalisPage from "./Page/Admin/AdminOrderDetalisPage";
-// import AdminAddBrandPage from "./Page/Admin/AdminAddBrandPage";
-// import AdminAddCategoryPage from "./Page/Admin/AdminAddCategoryPage";
-// import AdminAddSubCategoryPage from "./Page/Admin/AdminAddSubCategoryPage";
 import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
 // import Khhh from "./Page/Admin/Khhh";
 import AdminAddProductsPage from "./Page/Admin/AdminAddProductsPage";
 import UserAllOrdersPage from "./Page/User/UserAllOrdersPage";
-
+import AdminAddCraft from "./Page/Admin/AdminAddCrafts";
 import UserAllAddresPage from "./Page/User/UserAllAddresPage";
 import UserAddAddressPage from "./Page/User/UserAddAddressPage";
 import UserEditAddressPage from "./Page/User/UserEditAddressPage";
@@ -48,20 +45,26 @@ import CatPage from "./Page/Category/CatPage";
 //------------------------------------------------------------
 
 export default function App() {
+  var access=false;
+const status =window.localStorage.getItem("status");
+if (status === "owner"){access = true}
+
+
   return (
     <div>
-      <Navbar />
+      
+     <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="AllCards" element={<AllProductsCards />} />
-        <Route path="AllCrafts" element={<AllCraftsCards />} />
+      
+        <Route path="/AllCrafts" element={<AllCraftsCards />} />
         {/* <Route path="profile" element={<UserProfilePage />} /> */}
         <Route path="slider" element={<Slider />} />
-        <Route path="SignUp" element={<SignUp />} />
+        <Route path="/SignUp" element={<SignUp />} />
 
         {/* <Route path="CardDetails" element={<CardDetails/>} /> */}
-        <Route path="login" element={<Login/>} />
-        <Route path="StorePage" element={<StorePage/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/StorePage" element={<StorePage/>} />
         <Route path="/allcategory" element={<AllCategoryPage/>}/>
         <Route path="/products/:id" element={<ProductDetalisPage />} />
         <Route path="/products" element={<ShopProductsPage/>}/>
@@ -74,31 +77,29 @@ export default function App() {
         
 
 
-        {/* <Route path="/kh/test" element={<Khhh/>} />  */}
+        {access ? (<>
+        <Route path="/adminprofile" element={<AdminProfilePage/>} />
         <Route path="/adminallproducts" element={<AdminAllProductsPage />} />
-        <Route path="/adminallorders" element={<AdminAllOrdersPage />} />
         <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage />} />
-        {/* <Route path="/adminaddbrand" element={<AdminAddBrandPage/>} />
-        <Route path="/adminaddcategory" element={<AdminAddCategoryPage />} />
-        <Route path="/adminaddsubcategory" element={<AdminAddSubCategoryPage />} /> */}
         <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
+        <Route path="/adminaddcraft" element={<AdminAddCraft />} />
+        <Route path="/adminprofile" element={<AdminProfilePage/>} /> </>)
+           :(
+            <>
         <Route path="/userallorders" element={<UserAllOrdersPage />} />
-        
         <Route path="/useraddresses" element={<UserAllAddresPage/>} />
         <Route path="/useradd-address" element={<UserAddAddressPage />} />
         <Route path="/useredit-address" element={<UserEditAddressPage />} />
         <Route path="/userprofile" element={<UserProfilePage />} />
 
-        <Route path="/adminprofile" element={<AdminProfilePage/>} />
-
-
-
-
+        <Route path="/userprofile" element={<UserProfilePage />} /></>)}
+        
         <Route path="/CatPage" element={<CatPage/>} />
-       
+        
 
       </Routes>
       <Footer />
     </div>
   );
 }
+ 

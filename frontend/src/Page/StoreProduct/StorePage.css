@@ -534,6 +534,9 @@ body {
     line-height: 20px;
     text-align: right;
   }
+  .input-form::placeholder {
+    color: var(--placeholder-color);
+  }
   .input-form {
     height: 37px;
     width: 100%;
@@ -641,7 +644,7 @@ body {
   /* user Address */
   
   .user-address-card {
-    height: 151px;
+    height: 600px;
     width: 100%;
     border-radius: 7px;
   

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 
 // import CardProductsContainer from '../../Components/Products/CardProductsContainer'
@@ -6,15 +6,37 @@ import { Container } from "react-bootstrap";
 // import RateContainer from '../../Components/Rate/RateContainer'
 import ProductDetalis from "../../components/Products/ProductDetalis";
 import RateBax from "../../components/Products/RateBax";
-import CardProductsContainer from "../../components/Products/CardProductsContainer";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getProduct } from "../../redux/actions/ProductByIdAction";
 
 const ProductDetalisPage = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.product.product);
+  const loading = useSelector((state) => state.product.loading);
+  const error = useSelector((state) => state.product.error);
+  useEffect(() => {
+    dispatch(getProduct(id));
+  }, [dispatch, id]);
+  if (loading) {
+    return <p>Loading product data...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
   return (
-    <div style={{ minHeight: "670px" }}>
-      <Container>
-        <ProductDetalis />
-        <RateBax />
-      </Container>
+    //
+    <div>
+      {product && (
+        <div style={{ minHeight: "670px" }}>
+          <Container>
+            <ProductDetalis />
+            <RateBax />
+          </Container>
+        </div>
+      )}
     </div>
   );
 };

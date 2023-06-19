@@ -6,7 +6,7 @@ import UserSideBar from '../../components/User/UserSideBar'
 import UserFavoriteProduct from '../../components/User/UserFavoriteProduct'
 const UserFavoriteProductsPage = () => {
     return (
-        <Container >
+        <Container style={{marginBottom:"100px", marginTop:"100px"}} >
             <Row className='py-3'>
                 <Col sm="3" xs="2" md="2">
                     <UserSideBar />

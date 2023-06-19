@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 function SignUpCraftOwner() {
+  const [showPassword, setShowPassword] = useState(false);
 const navigate = useNavigate();
 const [ownerFName, setownerFName] = useState("");
 const [ownerLName,  setownerLName] = useState("");
@@ -38,13 +39,15 @@ const handleSubmit = (event) => {
   dispatch(signupcoaction(formData));
   
 };
-
+function togglePasswordVisibility() {
+  setShowPassword(!showPassword);
+}
   return (
     <>
     <h2 className="mb-4 animate__animated animate__fadeInDown">CraftOwner Sign Up</h2>
   <div className="form-group animate__animated animate__fadeInLeft">
 
-  {success && ( navigate("/AllCards"))}
+  {success && ( navigate("/StorePage"))}
 
   {error && (
   <div className="alert alert-danger" role="alert">
@@ -54,30 +57,39 @@ const handleSubmit = (event) => {
 
 
   <label htmlFor="firstName" style={{marginBottom:"10px"}}>First Name</label>
-  <input type="text" id="firstName" style={{ marginBottom: "20px", boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
+  <input type="text" id="firstName" style={{ marginBottom: "30px", boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
   ,backgroundColor:"rgb(0,0,0,0.5)",color:"white" }} className="form-control" placeholder="Enter your first name" value={ownerFName} onChange={(e) => setownerFName(e.target.value)} />
   
   <label htmlFor="lastName" style={{marginBottom:"10px"}}>Last Name</label>
-  <input type="text" id="lastName" style={{marginBottom:"10px",
+  <input type="text" id="lastName" style={{marginBottom:"20px",
   boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',backgroundColor:"rgb(0,0,0,0.5)",color:"white"}}
    className="form-control" placeholder="Enter your last name"  value={ownerLName} onChange={(e) => setownerLName(e.target.value)} />
   
   <label htmlFor="email" style={{marginBottom:"10px"}}>Email</label>
-  <input type="email" id="email"  style={{marginBottom:"10px",boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+  <input type="email" id="email"  style={{marginBottom:"20px",boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
   backgroundColor:"rgb(0,0,0,0.5)", color:"white"}} className="form-control"  placeholder="example@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} />
 
 <label htmlFor="lastName" style={{marginBottom:"10px"}}>Your Location</label>
-<input type="text" id="lastName" style={{marginBottom:"10px",
+<input type="text" id="lastName" style={{marginBottom:"20px",
 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',backgroundColor:"rgb(0,0,0,0.5)",color:"white"}}
  className="form-control" placeholder="Enter your last name"  value={ownerLocation} onChange={(e) => setownerLocation(e.target.value)} />
   
   
-  <label htmlFor="password" style={{marginBottom:"10px"}}>Password</label>
-  <input type="password" id="password" className="form-control" 
+  <label htmlFor="password" style={{marginBottom:"20px"}}>Password</label>
+  <input type={showPassword ? "text" : "password"} id="password" className="form-control" 
    style={{marginBottom:"10px",boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
    ,backgroundColor:"rgb(0,0,0,0.5)",color:"white"}}placeholder="Enter your password"  value={password} onChange={(e) => setpassword(e.target.value)} />
 
-  <label htmlFor="password" style={{marginBottom:"10px"}}>photo for your profile:</label>
+<div>
+       <input
+          type="checkbox" style={{ width: "20px", height: "20px", color: 'white' }}
+        onClick={togglePasswordVisibility}
+      />   show password 
+</div>
+
+
+
+  <label htmlFor="password" style={{marginBottom:"10px" , marginTop:"30px"}}>photo for your profile:</label>
  <input type="file" id="profilePhoto" style={{marginBottom:"10px",boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
  ,backgroundColor:"rgb(0,0,0,0.5)",color:"white"}} className="form-control" value={ownerImage} onChange={(e) => setownerImage(e.target.value)} />
 

@@ -1,23 +1,22 @@
 import React from 'react'
-
 import { Container, Row, Col } from 'react-bootstrap'
 import AdminSideBar from '../../components/Admin/AdminSideBar'
+import AdminAddCraft from '../../components/Admin/AdminAddCraft'
 
-import AdminAddBrand from '../../components/Admin/AdminAddBrand'
-const AdminAddBrandPage = () => {
+const AdminAddCrafts = () => {
     return (
-        <Container >
+        <Container style={{marginBottom:"100px", marginTop:"100px"}} >
             <Row className='py-3'>
                 <Col sm="3" xs="2" md="2">
                     <AdminSideBar />
                 </Col>
 
                 <Col sm="9" xs="10" md="10">
-                     <AdminAddBrand />
+                     <AdminAddCraft />
                 </Col>
             </Row>
         </Container>
     )
 }
 
-export default AdminAddBrandPage
+export default AdminAddCrafts

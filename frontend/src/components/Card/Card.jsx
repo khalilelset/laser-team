@@ -23,7 +23,7 @@ const Card = ({ product }) => {
             <Link to="#" className="btn btn-primary">
               Add to cart
             </Link>
-            <Link to="/products/:id" className="ms-4 mt-3">
+            <Link to={"/products/" + product._id} className="ms-4 mt-3">
               More Details
             </Link>
           </div>

@@ -12,7 +12,7 @@ const productSchema = new mongoose.Schema({
   },
   mainProductImage: {
     type: String,
-    
+    required: true
   },
   productDescription: {
     type: String,
@@ -31,7 +31,7 @@ const productSchema = new mongoose.Schema({
     
   },
   productImage: [{
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     ref: 'ProductImages' 
   }],
   craftOwner: {

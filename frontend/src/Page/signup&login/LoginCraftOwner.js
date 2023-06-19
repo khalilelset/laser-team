@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function LoginCraftOwner() {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
     const loading = useSelector((state) => state.loginco.loading);
@@ -19,14 +20,17 @@ export default function LoginCraftOwner() {
     password: Password,
   };
   dispatch(loginaction(formData));
- 
 };
+function togglePasswordVisibility() {
+  setShowPassword(!showPassword);
+}
+
   return (
     <>
      <h2 className="mb-4 animate__animated animate__fadeInDown ">Craft Owner Login</h2>
  <div className="form-group animate__animated animate__fadeInLeft"></div>
 
- {success && ( navigate("/AllCards"))}
+ {success && ( navigate("/StorePage"))}
 
   {error && (
  <div className="alert alert-danger" role="alert">
@@ -40,9 +44,16 @@ export default function LoginCraftOwner() {
  className="form-control" placeholder="example@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} />
 
 <label htmlFor="password" style={{ marginBottom: "10px",}}>Password</label>
-<input type="password" id="password"   style={{ marginBottom: "20px",backgroundColor:"rgb(0,0,0,0.5)"
-,boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',color:"white" }} 
+<input  type={showPassword ? "text" : "password"} id="password"   style={{ backgroundColor:"rgb(0,0,0,0.5)"
+,boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',color:"white" , marginBottom:"40px"}} 
 className="form-control" placeholder="Enter your password"  value={Password} onChange={(e) => setPassword(e.target.value)} />
+
+<div>
+       <input
+          type="checkbox" style={{ width: "20px", height: "20px", color: 'white' }}
+        onClick={togglePasswordVisibility}
+      />   show password 
+</div>
       
 
       <button onClick={handleSubmit} type="submit" className="btn btn-primary" disabled={loading}>
