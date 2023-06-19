@@ -9,6 +9,13 @@ export default function ImagesProduct({ productTitle, productDescription, produc
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [uploadedFilesp, setUploadedFilesp] = useState([]);
   const handleAddProduct = () => {
+
+    if( mainProductImage==null){
+     return alert("you can not add product without photo")
+    }
+     if(productTitle===""|| productDescription ==="" || price===""  || productAvailableQuantity==="" ){
+      return alert("All field should be require")
+     }
     // Create an object with the form data
     const formData = {
       productTitle,
@@ -19,7 +26,7 @@ export default function ImagesProduct({ productTitle, productDescription, produc
       mainProductImage: mainProductImage.path,
       productImage: uploadedFilesp,
     };
-    console.log(formData);
+    
 
     // Perform API fetch here with the formData
     fetch(`http://localhost:4000/api/post/product/${email}`, {

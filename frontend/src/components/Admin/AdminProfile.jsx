@@ -52,8 +52,6 @@ const AdminProfile = () => {
         try {
           const emailL= window.localStorage.getItem("email");
           const email=emailL.slice(1, -1);
-          console.log(email)
-          console.log(formData)
           // Make API request to update data
           const response = await fetch(`http://localhost:4000/api/craftowner/updateprofile/${email}`, {
               method: 'PATCH',
@@ -161,7 +159,7 @@ const AdminProfile = () => {
                 <Row className="">
                   <Col xs="12" className="d-flex">
                      <div className="p-1">Description:</div>
-                      <div className="p-8 item-delete-edit">{craftOwner.ownerDescription}</div>
+                      <div className="p-8 item-delete-edit"style={{textAlign:"left"}}>{craftOwner.ownerDescription}</div>
                    </Col>
                 </Row>
                 
