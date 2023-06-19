@@ -159,7 +159,10 @@ const AdminProfile = () => {
                 <Row className="">
                   <Col xs="12" className="d-flex">
                      <div className="p-1">Description:</div>
-                      <div className="p-8 item-delete-edit"style={{textAlign:"left"}}>{craftOwner.ownerDescription}</div>
+                     <div className="p-8 item-delete-edit" style={{textAlign: "left"}}>
+                        {craftOwner.ownerDescription}
+                        </div>
+
                    </Col>
                 </Row>
                 

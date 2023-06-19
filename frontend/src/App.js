@@ -23,11 +23,8 @@ import Slider from "./components/Slider/Slider";
 
 //import profile
 
-
-
-import AdminOrderDetalisPage from "./Page/Admin/AdminOrderDetalisPage";
 import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
-// import Khhh from "./Page/Admin/Khhh";
+import AdminAllCraftsPage from "./Page/Admin/AdminAllCraftsPage";
 import AdminAddProductsPage from "./Page/Admin/AdminAddProductsPage";
 import UserAllOrdersPage from "./Page/User/UserAllOrdersPage";
 import AdminAddCraft from "./Page/Admin/AdminAddCrafts";
@@ -73,7 +70,7 @@ if (status === "owner"){access = true}
         {access ? (<>
         <Route path="/adminprofile" element={<AdminProfilePage/>} />
         <Route path="/adminallproducts" element={<AdminAllProductsPage />} />
-        <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage />} />
+        <Route path="/adminallCrafts" element={<AdminAllCraftsPage />} />
         <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
         <Route path="/adminaddcraft" element={<AdminAddCraft />} /> </>)
            :(

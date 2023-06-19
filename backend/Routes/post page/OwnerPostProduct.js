@@ -7,7 +7,7 @@ const CategoryModel = require("../../Models/Crafts/ProductCategory")
 
 // post update delete route
 router.post('/api/post/product/:email', PostProductController.postProduct);
-router.patch('/api/product/update', PostProductController.updateProduct);
+router.patch('/api/product/update/:id', PostProductController.updateProduct);
 router.delete('/api/product/delete/:id/:email', PostProductController.deleteProduct);
 
 

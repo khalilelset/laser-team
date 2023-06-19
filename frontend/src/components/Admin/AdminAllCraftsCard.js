@@ -1,30 +1,27 @@
 import React, { useState } from 'react'
 import { Row, Col , Modal, Card } from 'react-bootstrap'
-import FormInputsPR from './FormInputsPR';
+import FormInputsCC from './FormInputsCC';
 import { Link, useNavigate } from 'react-router-dom'
 import labtop from '../../images/labtop.png'
 
-const AdminAllProductsCard = ({_id,mainProductImage,price,productAvailableQuantity,
-    productCategory,productDescription,productTitle,productImage}) => {
+const AdminAllProductsCard = ({_id,craftDescription,craftTitle,
+    mainCraftImage,craftImage}) => {
         const navigate = useNavigate();
         const [showModal, setShowModal] = useState(false);
         const [formData, setFormData] = useState({
-           productTitle: "",
-           productDescription: "",
-           productCategory: "",
-           price: 0,
-           productAvailableQuantity: 0,
+            craftTitle: "",
+            craftDescription: "",
         });
 
 
         const emailL= window.localStorage.getItem("email");
         const email=emailL.slice(1, -1);                    
-        const deleteProduct = async () => {
+        const deleteCraft = async () => {
 
-            var answer = window.confirm("do you want really to delete your product");    
+            var answer = window.confirm("do you want really to delete your post");    
             if(answer){
             try {
-              const response = await fetch(`http://localhost:4000/api/product/delete/${_id}/${email}`, {
+              const response = await fetch(`http://localhost:4000/api/craft/delet/${_id}/${email}`, {
                 method: 'DELETE'
               });
           
@@ -59,7 +56,7 @@ const AdminAllProductsCard = ({_id,mainProductImage,price,productAvailableQuanti
   const handleSubmit = async (event) => {
    event.preventDefault();
    try {
-   const response = await fetch(`http://localhost:4000/api/product/update/${_id}`, {
+   const response = await fetch(`http://localhost:4000/api/craft/update/${_id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -84,11 +81,9 @@ const AdminAllProductsCard = ({_id,mainProductImage,price,productAvailableQuanti
  const handleShowModal = () => {
      setFormData((prevFormData) => ({
        ...prevFormData,
-       productTitle: productTitle,
-       productDescription: productDescription,
-       productCategory: productCategory,
-       price: price,
-       productAvailableQuantity: productAvailableQuantity,
+
+       craftTitle: craftTitle,
+       craftDescription: craftDescription,
      }));
      setShowModal(true);
    };
@@ -110,15 +105,15 @@ const AdminAllProductsCard = ({_id,mainProductImage,price,productAvailableQuanti
                 }}>
                 <Row className="d-flex justify-content-center px-2">
                     <Col className=" d-flex justify-content-between">
-                   <button className="item-delete-edit remove-button"style={{margin:"10px"}} onClick={deleteProduct}>Remove</button>
+                   <button className="item-delete-edit remove-button"style={{margin:"10px"}} onClick={deleteCraft}>Remove</button>
                      <button className="item-delete-edit edit-button"style={{margin:"10px"}}onClick={handleShowModal}>Edit</button>
 
                         <Modal show={showModal} onHide={handleCloseModal}>
           <Modal.Header closeButton>
-           <Modal.Title>Edit Profile</Modal.Title>
+           <Modal.Title>Craft Profile</Modal.Title>
   </Modal.Header>
    <Modal.Body>
-    <FormInputsPR formData={formData} handleChange={handleChange} />
+    <FormInputsCC formData={formData} handleChange={handleChange} />
     <div className="form-group" style={{ marginBottom: "20px" }}>
       <button type="submit" onClick={handleSubmit} className="btn btn-primary" style={{ marginRight: "10px" }}>
         update
@@ -133,23 +128,18 @@ const AdminAllProductsCard = ({_id,mainProductImage,price,productAvailableQuanti
 
                     </Col>
                 </Row>
-                 <Link to={`/products/${_id}`} style={{ textDecoration: "none" }}> 
+                 <Link to={`/craft/${_id}`} style={{ textDecoration: "none" }}> 
                     <Card.Img style={{ height: "228px", width: "100%" }} src={labtop} />
                     <Card.Body>
                         <Card.Title>
                             <div className="card-title" style={{textAlign:"left",marginBottom:"10px"}}>
-                                {productTitle}
+                               {craftTitle}
                             </div>
                         </Card.Title>
                         <Card.Text>
                             <div className="d-flex flex-column">
-                            <p className="card-description">{productDescription.slice(0, 20)}</p>
-                                <div className="card-rate" style={{marginBottom:"10px"}}> Q :{productAvailableQuantity}</div>
-                              
-                                <div className="d-flex">
-                                   
-                                    <div className="card-price">{price}$</div>
-                                </div>
+                            <p className="card-description">{craftDescription.slice(0, 30)}</p>
+                            
                             </div>
                         </Card.Text>
                     </Card.Body>
