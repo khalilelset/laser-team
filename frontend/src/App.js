@@ -40,6 +40,8 @@ import UserEditAddressPage from "./Page/User/UserEditAddressPage";
  import UserProfilePage from "./Page/User/UserProfilePage";
 
 import AdminProfilePage from "./Page/Admin/AdminProfile";
+import CatPage from "./Page/Category/CatPage";
+
 
 
 
@@ -65,6 +67,8 @@ export default function App() {
         <Route path="/products" element={<ShopProductsPage/>}/>
 
         <Route path="login" element={<Login />} />
+
+       
        
 
         
@@ -86,6 +90,11 @@ export default function App() {
         <Route path="/userprofile" element={<UserProfilePage />} />
 
         <Route path="/adminprofile" element={<AdminProfilePage/>} />
+
+
+
+
+        <Route path="/CatPage" element={<CatPage/>} />
        
 
       </Routes>

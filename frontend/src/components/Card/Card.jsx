@@ -16,8 +16,8 @@ const Card = ({ product }) => {
             alt="..."
           />
           <div className="card-body">
-            <h5 className="card-title">{product.productTitle} </h5>
-            <p className="card-text">{product.productDescription}</p>
+            <h5 className="productTitle">{product.productTitle} </h5>
+            <p className="card-text">{product.productDescription.substr(0,55)}</p>
             <h5>{product.price}$</h5>
             <p>{product.productAvailableQuantity} pieces</p>
             <Link to="#" className="btn btn-primary">

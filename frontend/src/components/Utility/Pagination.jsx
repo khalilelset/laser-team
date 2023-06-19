@@ -4,7 +4,9 @@ import ReactPaginate from 'react-paginate';
 
 const Pagination = () => {
 
-    const handlePageClick = () => { };
+    const handlePageClick = (e) => { 
+        console.log(e)
+    };
     return (
         <ReactPaginate
             breakLabel="..."
