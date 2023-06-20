@@ -11,6 +11,7 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.3.0",
     "cors": "^2.8.5",
+    "firebase": "^9.22.2",
     "js-cookie": "^3.0.5",
     "materialize-css": "^1.0.0",
     "multiselect-react-dropdown": "^2.0.25",

@@ -12,7 +12,7 @@ const OwnerDropDownProfile = () => {
 
 
                 {/* To add an element to the DropDown menu */}
-                <li><a className='Profile' href='/Profile'>Profile</a></li>
+                <li><a className='Profile' href='/adminprofile'>Profile</a></li>
                 <li><a className='MyProducts' href='/MyProducts'>My Products</a></li>
                 <li><a className='MyCrafts' href='/MyCrafts'>My Crafts</a></li>
                 <li><a className='Logout' href='/' onClick={changeStatusToNull}>Log out</a></li>

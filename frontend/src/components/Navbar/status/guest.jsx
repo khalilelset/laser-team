@@ -99,9 +99,9 @@ const GuestNavbar = () => {
 
                     {/* NavBar avatar */}
                     {!user ?
-                        (<Link to="/login">
+                        (<a href="/login">
                             <button className="btn btn-primary ms-lg-3 button">Sign in</button>
-                        </Link>) : (<span></span>)}
+                        </a>) : (<span></span>)}
 
                 </div>
             </div>

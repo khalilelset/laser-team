@@ -103,7 +103,7 @@ const OwnerNavbar = () => {
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/profile">
+                                    <a className="nav-link" href="/adminprofile">
                                         Profile
                                     </a>
                                 </li>
