@@ -10,32 +10,23 @@ import Navbar from "./components/Navbar/UserNavBar/Navbar";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./Page/signup&login/SignUp";
 import AllCraftsCards from "./components/AllCraftsCards/AllCraftsCards";
-
-
+import CatPage from "./Page/Category/CatPage";
 import StorePage from "./Page/StoreProduct/StorePage";
 import AllCategoryPage from "./Page/Category/AllCategoryPage";
 import ProductDetalisPage from "./Page/Products/ProductDetalisPage";
 import ShopProductsPage from "./Page/Products/ShopProductsPage";
 import Slider from "./components/Slider/Slider";
 
-
-
-
 //import profile
 
 import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
 import AdminAllCraftsPage from "./Page/Admin/AdminAllCraftsPage";
 import AdminAddProductsPage from "./Page/Admin/AdminAddProductsPage";
-import UserAllOrdersPage from "./Page/User/UserAllOrdersPage";
 import AdminAddCraft from "./Page/Admin/AdminAddCrafts";
-import UserAllAddresPage from "./Page/User/UserAllAddresPage";
-import UserAddAddressPage from "./Page/User/UserAddAddressPage";
-import UserEditAddressPage from "./Page/User/UserEditAddressPage";
  import UserProfilePage from "./Page/User/UserProfilePage";
-
 import AdminProfilePage from "./Page/Admin/AdminProfile";
-import CatPage from "./Page/Category/CatPage";
 
+import UserFavoriteProductsPage from"./Page/User/UserFavoriteProductsPage"
 
 
 
@@ -80,16 +71,13 @@ if (status === "owner"){access = true}
         <Route path="/adminallCrafts" element={<AdminAllCraftsPage />} />
         <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
         <Route path="/adminaddcraft" element={<AdminAddCraft />} />
-        <Route path="/adminprofile" element={<AdminProfilePage/>} /> </>)
+         </>)
            :(
             <>
-        <Route path="/userallorders" element={<UserAllOrdersPage />} />
-        <Route path="/useraddresses" element={<UserAllAddresPage/>} />
-        <Route path="/useradd-address" element={<UserAddAddressPage />} />
-        <Route path="/useredit-address" element={<UserEditAddressPage />} />
         <Route path="/userprofile" element={<UserProfilePage />} />
-
-        <Route path="/userprofile" element={<UserProfilePage />} /></>)}
+        <Route path="/userfavoriteproduct" element={<UserFavoriteProductsPage/>}/>
+        
+        </>)}
         
         <Route path="/CatPage" element={<CatPage/>} />
         

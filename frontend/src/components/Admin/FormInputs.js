@@ -38,14 +38,12 @@ export default function FormInputs({ formData, handleChange }) {
         </div>
         <div className="form-group" style={{ marginBottom: "10px", marginTop: "10px" }}>
           <label htmlFor="ownerImage" style={{ marginBottom: "5px" }}>Profile photo:</label>
-          <div className="custom-file">
-            <input
-              type="file"
-              className="custom-file-input"
-              id="ownerImage"
-              name="ownerImage"
-              onChange={handleChange}
-            />
+          <div className="custom-file">     
+              <div class="mb-3">
+               <label for="formFile" class="form-label">Default file input example</label>
+               <input  type="file" class="form-control" id="ownerImage"  name="ownerImage"  onChange={handleChange}/>  
+                </div>
+
           </div>
         </div>
         <div className="form-group">

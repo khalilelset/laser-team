@@ -76,19 +76,50 @@ const logout = (req, res) => {
 
 // Get Info
 const getUserInfo = async (req, res) => {
+  const clientem = req.params.email;
+  const client = await Client.findOne({ email: clientem });
   try {
-    const token = req.cookies && req.cookies["access-token"];
-    if (!token) {
-      return res.status(400).json({ error: "User Not Authenticated!" });
+    if (!client) {
+      return res.status(404).json({ error: { message: 'Client not found' } });
     }
-    const userInfo = extractIdFromToken(token);
-    const { id } = userInfo;
-    const client = await Client.findById(id);
-    res.status(200).json({ data: client });
+    res.status(200).json({ client });
   } catch (error) {
-    res.status(500).json({ error: error });
+    res.status(500).json({ error: error.message });
   }
 };
+
+
+// Update
+
+const updateclient = async (req, res) => {
+  try {
+    const clientemail = req.params.email; // Retrieve email from URL parameters
+        
+  
+    const client = await Client.findOneAndUpdate(
+      { email: clientemail },
+      { $set: req.body },
+      { new: true }
+    );
+
+    if (!client) {
+      return res.status(404).json({ error: { message: 'client not found' } });
+      
+    }
+    console.log("meshi l7al client")
+    res.status(200).json({ client });
+  } catch (error) {
+   
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+
+
+
+
+
 
 // Get Info
 /*
@@ -114,7 +145,7 @@ module.exports = {
   login,
   logout,
   getUserInfo,
- 
+  updateclient
 };
 
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Row, Col , Modal, Button } from 'react-bootstrap'
 import FormInputs from './FormInputs';
 import "./Admin.css"
+import unknow from "./../../images/Unknown_person.jpg"
 import { useNavigate } from 'react-router-dom';
 const AdminProfile = () => {
     const [craftOwner, setCraftOwner] = useState(null);
@@ -102,9 +103,12 @@ const AdminProfile = () => {
             {!isLoading ? ( 
                 <>
             <div className="admin-content-text">Profile page </div>
+            
+            <img src={unknow} alt=''style={{width:"200px",height:"200px",marginTop:"20px",marginLeft:"20px", borderRadius:"50%"}}/>
+
             <div className="user-address-card my-3 px-2">
             <Row className="d-flex justify-content-between pt-2">
-  <Col xs="auto" className="d-flex align-items-center" style={{marginTop:"50px"}}>
+  <Col xs="auto" className="d-flex align-items-center" style={{marginTop:"20px"}}>
     <div className="p-2">name:</div>
     <div className="p-1 item-delete-edit">{craftOwner.ownerFName} {craftOwner.ownerLName}</div>
   </Col>
