@@ -132,12 +132,15 @@
   .shopping-now {
     padding: 5px;
     height: 35px;
-    width: 90px;
+    width: 190px;
     color: #272727;
     text-decoration: none;
     text-align: center;
     border: 1px solid #272727;
-    border-radius: 14px;
+    border-radius: 14px;  
+    display: flex;
+    
+    justify-content: center;
   }
   
   .shopping-now:hover {

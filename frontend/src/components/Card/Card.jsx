@@ -9,7 +9,7 @@ const Card = ({ product }) => {
       {/* <div className="container">
         <div className="col-lg-3 ms-5 mt-4"> */}
       <div className="col-lg-3 mt-3">
-        <div className="card" key={product.id}>
+    <Link to={"/products/" + product._id} >    <div className="card" key={product.id}>
           <img
             src={productImage}
             className="card-img-top img-fluid"
@@ -23,11 +23,11 @@ const Card = ({ product }) => {
             <Link to="#" className="btn btn-primary">
               Add to cart
             </Link>
-            <Link to={"/products/" + product._id} className="ms-4 mt-3">
-              More Details
-            </Link>
+            <span className="ms-4 mt-3"> More Details</span>
+             
+          
           </div>
-        </div>
+        </div>  </Link>
       </div>
 
       {/* </div>

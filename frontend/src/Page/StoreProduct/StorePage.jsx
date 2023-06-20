@@ -4,6 +4,7 @@ import Slider from '../../components/Utility/Slider'
 import HomeCategory from '../../components/StoreProduct/HomeCategory'
 import CardProductsContainer from '../../components/Products/CardProductsContainer'
 import DiscountSection from '../../components/Utility/DiscountSection'
+import { Link } from 'react-router-dom'
 
 const StorePage = () => {
   return (
@@ -13,7 +14,9 @@ const StorePage = () => {
     <DiscountSection text="Select a category to views its products"/>
     <HomeCategory/>
     <DiscountSection text="Click more to view our products"/>
-    <CardProductsContainer title=" Product" btntitle="more" pathText="/products"/>
+    <CardProductsContainer title=" Product"/>
+  <div className='shopping-now ' style={{display:'flex', justifyContent:'center'}}><Link to="/products">more</Link> </div> 
+    
 
      
      
