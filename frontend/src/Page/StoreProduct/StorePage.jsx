@@ -8,26 +8,28 @@ import { Link } from 'react-router-dom'
 
 const StorePage = () => {
   return (
-    <div className='font' style={{minHeight:'670px'}}>
-        
-    <Slider/>
-    <DiscountSection text="Select a category to views its products"/>
-    <HomeCategory/>
-    <DiscountSection text="Click more to view our products"/>
-    <CardProductsContainer title=" Product"/>
-  <div className='shopping-now ' style={{display:'flex', justifyContent:'center'}}><Link to="/products">more</Link> </div> 
-    
+    <div className='font' style={{ minHeight: '670px' }}>
 
-     
-     
-   
-  {/*  <CardProductsContainer title=" best rated" btntitle="more" pathText="/products"/>
+      <Slider />
+      <DiscountSection text="Select a category to views its products" />
+      <HomeCategory />
+      <DiscountSection text="Click more to view our products" />
+      <CardProductsContainer title=" Product" />
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
+        <Link to="/products">
+          <button className='shopping-now'>more</button>
+        </Link>
+      </div>
+
+
+
+      {/*  <CardProductsContainer title=" best rated" btntitle="more" pathText="/products"/>
     <BrandFeatured title=" best mark" btntitle="more"/> */}
-  
-    
 
 
-</div>
+
+
+    </div>
   )
 }
 
