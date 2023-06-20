@@ -37,6 +37,8 @@ const ShopProductsPage = () => {
 
   const [pro, setPro] = useState(products);
   const [searchVal, setSearchVal] = useState('');
+  // const [category, setCategory] = useState('all');
+  
   // useEffect(() => {
   //   setPro(products);
   // }, []);
