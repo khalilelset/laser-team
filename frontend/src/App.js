@@ -23,68 +23,66 @@ import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
 import AdminAllCraftsPage from "./Page/Admin/AdminAllCraftsPage";
 import AdminAddProductsPage from "./Page/Admin/AdminAddProductsPage";
 import AdminAddCraft from "./Page/Admin/AdminAddCrafts";
- import UserProfilePage from "./Page/User/UserProfilePage";
+import UserProfilePage from "./Page/User/UserProfilePage";
 import AdminProfilePage from "./Page/Admin/AdminProfile";
 
-import UserFavoriteProductsPage from"./Page/User/UserFavoriteProductsPage"
+import UserFavoriteProductsPage from "./Page/User/UserFavoriteProductsPage"
 
 
 
 //------------------------------------------------------------
 
 export default function App() {
-  var access=false;
-const status =window.localStorage.getItem("status");
-if (status === "owner"){access = true}
+  var access = false;
+  const status = window.localStorage.getItem("status");
+  if (status === "owner") { access = true }
 
 
   return (
     <div>
-      
-     <Navbar />
+
       <Routes>
-        <Route path="/" element={<HomePage />} />
-      
-        <Route path="/AllCrafts" element={<AllCraftsCards />} />
+        <Route path="/" element={<><Navbar /> <HomePage /></>} />
+
+        <Route path="/AllCrafts" element={<><Navbar /> <AllCraftsCards /></>} />
         {/* <Route path="profile" element={<UserProfilePage />} /> */}
-        <Route path="slider" element={<Slider />} />
-        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="slider" element={<><Navbar /> <Slider /></>} />
+        <Route path="/SignUp" element={<><Navbar /> <SignUp /></>} />
 
         {/* <Route path="CardDetails" element={<CardDetails/>} /> */}
-        <Route path="/login" element={<Login/>} />
-        <Route path="/StorePage" element={<StorePage/>} />
-        <Route path="/allcategory" element={<AllCategoryPage/>}/>
-        <Route path="/products/:id" element={<ProductDetalisPage />} />
-        <Route path="/products" element={<ShopProductsPage/>}/>
+        <Route path="/login" element={<><Navbar /> <Login /></>} />
+        <Route path="/StorePage" element={<><Navbar /> <StorePage /></>} />
+        <Route path="/allcategory" element={<><Navbar /> <AllCategoryPage /></>} />
+        <Route path="/products/:id" element={<><Navbar /> <ProductDetalisPage /></>} />
+        <Route path="/products" element={<><Navbar /> <ShopProductsPage /></>} />
 
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<><Navbar /> <Login /></>} />
 
-       
-       
 
-        
+
+
+
 
 
         {access ? (<>
-        <Route path="/adminprofile" element={<AdminProfilePage/>} />
-        <Route path="/adminallproducts" element={<AdminAllProductsPage />} />
-        <Route path="/adminallCrafts" element={<AdminAllCraftsPage />} />
-        <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
-        <Route path="/adminaddcraft" element={<AdminAddCraft />} />
-         </>)
-           :(
+          <Route path="/adminprofile" element={<AdminProfilePage />} />
+          <Route path="/adminallproducts" element={<AdminAllProductsPage />} />
+          <Route path="/adminallCrafts" element={<AdminAllCraftsPage />} />
+          <Route path="/adminaddproduct" element={<AdminAddProductsPage />} />
+          <Route path="/adminaddcraft" element={<AdminAddCraft />} />
+        </>)
+          : (
             <>
-        <Route path="/userprofile" element={<UserProfilePage />} />
-        <Route path="/userfavoriteproduct" element={<UserFavoriteProductsPage/>}/>
-        
-        </>)}
-        
-        <Route path="/CatPage" element={<CatPage/>} />
-        
+              <Route path="/userprofile" element={<><Navbar /><UserProfilePage /></>} />
+              <Route path="/userfavoriteproduct" element={<UserFavoriteProductsPage />} />
+
+            </>)}
+
+        <Route path="/CatPage" element={<><Navbar /><CatPage /></>} />
+
 
       </Routes>
       <Footer />
     </div>
   );
 }
- 

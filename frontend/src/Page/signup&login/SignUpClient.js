@@ -38,7 +38,7 @@ export default function SignUpClient() {
       <h2 className="mb-4 animate__animated animate__fadeInDown ">Client Sign Up </h2>
       <div className="form-group animate__animated animate__fadeInLeft">
 
-      {success && (navigate("/StorePage"))}
+      {success && (navigate(0)  ,  navigate("/StorePage"))}
       {error && (
      <div className="alert alert-danger" role="alert">
      {error.message.split(",")[0]}
