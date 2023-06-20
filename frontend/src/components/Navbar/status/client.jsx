@@ -129,7 +129,7 @@ const ClientNavbar = () => {
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/">
+                                    <a className="nav-link" href="#">
                                         Log out
                                     </a>
                                 </li>

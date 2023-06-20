@@ -2,13 +2,15 @@ import React from 'react';
 import styles from './Navbar.css';
 
 const ClientDropDownProfile = () => {
-    const changeStatusToNull = () => {
-        let answer = window.confirm("are you sure you want to logout")
+    const changeStatusToNull = (event) => {
+        event.preventDefault();
+        let answer = window.confirm("Are you sure you want to logout?");
         if (answer) {
             window.localStorage.setItem('status', 'null');
             window.localStorage.removeItem('email');
+            window.location.href = '/';
         }
-    }
+    };
     return (
         <div className='flex flex-col dropDownProfile'>
             <ul className='flex flex-col gap-4'>
