@@ -119,7 +119,7 @@ const ClientNavbar = () => {
                         {shouldDisplayAdditionalElement && (
                             <>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/profile">
+                                    <a className="nav-link" href="/userprofile">
                                         Profile
                                     </a>
                                 </li>

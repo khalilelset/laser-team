@@ -1,19 +1,7 @@
+*{
+  font-size: 15px;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
-body {
-    margin: 0;
-    /* font-family: "Comfortaa", sans-serif;
-    font-family: "Sora", sans-serif; */
-    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  
-    font-family: 'Comfortaa', cursive;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Raleway', sans-serif; */
-    font-family: "Sora", sans-serif;
-    
-
-
-  }
   .m-0 {
     margin: 0;
   }
@@ -21,7 +9,6 @@ body {
     padding: 0;
   }
   .font {
-    font-family: "Comfortaa", sans-serif;
     background-color: #f9f9f9;
   }
   .hieght-search {
@@ -42,7 +29,6 @@ body {
   }
   .sub-tile {
     color: #272727;
-    font-family: 'Comfortaa';
     font-size: 21px;
     font-weight: bold;
     letter-spacing: 0;
@@ -74,7 +60,6 @@ body {
   }
   .slider-title {
     color: #915970;
-    font-family: 'Comfortaa';
     font-size: 24px;
     letter-spacing: 0;
     line-height: 32px;
@@ -82,7 +67,6 @@ body {
   }
   .slider-text {
     color: #915970;
-    font-family: 'Comfortaa';
     font-size: 30px;
     font-weight: 800;
     letter-spacing: 0;
@@ -110,7 +94,6 @@ body {
   }
   .categoty-card-text {
     color: #555550;
-    font-family: 'Comfortaa';
     font-size: 18px;
     font-weight: bold;
     text-align: center;
@@ -120,7 +103,6 @@ body {
   
   .card-title {
     color: #555550;
-    font-family: 'Comfortaa';
     font-size: 16px;
     letter-spacing: 0;
     line-height: 20px;
@@ -128,7 +110,6 @@ body {
   }
   .card-price {
     color: #272727;
-    font-family: 'Comfortaa';
     font-size: 21px;
     font-weight: bold;
     letter-spacing: 0;
@@ -136,14 +117,12 @@ body {
   }
   .card-currency {
     color: #555550;
-    font-family: 'Comfortaa';
     font-size: 18px;
     letter-spacing: 0;
     line-height: 24px;
   }
   .card-rate {
     color: #ffc107;
-    font-family: 'Comfortaa';
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 0;
@@ -200,7 +179,6 @@ body {
   }
   .footer-shroot {
     color: #979797;
-    font-family: 'Comfortaa';
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 0;
@@ -210,7 +188,6 @@ body {
   
   .footer-phone {
     color: #979797;
-    font-family: 'Comfortaa';
     font-size: 13px;
     font-weight: bold;
     text-align: right;
@@ -221,7 +198,6 @@ body {
   /* card filter style */
   .search-count-text {
     color: #979797;
-    font-family: 'Comfortaa';
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0;
@@ -257,7 +233,6 @@ body {
   
   .cat-text {
     color: #979797;
-    /* font-family: 'Comfortaa'; */
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 0;
@@ -275,7 +250,6 @@ body {
   
   .cat-rate {
     color: #ffc107;
-    font-family: 'Comfortaa';
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 0;
@@ -285,7 +259,6 @@ body {
   
   .barnd-text {
     color: #555550;
-    font-family: 'Comfortaa';
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 0;
@@ -370,7 +343,6 @@ body {
   .cat-text-header {
 
     color: #979797;
-    font-family: "Comfortaa";
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 0;
@@ -401,7 +373,6 @@ body {
   }
   .title-login {
     color: #555550;
-    font-family: 'Comfortaa';
     font-size: 21px;
     font-weight: 800;
     letter-spacing: 0;
@@ -425,7 +396,6 @@ body {
   /* cart page */
   .cart-title {
     color: #555550;
-    font-family: 'Comfortaa';
     font-size: 21px;
     font-weight: 800;
     letter-spacing: 0;
@@ -450,7 +420,6 @@ body {
     height: 46px;
     width: 90%;
     border: 1px solid #979797;
-    font-family: "Comfortaa";
     font-size: 12px;
     font-weight: normal;
   }
@@ -466,7 +435,6 @@ body {
     border-radius: 0 !important;
     background-color: #272727;
     color: #ffff !important;
-    font-family: "Comfortaa";
     font-size: 12px;
     font-weight: normal;
   }
@@ -490,7 +458,6 @@ body {
   
   .admin-side-text {
     color: #272727;
-    font-family: "Comfortaa";
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 0;
@@ -508,7 +475,6 @@ body {
   }
   .admin-content-text {
     color: #555550;
-    font-family: 'Comfortaa';
     font-size: 21px;
     font-weight: 800;
     letter-spacing: 0;
@@ -518,7 +484,6 @@ body {
   }
   .item-delete-edit {
     color: #979797;
-    font-family: "Comfortaa";
     font-size: 16px;
     letter-spacing: 0;
     line-height: 30px;
@@ -528,7 +493,6 @@ body {
   
   .text-form {
     color: #979797;
-    font-family: "Comfortaa";
     font-size: 16px;
     letter-spacing: 0;
     line-height: 20px;
@@ -593,14 +557,12 @@ body {
   }
   .rate-count {
     color: #979797;
-    font-family: "Comfortaa";
     font-size: 12px;
     letter-spacing: 0;
     line-height: 23px;
   }
   .rate-name {
     color: #555550;
-    font-family: "Comfortaa";
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 0;
@@ -608,7 +570,6 @@ body {
   }
   .rate-description {
     color: #555550;
-    font-family: "Comfortaa";
     font-size: 14px;
     letter-spacing: 0;
     line-height: 19px;
@@ -626,7 +587,6 @@ body {
   }
   .order-title {
     color: #272727;
-    font-family: "Comfortaa";
     font-size: 16px;
     font-weight: bold;
   }
@@ -675,7 +635,6 @@ body {
   /* filter side style */
   .filter-title {
     color: #555550;
-    font-family: "Comfortaa";
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0;
@@ -684,7 +643,6 @@ body {
   }
   .filter-sub {
     color: #555550;
-    font-family: "Comfortaa";
     font-size: 12px;
     letter-spacing: 0;
     line-height: 17px;
