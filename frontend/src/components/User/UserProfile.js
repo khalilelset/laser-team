@@ -73,7 +73,7 @@ const UserProfile = () => {
           }   }
 
         setShowModal(false);
-        //navigate(0);
+        navigate(0);
       };
       
 
