@@ -27,6 +27,7 @@ import UserProfilePage from "./Page/User/UserProfilePage";
 import AdminProfilePage from "./Page/Admin/AdminProfile";
 
 import UserFavoriteProductsPage from "./Page/User/UserFavoriteProductsPage"
+import CraftDetails from "./components/AllCraftsCards/CraftDetails";
 
 
 
@@ -60,10 +61,6 @@ export default function App() {
 
 
 
-
-
-
-
         {access ? (<>
           <Route path="/adminprofile" element={<AdminProfilePage />} />
           <Route path="/adminallproducts" element={<AdminAllProductsPage />} />
@@ -80,6 +77,8 @@ export default function App() {
 
         <Route path="/CatPage" element={<><Navbar /><CatPage /></>} />
 
+        <Route path="/AllCraftsdetails" element={<><Navbar /> <CraftDetails /></>} />
+        
 
       </Routes>
       <Footer />

@@ -27,10 +27,10 @@ const CardProductsContainer = ({ title, btntitle, pathText }) => {
      <ProductCard/>
      </Row>
      <Row className='my-2 d-flex justify-content-between'>
-     <ProductCard/>
-     <ProductCard/>
-     <ProductCard/>
-     <ProductCard/> */}
+     
+     <ProductCard/><ProductCard/><ProductCard/><ProductCard/>
+     
+      */}
         {products.slice(0, 8).map((product) => (
           // <ProductCard product={product} />
           <Card product={product} />

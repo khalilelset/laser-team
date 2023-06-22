@@ -28,7 +28,7 @@ const Team = () => {
                 {/* <img src="img/team4.jpg" alt="" /> */}
                 <img src={process.env.PUBLIC_URL + '/img/tdr.jpeg'} style={{ borderRadius: '100%' }} />
                 <h5 class="mb-0 mt-4">Dr. Salah ElFalou</h5>
-                <p>project manager</p>
+                <p>Project Manager</p>
                 <div class="social-icons">
                   {/* <a href="#">
         <i class="bx bxl-facebook"></i>
