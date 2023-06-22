@@ -25,8 +25,6 @@ import AdminAddProductsPage from "./Page/Admin/AdminAddProductsPage";
 import AdminAddCraft from "./Page/Admin/AdminAddCrafts";
 import UserProfilePage from "./Page/User/UserProfilePage";
 import AdminProfilePage from "./Page/Admin/AdminProfile";
-
-import UserFavoriteProductsPage from "./Page/User/UserFavoriteProductsPage"
 import CraftDetails from "./components/AllCraftsCards/CraftDetails";
 
 
@@ -71,7 +69,6 @@ export default function App() {
           : (
             <>
               <Route path="/userprofile" element={<><Navbar /><UserProfilePage /></>} />
-              <Route path="/userfavoriteproduct" element={<UserFavoriteProductsPage />} />
 
             </>)}
 

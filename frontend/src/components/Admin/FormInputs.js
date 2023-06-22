@@ -1,4 +1,4 @@
-export default function FormInputs({ formData, handleChange }) {
+export default function FormInputs({ formData, handleChange ,handlePhotoChange }) {
     return (
       <form>
         <div className="form-group">
@@ -41,7 +41,7 @@ export default function FormInputs({ formData, handleChange }) {
           <div className="custom-file">     
               <div class="mb-3">
                <label for="formFile" class="form-label">Default file input example</label>
-               <input  type="file" class="form-control" id="ownerImage"  name="ownerImage"  onChange={handleChange}/>  
+               <input  type="file" class="form-control" id="ownerImage"  name="ownerImage"  onChange={handlePhotoChange}/>  
                 </div>
 
           </div>

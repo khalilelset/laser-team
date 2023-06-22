@@ -45,6 +45,16 @@ const AdminProfile = () => {
           [name]: value,
         }));
       };
+      
+      const handlePhotoChange = (e) => {
+        const file = e.target.files[0];
+        const fileName = file ? file.name : '';
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          ownerImage: fileName,
+        }));
+        
+      };
 
       const handleSubmit = async (event) => {
         event.preventDefault();
@@ -96,8 +106,8 @@ const AdminProfile = () => {
         }));
         setShowModal(true);
       };
-      
-     
+
+    
     return (
         <>
             {!isLoading ? ( 
@@ -119,7 +129,7 @@ const AdminProfile = () => {
         <Modal.Title>Edit Profile</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <FormInputs formData={formData} handleChange={handleChange} />
+        <FormInputs formData={formData} handleChange={handleChange} handlePhotoChange={handlePhotoChange}/>
         <div className="form-group" style={{ marginBottom: "20px" }}>
           <button type="submit" onClick={handleSubmit} className="btn btn-primary" style={{ marginRight: "10px" }}>
             Save

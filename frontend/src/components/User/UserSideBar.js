@@ -24,12 +24,6 @@ const UserSideBar = () => {
                  </div>
                 </Link>
                
-               
-              
-                <Link to="/userfavoriteproduct" style={{ textDecoration: 'none' }}>
-                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
-                      Favorite product      </div>
-                </Link>
 
                 <Button variant="danger" size="lg" onClick={() => setShowModal(true)}>
                  Logout

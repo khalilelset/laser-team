@@ -11,7 +11,11 @@ export default function SignUpClient() {
   const [email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [photo, setphoto] = useState("");
-  console.log(photo)
+   const handlePhotoChange = (e) => {
+    const file = e.target.files[0];
+    const fileName = file ? file.name : '';
+    setphoto(fileName);
+  };
   const loading = useSelector((state) => state.signup.loading);
   const success = useSelector((state) => state.signup.success);
   const error = useSelector((state) => state.signup.error);
@@ -71,7 +75,7 @@ export default function SignUpClient() {
 
         <label htmlFor="profilePhoto" style={{ marginBottom: "10px",marginTop:"30px"}}>Photo for your profile:</label>
         <input type="file" id="profilePhoto" style={{ marginBottom: "20px",boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',backgroundColor:"rgb(0,0,0,0.5)",color:"white"} }
-         className="form-control" value={photo} onChange={(e) => setphoto(e.target.value)} />
+         className="form-control"   onChange={handlePhotoChange} />
       </div>
 
       <button onClick={handleSubmit} type="submit" className="btn btn-primary" disabled={loading}>

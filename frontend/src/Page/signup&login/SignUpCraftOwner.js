@@ -22,6 +22,13 @@ const success = useSelector((state) => state.signcpco.success);
 const error = useSelector((state) => state.signcpco.error);
 const dispatch = useDispatch();
 
+const handlePhotoChange = (e) => {
+  const file = e.target.files[0];
+  const fileName = file ? file.name : '';
+  setownerImage(fileName);
+};
+
+console.log(ownerImage)
 const handleSubmit = (event) => {
   event.preventDefault();
   const formData = {
@@ -91,7 +98,7 @@ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',backgroundColor:"rgb(0,0,0,0.5)",color
 
   <label htmlFor="password" style={{marginBottom:"10px" , marginTop:"30px"}}>photo for your profile:</label>
  <input type="file" id="profilePhoto" style={{marginBottom:"10px",boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
- ,backgroundColor:"rgb(0,0,0,0.5)",color:"white"}} className="form-control" value={ownerImage} onChange={(e) => setownerImage(e.target.value)} />
+ ,backgroundColor:"rgb(0,0,0,0.5)",color:"white"}} className="form-control"  onChange={handlePhotoChange} />
 
  <label htmlFor="phoneNumber"style={{marginBottom:"10px"}}>Phone Number</label>
   <input type="tel" id="phoneNumber"  className="form-control"  style={{marginBottom:"10px",boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
