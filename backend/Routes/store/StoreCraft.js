@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/api/store/Craft', async (req, res) => {
     try {
-    const data = await Craft.find();
+    const data = await Craft.find().sort({ _id: -1 });;
     res.json(data)
     }
     catch (error) {

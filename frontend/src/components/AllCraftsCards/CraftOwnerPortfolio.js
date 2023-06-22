@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
 import {Container,Row,Col}from 'reactstrap'
-import { useParams } from "react-router-dom";
 import w from "./../../images/Unknown_person.jpg"
 import ProductPortfolio from './ProductPortfolio'
 import CraftPortfolio from "./CraftPortfolio";
 
-const CraftOwnerPortfolio = () => {
-  const { id } = useParams();
+const CraftOwnerPortfolio = ({ idd }) => {
+ 
   const [portfolio, setPortfolio] = useState(null);
   const [activeForm, setActiveForm] = useState('user1');
   const showUserForm = (formId) => {
@@ -17,7 +15,7 @@ const CraftOwnerPortfolio = () => {
   useEffect(() => {
     const fetchPortfolio = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/craftowner/portfolio/productid/${id}`);
+        const response = await axios.get(`http://localhost:4000/api/craftowner/portfolio/craftid/${idd}`);
         setPortfolio(response.data);
       } catch (error) {
         console.error(error);
@@ -35,7 +33,6 @@ const CraftOwnerPortfolio = () => {
   }
 
   return (
-
 <div style={{marginTop:"100px"}}>
 <h1 className="text-center my-4">Portfolio of craft owner</h1>
 

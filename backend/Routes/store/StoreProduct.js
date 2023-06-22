@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/api/store/product", async (req, res) => {
   try {
-    const data = await Product.find();
+    const data = await Product.find().sort({ _id: -1 });
     res.json(data);
   } catch (error) {
     res.status(500).json({ message: error.message });

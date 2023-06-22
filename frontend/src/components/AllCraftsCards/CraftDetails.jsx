@@ -1,24 +1,26 @@
-
-
 import React, { useDeferredValue, useEffect, useState } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/actions/AllProductsActions";
 import { getCrafts } from "../../redux/actions/AllCraftsActions";
 import { Col, Row } from "react-bootstrap";
-
+import CraftOwnerPortfolio from "./CraftOwnerPortfolio";
 import productImage from "../../assets/images/products/fe3.jpg";
 import productImage1 from "../../assets/images/products/fe2.jpg";
 import { Link } from "react-router-dom";
 import ReactImageGallery from "react-image-gallery";
 import Gallery from "../Utility/Gallery";
+import { useLocation } from 'react-router-dom';
+
 
 const CraftDetails = () => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const idd = searchParams.get('idd');
   const dispatch = useDispatch();
   const craftsData = useSelector((state) => state.crafts);
   const [crafts, setCrafts] = useState([]);
   const [id, setId] = useState('');
-
+  console.log(idd)
   useEffect(() => {
     window.scrollTo(0, 0);
   },[]);
@@ -205,6 +207,8 @@ const CraftDetails = () => {
             
         </Col>
     </Row> */}
+
+    <CraftOwnerPortfolio idd={idd}/>
 </div>
 
 
