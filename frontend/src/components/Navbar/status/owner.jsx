@@ -125,12 +125,12 @@ const OwnerNavbar = () => {
                         {shouldDisplayAdditionalElement && (
                             <>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/MyProducts">
+                                    <a className="nav-link" href="/adminallproducts">
                                         My Products
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/MyCrafts">
+                                    <a className="nav-link" href="/adminallCrafts">
                                         My Crafts
                                     </a>
                                 </li>

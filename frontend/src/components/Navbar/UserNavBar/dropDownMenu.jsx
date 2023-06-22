@@ -18,8 +18,8 @@ const OwnerDropDownProfile = () => {
         <div className='flex flex-col dropDownProfile'>
             <ul className='flex flex-col gap-4'>
                 <li><a className='Profile' href='/adminprofile'>Profile</a></li>
-                <li><a className='MyProducts' href='/MyProducts'>My Products</a></li>
-                <li><a className='MyCrafts' href='/MyCrafts'>My Crafts</a></li>
+                <li><a className='MyProducts' href='/adminallproducts'>My Products</a></li>
+                <li><a className='MyCrafts' href='/adminallCrafts'>My Crafts</a></li>
                 <li><a className='Logout' onClick={changeStatusToNull}>Log out</a></li>
             </ul>
         </div>
