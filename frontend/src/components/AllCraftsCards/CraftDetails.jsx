@@ -77,6 +77,8 @@ const CraftDetails = () => {
 
   // const craft = useSelector((state) => state.craft);
   // console.log(craft);
+  
+  
   const images = [
     {
         original: `${productImage}`,
@@ -113,15 +115,11 @@ const CraftDetails = () => {
 //     setCurrentImageIndex(currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1);
 //   };
 
-
-
   return (
 
-
-    
     <div>
     <Row className="justify-content-center">
-        {/* <Col md="12" xs="12" sm="12" className="mt-4 "> */}
+         {/* <Col md="12" xs="" sm="6" className="mt-4 ">  */}
             <div className="card-detalis1 d-flex align-items-center ">
                 {/* <img
                     className="img-movie1 w-30"
@@ -139,9 +137,11 @@ const CraftDetails = () => {
                 // isRTL={true}
                 // showPlayButton={false}
                 // showThumbnails={false}
-                thumbnailWidth={100}
-                thumbnailHeight={200}
+                thumbnailWidth={200}
+                thumbnailHeight={300}
                 itemHeight={500}
+                className="gallery"
+                style={{ width:'500px',height:'500px'}}
                 
             />
             {/* <div>
@@ -174,8 +174,8 @@ const CraftDetails = () => {
         <Col md="12" xs="12" sm="12" className="mt-1 ">
             <div className="card-story1  d-flex flex-column align-items-start">
                 <div className="text-end p-4 ">
-                <p className="card-text-title1 border-bottom">details:{craft != {} &&  craft.craftTitle}</p>
-                    <p className="card-text-title1 border-bottom">details:{craft != {} && craft.craftDescription}</p>
+                <p className="card-text-title1 border-bottom">title:{craft != {} &&  craft.craftTitle}</p>
+                    <p className="card-text-title2 border-bottom">details:{craft != {} && craft.craftDescription}</p>
                 </div>
                 <div className="text-end px-2">
                     {/* <p className="card-text-story1">{movie.overview}</p> */}
