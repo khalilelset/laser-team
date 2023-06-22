@@ -46,6 +46,10 @@ const AdminSideBar = () => {
                      <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
                      Crafts management                    </div>
                     </Link>
+                    <Link to="/StorePage" style={{ textDecoration: 'none' }}>
+                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+                                   Back To Store </div>
+                                  </Link>
 
                     <Button variant="danger" size="lg" onClick={() => setShowModal(true)}>
                                 Logout

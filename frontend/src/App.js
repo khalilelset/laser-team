@@ -5,7 +5,7 @@ import React from "react";
 import Login from "./Page/signup&login/Login";
 import HomePage from "./Page/HomePage/HomePage";
 import { Route, Routes } from "react-router-dom";
-
+import CraftOwnerPortfolio from "./Page/Products/CraftOwnerPortfolio";
 import Navbar from "./components/Navbar/UserNavBar/Navbar";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./Page/signup&login/SignUp";
@@ -54,7 +54,7 @@ export default function App() {
         <Route path="/login" element={<><Navbar /> <Login /></>} />
         <Route path="/StorePage" element={<><Navbar /> <StorePage /></>} />
         <Route path="/allcategory" element={<><Navbar /> <AllCategoryPage /></>} />
-        <Route path="/products/:id" element={<><Navbar /> <ProductDetalisPage /></>} />
+        <Route path="/products/:id" element={<><Navbar /> <ProductDetalisPage /> <CraftOwnerPortfolio/></>} />
         <Route path="/products" element={<><Navbar /> <ShopProductsPage /></>} />
 
         <Route path="login" element={<><Navbar /> <Login /></>} />

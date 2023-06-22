@@ -1,6 +1,6 @@
 import { useDropzone } from 'react-dropzone';
 import { Row, Col } from 'react-bootstrap';
-
+import {  useNavigate } from 'react-router-dom'
 import add from '../../images/add.png';
 import React, { useCallback, useState } from 'react';
 
@@ -9,6 +9,8 @@ export default function ImagesProduct({ craftTitle, craftDescription, mainCraftI
   const email = emailL.slice(1, -1);
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [uploadedFilesp, setUploadedFilesp] = useState([]);
+const navigate=useNavigate();
+  
   const handleAddProduct = () => {
     if( mainCraftImage==null || uploadedFiles==null){
       return alert("you can not add product without main photo  ")
@@ -39,7 +41,7 @@ export default function ImagesProduct({ craftTitle, craftDescription, mainCraftI
       .then((response) => response.json())
       .then((data) => {
         // Handle the API response
-        console.log(data);
+        navigate(0);
       })
       .catch((error) => {
         // Handle the error
@@ -139,7 +141,7 @@ export default function ImagesProduct({ craftTitle, craftDescription, mainCraftI
       <Row>
         <Col sm="8" className="d-flex justify-content-start ">
           <button className="btn-save d-inline mt-2" onClick={handleAddProduct}>
-            Add product
+            Add Craft
           </button>
         </Col>
       </Row>
