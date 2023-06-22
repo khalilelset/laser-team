@@ -1,13 +1,15 @@
 import { useDropzone } from 'react-dropzone';
 import { Row, Col } from 'react-bootstrap';
 import add from '../../images/add.png';
-import React, { useCallback, useState } from 'react';
-
+import React, { useCallback, useState ,  } from 'react';
+import {  useNavigate } from 'react-router-dom'
 export default function ImagesProduct({ productTitle, productDescription, productAvailableQuantity, price, productCategory, mainProductImage }) {
   const emailL = window.localStorage.getItem("email");
   const email = emailL.slice(1, -1);
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [uploadedFilesp, setUploadedFilesp] = useState([]);
+  const navigate = useNavigate();
+
   const handleAddProduct = () => {
 
     if( mainProductImage==null){
@@ -39,7 +41,8 @@ export default function ImagesProduct({ productTitle, productDescription, produc
       .then((response) => response.json())
       .then((data) => {
         // Handle the API response
-        console.log(data);
+        navigate(0);
+
       })
       .catch((error) => {
         // Handle the error
