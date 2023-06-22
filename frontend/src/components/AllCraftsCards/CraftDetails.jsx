@@ -8,7 +8,10 @@ import { getCrafts } from "../../redux/actions/AllCraftsActions";
 import { Col, Row } from "react-bootstrap";
 
 import productImage from "../../assets/images/products/fe3.jpg";
+import productImage1 from "../../assets/images/products/fe2.jpg";
 import { Link } from "react-router-dom";
+import ReactImageGallery from "react-image-gallery";
+import Gallery from "../Utility/Gallery";
 
 const CraftDetails = () => {
   const dispatch = useDispatch();
@@ -74,6 +77,43 @@ const CraftDetails = () => {
 
   // const craft = useSelector((state) => state.craft);
   // console.log(craft);
+  const images = [
+    {
+        original: `${productImage}`,
+    },
+    {
+        original: `${productImage1}`,
+    },
+    {
+        original: `${productImage}`,
+    },
+];
+
+
+
+
+// const images1 = [
+    
+//        {productImage},
+    
+    
+//         {productImage1},
+    
+    
+//         {productImage}
+    
+// ];
+// const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+//   const handlePrevClick = () => {
+//     setCurrentImageIndex(currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1);
+//   };
+
+//   const handleNextClick = () => {
+//     setCurrentImageIndex(currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1);
+//   };
+
+
 
   return (
 
@@ -83,7 +123,7 @@ const CraftDetails = () => {
     <Row className="justify-content-center">
         {/* <Col md="12" xs="12" sm="12" className="mt-4 "> */}
             <div className="card-detalis1 d-flex align-items-center ">
-                <img
+                {/* <img
                     className="img-movie1 w-30"
                     src={productImage}
                     alt="ascad"
@@ -91,7 +131,27 @@ const CraftDetails = () => {
                     width="520px"
                     style={{height: '860px', width: '860px'}}
                     
-                />
+                /> */}
+
+<ReactImageGallery items={images}
+                // defaultImage={productImage1}
+                // showFullscreenButton={false}
+                // isRTL={true}
+                // showPlayButton={false}
+                // showThumbnails={false}
+                thumbnailWidth={100}
+                thumbnailHeight={200}
+                itemHeight={500}
+                
+            />
+            {/* <div>
+      <img src={images1[0]} alt={`currentImageIndex`} />
+      <div>
+        <button onClick={handlePrevClick}>Previous</button>
+        <button onClick={handleNextClick}>Next</button>
+      </div>
+    </div> */}
+
                 {/* <div className="justify-content-center text-center  mx-auto">
                     <p className="card-text-details1 border-bottom">
                     title:  {craft != {} &&  craft.craftTitle}
@@ -114,7 +174,8 @@ const CraftDetails = () => {
         <Col md="12" xs="12" sm="12" className="mt-1 ">
             <div className="card-story1  d-flex flex-column align-items-start">
                 <div className="text-end p-4 ">
-                    <p className="card-text-title1 border-bottom">details:</p>
+                <p className="card-text-title1 border-bottom">details:{craft != {} &&  craft.craftTitle}</p>
+                    <p className="card-text-title1 border-bottom">details:{craft != {} && craft.craftDescription}</p>
                 </div>
                 <div className="text-end px-2">
                     {/* <p className="card-text-story1">{movie.overview}</p> */}
@@ -122,7 +183,7 @@ const CraftDetails = () => {
             </div>
         </Col>
     </Row>
-    <Row className="justify-content-center">
+    {/* <Row className="justify-content-center">
         <Col
             md="10"
             xs="12"
@@ -135,15 +196,15 @@ const CraftDetails = () => {
                     Home page
                 </button>
             </Link>
-            {/* <a href={movie.homepage} > */}
+          
                 <button
                     style={{ backgroundColor: "#b45b35", border: "none" }}
                     className="btn btn-primary">
                     watch film
                 </button>
-            {/* </a> */}
+            
         </Col>
-    </Row>
+    </Row> */}
 </div>
 
 
