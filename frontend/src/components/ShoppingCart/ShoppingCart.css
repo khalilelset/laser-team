@@ -1,0 +1,37 @@
+.product-name,
+.product-price {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quantity {
+  width: 50px;
+}
+
+.total {
+  white-space: nowrap;
+}
+
+.remove-button {
+  width: 70px;
+}
+.product-table {
+    table-layout: auto;
+    width: 100%;
+  }
+
+  .product-table th,
+  .product-table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .quantity {
+    width: 50px;
+  }
+
+  .remove-button {
+    min-width: 70px;
+  }

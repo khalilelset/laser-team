@@ -9,6 +9,13 @@ const productsInCartSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Product",
   },
+  product: [
+    {
+      type: mongoose.Schema.Types.Mixed,
+      ref: "Product",
+    },
+  ],
+
   numOfProduct: {
     type: Number,
     default: 1,
