@@ -16,7 +16,6 @@ import AllCategoryPage from "./Page/Category/AllCategoryPage";
 import ProductDetalisPage from "./Page/Products/ProductDetalisPage";
 import ShopProductsPage from "./Page/Products/ShopProductsPage";
 import Slider from "./components/Slider/Slider";
-
 //import profile
 
 import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
