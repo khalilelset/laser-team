@@ -6,6 +6,7 @@ import Features from "../../components/Features/Features";
 import Team from "../../components/Team/Team";
 import Contact from "../../components/Contact/Contact";
 import Footer from "../../components/Footer/Footer";
+import Socket from "../../components/soketio/Socket";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <Services />
       <Features />
       <Team />
+      <Socket/>
       <Contact />
 
     </>
