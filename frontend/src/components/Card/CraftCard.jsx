@@ -1,7 +1,8 @@
 import React from "react";
 import "./Card.css";
  //import productImage from "../../assets/images/products/Apple_watch-series7_hero_09142021_big.jpg.slideshow-medium.jpg";
-import productImage from "../../assets/images/products/fe3.jpg";
+// import productImage from "../../assets/images/products/fe3.jpg";
+import productImage from "../../assets/image/craft/craftc/craft1c.jpg";
 import { Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 

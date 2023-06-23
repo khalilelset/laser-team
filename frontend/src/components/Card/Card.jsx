@@ -1,9 +1,9 @@
 import React from "react";
 import "./Card.css";
-import productImage from "../../assets/images/products/Apple_watch-series7_hero_09142021_big.jpg.slideshow-medium.jpg";
+
 import { Link } from "react-router-dom";
 import Login from "../../Page/signup&login/Login";
-
+import productImage from "../../assets/image/product/productc/productc10.jpeg";
 const Card = ({ product }) => {
   const handleButtonClick = () => {
     const id = product._id;
@@ -53,6 +53,8 @@ const Card = ({ product }) => {
               src={productImage}
               className="card-img-top img-fluid"
               alt="..."
+              height="200px"
+              width="150px"
             />
             <div className="card-body" style={{height:'280px'}}>
               <h5 className="productTitle" style={{height:'30px'}} >{product.productTitle}</h5>
