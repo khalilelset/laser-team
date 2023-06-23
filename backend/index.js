@@ -16,7 +16,6 @@ const profileOwner = require("./Routes/CraftOwner/CraftOwner")
 const cookieParser = require("cookie-parser");
 const companyRouter = require("./Routes/company/companyRouter");
 const ProductOfOwner=require("./Routes/CraftOwner/CraftOwner")
-const express = require("express");
 const http = require("http");
 const port = 4000;
 const server = http.createServer(app);
@@ -57,12 +56,10 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
+  
   connectedUsers++;
   socket.emit("connection", connectedUsers);
 
-  socket.on("disconnect", () => {
-    io.emit("connection", connectedUsers);
-  });
 });
 //Cart Routes
 app.use("/", cartRouter);
@@ -97,7 +94,7 @@ app.use("/", profileOwner);
 //ProductOfOwner
 app.use("/", ProductOfOwner);
 
-app.listen(4000, () => {
+server.listen(4000, () => {
   console.log(`Server Started at \${4000}`);
 });
 
