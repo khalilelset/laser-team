@@ -49,8 +49,8 @@ const OwnerNavbar = () => {
 
 
                 {/* To add a logo to the NavBar */}
-                <a className="navbar-brand" href="#">
-                    <img className="logo" src="img/logo-dark.svg" alt="" />
+                <a className="logo" href="#">
+                    <a href="/">Tripoli Crafts</a>
                 </a>
                 <button
                     className="navbar-toggler"
