@@ -17,6 +17,8 @@ const ProductDetalisPage = () => {
   const loading = useSelector((state) => state.product.loading);
   const error = useSelector((state) => state.product.error);
   useEffect(() => {
+   
+      window.scrollTo(0, 0);
     dispatch(getProduct(id));
   }, [dispatch, id]);
   if (loading) {
@@ -26,6 +28,7 @@ const ProductDetalisPage = () => {
   if (error) {
     return <p>Error: {error}</p>;
   }
+ 
   return (
     //
     <div>
