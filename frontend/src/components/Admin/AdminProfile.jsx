@@ -3,6 +3,9 @@ import { Row, Col , Modal, Button } from 'react-bootstrap'
 import FormInputs from './FormInputs';
 import "./Admin.css"
 import unknow from "./../../images/Unknown_person.jpg"
+import prof from "./../../assets/image/profile/tkhaledblue.jpeg"
+
+
 import { useNavigate } from 'react-router-dom';
 const AdminProfile = () => {
     const [craftOwner, setCraftOwner] = useState(null);

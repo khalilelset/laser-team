@@ -20,7 +20,7 @@ const ShopProductsPage = () => {
 
 
   const dispatch = useDispatch();
-  const itemsPerPage = 4;
+  const itemsPerPage = 12;
   const productsData = useSelector((state) => state.products);
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -127,7 +127,7 @@ setItemOffset(newOffset);
         </Row>
         {/* <Pagination /> */}
 
-{pageCount > 0 && <ReactPaginate
+{pageCount > 0 && <div style={{marginTop:'20px',marginBottom:'20px'}}><ReactPaginate
         breakLabel="..."
         nextLabel="next"
         onPageChange={handlePageClick}
@@ -146,7 +146,7 @@ setItemOffset(newOffset);
         breakLinkClassName={"page-link"}
         activeClassName={"active"}
       />
-
+</div>
 }
         
       </Container>

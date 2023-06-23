@@ -11,7 +11,7 @@ const SearchCountResult = ({ title ,setSearch,filterByTitle}) => {
   }
 
     return (
-        <div className="d-flex pt-3 px-2 search-box">
+        <div className="d-flex pt-3 px-2 search-box" style={{marginBottom:"20px" , marginTop:"20px"}}>
              {/* justify-content-between */}
             <div className="sub-tile" > <span style={{color:"#add3ff"}}>{title} </span> search value </div>
            

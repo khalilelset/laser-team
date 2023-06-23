@@ -4,8 +4,13 @@ import { getProducts } from "../../redux/actions/AllProductsActions";
 import { getCrafts } from "../../redux/actions/AllCraftsActions";
 import { Col, Row } from "react-bootstrap";
 import CraftOwnerPortfolio from "./CraftOwnerPortfolio";
-import productImage from "../../assets/images/products/fe3.jpg";
-import productImage1 from "../../assets/images/products/fe2.jpg";
+
+import craftd1 from "../../assets/image/craft/craftd/craftd4.jpg";
+import craftd2 from "../../assets/image/craft/craftd/craftd7.jpg";
+import craftd3 from "../../assets/image/craft/craftd/craftd10.jpg";
+
+
+
 import { Link } from "react-router-dom";
 import ReactImageGallery from "react-image-gallery";
 import Gallery from "../Utility/Gallery";
@@ -83,13 +88,13 @@ const CraftDetails = () => {
   
   const images = [
     {
-        original: `${productImage}`,
+        original: `${craftd1}`,
     },
     {
-        original: `${productImage1}`,
+        original: `${craftd2}`,
     },
     {
-        original: `${productImage}`,
+        original: `${craftd3}`,
     },
 ];
 

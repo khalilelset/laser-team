@@ -25,4 +25,15 @@ const getMessages = async (req, res) => {
   }
 };
 
-module.exports = { addMessage, getMessages };
+const deleteMessages = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const result = await Contact.findByIdAndDelete(id);
+    res.send(result);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+
+module.exports = { addMessage, getMessages ,deleteMessages };

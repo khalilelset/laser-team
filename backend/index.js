@@ -14,10 +14,19 @@ const GetCraft = require("./Routes/store/StoreCraft");
 const Contact = require("./Routes/Contact/contactRouter");
 const profileOwner = require("./Routes/CraftOwner/CraftOwner")
 const cookieParser = require("cookie-parser");
-
 const companyRouter = require("./Routes/company/companyRouter");
 const ProductOfOwner=require("./Routes/CraftOwner/CraftOwner")
+const http = require("http");
+const port = 4000;
+const server = http.createServer(app);
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  },
+});
 //const routes = require('./route');
+
 var cors = require("cors");
 const { validateToken } = require("./JWT");
 app.use(cors());
@@ -35,13 +44,23 @@ database.once("connected", () => {
 app.use(express.json());
 app.use(cookieParser());
 const router = express.Router();
-
+let connectedUsers = 0;
 //Client Routes
 app.use("/", clientRouter);
 // app.get("/profile", validateToken, (req, res) => {
 //   res.json("profile");
 // });
+app.get("/", (req, res) => {
+  connectedUsers++;
+  res.send({  connectedUsers }).status(200);
+});
 
+io.on("connection", (socket) => {
+  
+  connectedUsers++;
+  socket.emit("connection", connectedUsers);
+
+});
 //Cart Routes
 app.use("/", cartRouter);
 
@@ -75,6 +94,10 @@ app.use("/", profileOwner);
 //ProductOfOwner
 app.use("/", ProductOfOwner);
 
-app.listen(4000, () => {
+server.listen(4000, () => {
   console.log(`Server Started at \${4000}`);
 });
+
+
+
+
