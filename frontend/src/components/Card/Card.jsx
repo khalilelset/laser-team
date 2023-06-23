@@ -54,13 +54,13 @@ const Card = ({ product }) => {
               className="card-img-top img-fluid"
               alt="..."
             />
-            <div className="card-body">
-              <h5 className="productTitle">{product.productTitle}</h5>
-              <p className="card-text">
+            <div className="card-body" style={{height:'280px'}}>
+              <h5 className="productTitle" style={{height:'30px'}} >{product.productTitle}</h5>
+              <p className="card-text" style={{height:'70px'}}>
                 {product.productDescription.substr(0, 55)}
               </p>
-              <h5>{product.price}$</h5>
-              <p>{product.productAvailableQuantity} pieces</p>
+              <h5 style={{height:'30px'}}>{product.price}$</h5>
+              <p style={{height:'30px'}}>{product.productAvailableQuantity} pieces</p>
               {access === 0 ? (
                 <button
                   className="btn btn-primary"

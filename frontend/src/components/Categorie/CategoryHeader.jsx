@@ -62,7 +62,7 @@ cats.map((cats)=>{
 
 return (
   
-<div>
+<div style={{marginTop:"40px" , marginBottom:"40px"}}>
 {/* <button   onClick={()=>onFilter(cat)} className='btn mx-2' style={{border : "1px solid #b45b35" }} >{cat}</button> */}
 <button onClick={()=>onFilter(cats)} className='btn mx-2' style={{border : "1px solid #add3ff" }} >{cats}</button>
 
