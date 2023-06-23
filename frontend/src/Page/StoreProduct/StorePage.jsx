@@ -17,7 +17,7 @@ const StorePage = () => {
       <CardProductsContainer title=" Product" />
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
         <Link to="/products">
-          <button className='shopping-now'>more</button>
+          <button className='shopping-now'>more </button>
         </Link>
       </div>
 

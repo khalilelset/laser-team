@@ -16,7 +16,6 @@ const AdminAllProductsCard = ({_id,mainProductImage,price,productAvailableQuanti
            productAvailableQuantity: 0,
         });
 
-
         const emailL= window.localStorage.getItem("email");
         const email=emailL.slice(1, -1);                    
         const deleteProduct = async () => {
@@ -100,17 +99,17 @@ const AdminAllProductsCard = ({_id,mainProductImage,price,productAvailableQuanti
             <Card
                 className="my-2"
                 style={{
-                    width: "100%",
-                    height: "450px",
+                    width: "350px",
+                    height: "500px",
                     borderRadius: "8px",
                     border: "2px solid gray",
                     backgroundColor: "#FFFFFF",
                     margin:"10px",
                     
                 }}>
-                <Row className="d-flex justify-content-center px-2">
+                <Row className="d-flex justify-content-center px-20">
                     <Col className=" d-flex justify-content-between">
-                   <button className="item-delete-edit remove-button"style={{margin:"10px"}} onClick={deleteProduct}>Remove</button>
+                   <button className="item-delete-edit remove-button"style={{margin:"10px",width:"90px"}} onClick={deleteProduct}>Remove</button>
                      <button className="item-delete-edit edit-button"style={{margin:"10px"}}onClick={handleShowModal}>Edit</button>
 
                         <Modal show={showModal} onHide={handleCloseModal}>
@@ -134,7 +133,7 @@ const AdminAllProductsCard = ({_id,mainProductImage,price,productAvailableQuanti
                     </Col>
                 </Row>
                  <Link to={`/products/${_id}`} style={{ textDecoration: "none" }}> 
-                    <Card.Img style={{ height: "228px", width: "100%" }} src={labtop} />
+                    <Card.Img style={{ height: "228px", width: "100%" }} src={require(`./../../assets/image/product/productc/${mainProductImage}`)} />
                     <Card.Body>
                         <Card.Title>
                             <div className="card-title" style={{textAlign:"left",marginBottom:"10px"}}>

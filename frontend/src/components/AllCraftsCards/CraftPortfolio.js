@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea ,CardActions } from '@mui/material';
 import {Row,Col}from 'reactstrap'
-import w from "./../../images/Unknown_person.jpg"
+
 export default function CraftPortfolio({portfolio}) {
   return (
     <div>
@@ -18,7 +18,7 @@ export default function CraftPortfolio({portfolio}) {
     component="img"
     height="350px"
      width="400px"
-    image={w}
+    image={require(`./../../assets/image/craft/craftc/${craft.mainCraftImage}`)}
     alt="green iguana"
   />
   <CardContent>

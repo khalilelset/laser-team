@@ -13,7 +13,7 @@ const navigate=useNavigate();
   
   const handleAddProduct = () => {
     if( mainCraftImage==null || uploadedFiles==null){
-      return alert("you can not add product without main photo  ")
+      return alert("you can not add craft without main photo  ")
      }
  
      if(craftTitle===""|| craftDescription ===""  ){
@@ -28,7 +28,7 @@ const navigate=useNavigate();
         mainCraftImage: mainCraftImage.path,
         craftImage: uploadedFilesp,
     };
-    console.log(formData);
+    
 
     // Perform API fetch here with the formData
     fetch(`http://localhost:4000/api/post/craft/${email}`, {

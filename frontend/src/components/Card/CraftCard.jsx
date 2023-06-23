@@ -30,7 +30,8 @@ const CraftCard = ({ craft }) => {
      
      <Link to={`/AllCraftsdetails?idd=${craft._id}`}>
         <div className=" card1">
-          <img src={productImage} className="card__image1" alt="hu" />
+          <img  src={require(`./../../assets/image/craft/craftc/${craft.mainCraftImage}`)}  
+          className="card__image1" alt="hu" />
           <div className="card__overlay1">
             <div className="overlay__text1 text-center w-100 p-2">
               <p>{craft.craftTitle}</p>

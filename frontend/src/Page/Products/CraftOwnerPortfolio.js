@@ -41,7 +41,11 @@ const CraftOwnerPortfolio = () => {
 
   <Row className="text-left" style={{marginTop:"50px", marginLeft:'20px'}}>
     <Col md="2">
-      <img src={w} alt="" style={{ width: "300px", height: "300px",borderRadius:"50%" }} />
+    {portfolio ? (
+<img src={require(`./../../assets/image/profile/${portfolio.ownerImage}`)} 
+alt=''style={{ width: "300px", height: "300px",borderRadius:"50%" }}/>
+):(<img src={w} alt=''style={{ width: "300px", height: "300px",borderRadius:"50%" }}/>)}
+
     </Col>
     <Col md="8" style={{marginTop:"20px", marginLeft:'20px'}}>
     <h1 className="special-header" style={{color:"gray"}}>
