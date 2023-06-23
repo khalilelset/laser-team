@@ -101,7 +101,7 @@ const ShoppingCart = ({ show, onClose, products }) => {
             Close
           </Button>
           <Button variant="primary" onClick={onClose}>
-            Save Changes
+            Buy Now
           </Button>
         </Modal.Footer>
       </Modal>
