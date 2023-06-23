@@ -5,6 +5,7 @@ const Client = require("./../Models/Client/Client");
 const { extractIdFromToken } = require("./../JWT");
 const jwt = require("jsonwebtoken");
 const ProductInC = require("./../Models/Client/productsInCart");
+const Transaction = require("../Models/Transaction/Transaction");
 
 // ADD PRODUCT TO CART
 const addProductToCart = async (req, res) => {
@@ -107,8 +108,69 @@ const removeProductFromCart = async (req, res) => {
   }
 };
 
+// ADD TO TRANSACTION
+const addToTransaction = async (req, res) => {
+  const clientE = req.params.email;
+  try {
+    const client = await Client.findOne({ email: clientE });
+    if (!client) {
+      return res.status(400).json({ error: "No Client Found" });
+    }
+    const cart = await Cart.findById(client.cartClientId);
+    if (!cart) {
+      return res.status(200).json({ msg: "This client don't have a Cart" });
+    }
+    const productsInCart = cart.productsInCart;
+    if (!productsInCart) {
+      return res.status(404).json({ msg: "No Products Into this cart" });
+    }
+    let productsBuyed = []; // Declare productsBuyed outside the try block
+    try {
+      productsBuyed = await ProductsInCart.find({
+        _id: { $in: productsInCart },
+        status: 0,
+      });
+      await ProductsInCart.updateMany(
+        {
+          _id: { $in: productsBuyed.map((product) => product._id) },
+        },
+        { $set: { status: 1 } }
+      );
+      console.log("Products updated successfully.");
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+    const ProductsStatusOne = await ProductsInCart.find({
+      _id: { $in: productsInCart },
+      status: 1,
+    });
+
+    const transaction = new Transaction({
+      cartId: cart._id,
+      clientId: client._id,
+      productsInTransaction: ProductsStatusOne,
+      Location: "Tripoli",
+      // ownerPhoneNumber: client.ownerPhNumber,
+    });
+
+    // await productsBuyed.save();
+    await transaction.save();
+    res.status(200).json(transaction);
+    try {
+      await ProductsInCart.deleteMany({
+        _id: { $in: productsBuyed.map((product) => product._id) },
+      });
+      console.log("Products deleted successfully.");
+    } catch (error) {
+      console.log("Failed to delete products.");
+    }
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 module.exports = {
   addProductToCart,
   getProductsFromCart,
   removeProductFromCart,
+  addToTransaction,
 };

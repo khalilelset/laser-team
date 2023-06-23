@@ -9,5 +9,8 @@ router
 router
   .route("/api/cart/getAllProduct/:email")
   .get(cartController.getProductsFromCart);
+router
+  .route("/api/transaction/add/:email")
+  .post(cartController.addToTransaction);
 
 module.exports = router;
