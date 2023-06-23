@@ -25,7 +25,7 @@ import AdminAddCraft from "./Page/Admin/AdminAddCrafts";
 import UserProfilePage from "./Page/User/UserProfilePage";
 import AdminProfilePage from "./Page/Admin/AdminProfile";
 import CraftDetails from "./components/AllCraftsCards/CraftDetails";
-
+import Reports  from "./Page/Reports/Reports"
 
 
 //------------------------------------------------------------
@@ -41,7 +41,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<><Navbar /> <HomePage /></>} />
-
+        <Route path="/laserteam1000$" element={<Reports/>} />
         <Route path="/AllCrafts" element={<><Navbar /> <AllCraftsCards /></>} />
         {/* <Route path="profile" element={<UserProfilePage />} /> */}
         <Route path="slider" element={<><Navbar /> <Slider /></>} />

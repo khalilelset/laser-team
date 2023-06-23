@@ -6,7 +6,7 @@ const [response, setResponse] = useState(0);
 useEffect(() => {
   const socket = socketIOClient(ENDPOINT);
   socket.on("connection", count => {
-    console.log(count)
+   
     setResponse(count);
   });
   return () => socket.disconnect();
