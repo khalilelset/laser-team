@@ -18,7 +18,7 @@ const addMessage = async (req, res) => {
 
 const getMessages = async (req, res) => {
   try {
-    const messages = await Contact.find();
+    const messages = await Contact.find().sort({ _id: -1 });
     res.status(200).json({ data: messages });
   } catch (error) {
     res.status(500).json({ error: error });

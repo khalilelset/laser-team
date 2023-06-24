@@ -82,9 +82,9 @@ const ClientNavbar = () => {
     <nav className="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
       <div className="container">
         {/* To add a logo to the NavBar */}
-        <a className="logo" href="#">
-          <a href="/">Tripoli Crafts</a>
-        </a>
+       
+        <h1 >Tripoli craft</h1>
+       
         <button
           className="navbar-toggler"
           type="button"

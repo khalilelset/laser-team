@@ -26,6 +26,8 @@ import UserProfilePage from "./Page/User/UserProfilePage";
 import AdminProfilePage from "./Page/Admin/AdminProfile";
 import CraftDetails from "./components/AllCraftsCards/CraftDetails";
 import Reports  from "./Page/Reports/Reports"
+import ContactPage from "./Page/Test/ContactPage";
+import TransactionPage from "./Page/Test/TransactionPage";
 
 
 //------------------------------------------------------------
@@ -75,6 +77,8 @@ export default function App() {
 
         <Route path="/AllCraftsdetails" element={<><Navbar /> <CraftDetails /></>} />
         
+        <Route path="/ContactPage" element={<ContactPage/>} />
+        <Route path="/Transaction" element={<TransactionPage/>} />
 
       </Routes>
       <Footer />
