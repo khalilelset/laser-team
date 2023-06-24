@@ -3,7 +3,7 @@ import { Button, Modal } from "react-bootstrap";
 import "./ShoppingCart.css";
 
 const ShoppingCart = ({ show, onClose, products }) => {
-  let totalPrice = 0;
+  let total = 0;
   const [responseMsg, setResponseMsg] = useState("");
 
   const handleRemove = (productId) => {
@@ -19,27 +19,6 @@ const ShoppingCart = ({ show, onClose, products }) => {
       .then((response) => {
         const data = response.json();
         setResponseMsg(data.msg);
-      })
-      .catch((error) => {
-        console.error("Error adding Id:", error);
-      });
-  };
-
-  const handleTransaction = () => {
-    const email = window.localStorage.getItem("email");
-    const cleanedEmail = email.replace(/^"(.*)"$/, "$1");
-    fetch(`http://localhost:4000/api/transaction/add/${cleanedEmail}`, {
-      method: "post",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
-      // body: {
-      //   totalPrice: totalPrice,
-      // },
-    })
-      .then((response) => {
-        const data = response.json();
-        console.log(data.msg);
       })
       .catch((error) => {
         console.error("Error adding Id:", error);
@@ -71,7 +50,7 @@ const ShoppingCart = ({ show, onClose, products }) => {
                 {products.map((product, index) => {
                   const subTotal =
                     product.product[0].price * product.numOfProduct;
-                  totalPrice += subTotal;
+                  total += subTotal;
 
                   return (
                     <tr class="product-row">
@@ -110,7 +89,7 @@ const ShoppingCart = ({ show, onClose, products }) => {
                     <strong>Total:</strong>
                   </td>
                   <td colspan="2" id="cart-total">
-                    ${totalPrice}
+                    ${total}
                   </td>
                 </tr>
               </tfoot>
@@ -121,7 +100,7 @@ const ShoppingCart = ({ show, onClose, products }) => {
           <Button variant="secondary" onClick={onClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={() => handleTransaction()}>
+          <Button variant="primary" onClick={onClose}>
             Buy Now
           </Button>
         </Modal.Footer>

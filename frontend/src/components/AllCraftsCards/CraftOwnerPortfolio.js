@@ -33,7 +33,7 @@ const CraftOwnerPortfolio = ({ idd }) => {
   }
 
   return (
-<div style={{marginTop:"100px"}}>
+<div style={{marginTop:"100px", marginBottom:"200px"}}>
 <h1 className="text-center my-4">Portfolio of craft owner</h1>
 
   <Row className="text-left" style={{marginTop:"50px", marginLeft:'20px'}}>
