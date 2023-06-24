@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea ,CardActions } from '@mui/material';
 import {Row,Col}from 'reactstrap'
 import w from "./../../images/Unknown_person.jpg"
+import { Link } from 'react-router-dom';
 
 export default function ProductPortfolio({portfolio}) {
   
@@ -18,7 +19,7 @@ export default function ProductPortfolio({portfolio}) {
              
 <Col key={index}style={{width:"400px"}}>
  <Card sx={{ maxWidth: 500  , marginTop: 10}} >
- 
+ <Link to={`/products/${product._id}`}>
 <CardActionArea>
   <CardMedia
     component="img"
@@ -36,11 +37,13 @@ export default function ProductPortfolio({portfolio}) {
     </Typography>
   </CardContent>
 </CardActionArea>
+
 <CardActions>
   <p size="small" color="primary">
   {product.price}$
   </p>
 </CardActions>
+</Link>
 </Card>
    </Col>   
   
