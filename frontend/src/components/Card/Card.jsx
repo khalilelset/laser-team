@@ -3,7 +3,7 @@ import "./Card.css";
 
 import { Link } from "react-router-dom";
 import Login from "../../Page/signup&login/Login";
-import productImage from "../../assets/image/product/productc/productc10.jpeg";
+//import productImage from "../../assets/image/product/productc/productc10.jpeg";
 const Card = ({ product }) => {
   const handleButtonClick = () => {
     const id = product._id;
@@ -50,7 +50,7 @@ const Card = ({ product }) => {
         <Link to={"/products/" + product._id}>
           <div className="card" key={product.id}>
             <img
-              src={productImage}
+               src={require(`./../../assets/image/product/productc/${product.mainProductImage}`)} 
               className="card-img-top img-fluid"
               alt="..."
               height="200px"

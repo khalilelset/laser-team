@@ -22,7 +22,7 @@ export default function ProductPortfolio({portfolio}) {
     component="img"
     height="350px"
     width="400px"
-    image={w}
+    image={require(`./../../assets/image/product/productc/${product.mainProductImage}`)}
     alt="green iguana"
   />
   <CardContent>

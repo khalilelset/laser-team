@@ -116,8 +116,10 @@ const AdminProfile = () => {
             {!isLoading ? ( 
                 <>
             <div className="admin-content-text">Profile page </div>
-            
-            <img src={unknow} alt=''style={{width:"200px",height:"200px",marginTop:"20px",marginLeft:"20px", borderRadius:"50%"}}/>
+
+            {craftOwner.ownerImage ? (
+            <img src={require(`./../../assets/image/profile/${craftOwner.ownerImage}`)} alt=''style={{width:"200px",height:"200px",marginTop:"20px",marginLeft:"20px", borderRadius:"50%"}}/>
+            ):(<img src={unknow} alt=''style={{width:"200px",height:"200px",marginTop:"20px",marginLeft:"20px", borderRadius:"50%"}}/>)}
 
             <div className="user-address-card my-3 px-2">
             <Row className="d-flex justify-content-between pt-2">

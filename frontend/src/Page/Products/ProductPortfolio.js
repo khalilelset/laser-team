@@ -17,12 +17,13 @@ export default function ProductPortfolio({portfolio}) {
              
 <Col key={index}style={{width:"400px"}}>
  <Card sx={{ maxWidth: 500  , marginTop: 10}} >
+  
 <CardActionArea>
   <CardMedia
     component="img"
     height="350px"
     width="400px"
-    image={w}
+    image={require(`./../../assets/image/product/productc/${product.mainProductImage}`)}
     alt="green iguana"
   />
   <CardContent>

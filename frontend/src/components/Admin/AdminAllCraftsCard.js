@@ -105,7 +105,7 @@ const AdminAllProductsCard = ({_id,craftDescription,craftTitle,
                 }}>
                 <Row className="d-flex justify-content-center px-2">
                     <Col className=" d-flex justify-content-between">
-                   <button className="item-delete-edit remove-button"style={{margin:"10px"}} onClick={deleteCraft}>Remove</button>
+                   <button className="item-delete-edit remove-button"style={{margin:"10px", width:"90px"}} onClick={deleteCraft}>Remove</button>
                      <button className="item-delete-edit edit-button"style={{margin:"10px"}}onClick={handleShowModal}>Edit</button>
 
                         <Modal show={showModal} onHide={handleCloseModal}>
@@ -129,7 +129,8 @@ const AdminAllProductsCard = ({_id,craftDescription,craftTitle,
                     </Col>
                 </Row>
                  <Link to={`/craft/${_id}`} style={{ textDecoration: "none" }}> 
-                    <Card.Img style={{ height: "228px", width: "100%" }} src={labtop} />
+                    <Card.Img style={{ height: "228px", width: "100%" }}
+                     src={require(`./../../assets/image/craft/craftc/${mainCraftImage}`)} />
                     <Card.Body>
                         <Card.Title>
                             <div className="card-title" style={{textAlign:"left",marginBottom:"10px"}}>

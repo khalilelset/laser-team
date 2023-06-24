@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
           }}
         >
           <Link to="/products/:id" style={{ textDecoration: "none" }}>
-            <Card.Img className="im" src={prod4} />
+            <Card.Img className="im" src={require(`./../../assets/image/product/productc/${product.mainProductImage}`)} />
           </Link>
           <div className="d-flex justify-content-end mx-2">
             {/* <img
