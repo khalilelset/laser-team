@@ -33,6 +33,7 @@ const addProductToCart = async (req, res) => {
         await existingProduct.save();
       } else {
         const product = await Product.findById(productId);
+
         const newProductInCart = new ProductsInCart({
           cartId: cart._id,
           productId: productId,
@@ -150,6 +151,7 @@ const addToTransaction = async (req, res) => {
       clientId: client._id,
       productsInTransaction: ProductsStatusOne,
       Location: "Tripoli",
+      totalPrice: req.body.totalPrice,
       // ownerPhoneNumber: client.ownerPhNumber,
     });
 
@@ -168,9 +170,23 @@ const addToTransaction = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+// GET TRANSACTION DETAILS
+const getTransactionDetails = async (req, res) => {
+  try {
+    const transactions = await Transaction.find();
+    if (!transactions) {
+      return res.status(404).json({ msg: "Not Transactions Found" });
+    }
+    res.status(200).json(transactions);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 module.exports = {
   addProductToCart,
   getProductsFromCart,
   removeProductFromCart,
   addToTransaction,
+  getTransactionDetails,
 };
