@@ -6,7 +6,7 @@ import UserSideBar from '../../components/User/UserSideBar'
 import UserProfile from '../../components/User/UserProfile';
 const UserProfilePage = () => {
     return (
-        <Container style={{marginBottom:"100px", marginTop:"100px"}} >
+        <Container style={{marginBottom:"100px", marginTop:"10px"}} >
             <Row className='py-3'>
                 <Col sm="3" xs="2" md="2">
                     <UserSideBar />
