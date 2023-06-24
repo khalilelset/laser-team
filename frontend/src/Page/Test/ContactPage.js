@@ -46,7 +46,7 @@ cont.map((co,index)=>{
 {
           cont.map((co,index)=>{
             {console.log(co)}
-          return(  <ContactBox username={co.fullName} phon={co.subject} message={co.message}/>)
+          return(  <ContactBox username={co.fullName} phon={co.subject} message={co.message} email={co.email}/>)
           })
         }
 
