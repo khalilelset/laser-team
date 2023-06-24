@@ -49,9 +49,7 @@ const OwnerNavbar = () => {
 
 
                 {/* To add a logo to the NavBar */}
-                <a className="logo" href="#">
-                    <a href="/">Tripoli Crafts</a>
-                </a>
+                <h1 >Tripoli craft</h1>
                 <button
                     className="navbar-toggler"
                     type="button"

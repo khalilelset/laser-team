@@ -1,10 +1,11 @@
 import React from "react";
 import "./Card.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Login from "../../Page/signup&login/Login";
 //import productImage from "../../assets/image/product/productc/productc10.jpeg";
 const Card = ({ product }) => {
+  const navigate=useNavigate();
   const handleButtonClick = () => {
     const id = product._id;
     const email = window.localStorage.getItem("email");
@@ -24,6 +25,7 @@ const Card = ({ product }) => {
       .catch((error) => {
         console.error("Error adding ID:", error);
       });
+      navigate(0);
   };
   var access = 0;
   const status = window.localStorage.getItem("status");

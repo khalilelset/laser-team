@@ -12,7 +12,7 @@ useEffect(() => {
   return () => socket.disconnect();
 }, []);
 return (
-<h1 style={{ backgroundColor: 'gray', paddingBottom: '300px', textAlign: 'center', fontSize: '100px', paddingTop:"300px", 
+<h1 style={{ backgroundColor: 'gray', paddingBottom: '100px', textAlign: 'center', fontSize: '100px', paddingTop:"100px", 
 fontFamily: 'Helvetica', color: 'white',}}>
 The number of people who visited the store <br /> <br />{response}
 </h1>

@@ -35,7 +35,7 @@ const ProductDetalisPage = () => {
       {product && (
         <div style={{ minHeight: "670px" }}>
           <Container>
-            <ProductDetalis />
+            <ProductDetalis product={product} />
             <RateBax />
           </Container>
         </div>

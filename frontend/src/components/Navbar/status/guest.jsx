@@ -29,9 +29,9 @@ const GuestNavbar = () => {
 
 
                 {/* To add a logo to the NavBar */}
-                <a className="navbar-brand" href="#">
-                    <img className="logo" src="img/logo-dark.svg" alt="" />
-                </a>
+                
+                <h1 style={{fontFamily:"Helvetica"}}>Tripoli craft</h1>
+               
                 <button
                     className="navbar-toggler"
                     type="button"

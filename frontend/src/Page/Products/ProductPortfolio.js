@@ -8,6 +8,7 @@ import {Row,Col}from 'reactstrap'
 import w from "./../../images/Unknown_person.jpg"
 
 export default function ProductPortfolio({portfolio}) {
+  
   return (
     <div>
       
@@ -17,7 +18,7 @@ export default function ProductPortfolio({portfolio}) {
              
 <Col key={index}style={{width:"400px"}}>
  <Card sx={{ maxWidth: 500  , marginTop: 10}} >
-  
+ 
 <CardActionArea>
   <CardMedia
     component="img"

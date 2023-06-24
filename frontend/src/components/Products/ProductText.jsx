@@ -22,7 +22,7 @@ const ProductText = () => {
   // }, [id, getProductByIdUrl]);
   // console.log(product);
   const product = useSelector((state) => state.product.product);
-  console.log(product);
+
   return (
     <div>
       {product && (
