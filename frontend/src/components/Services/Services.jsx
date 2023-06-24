@@ -67,7 +67,7 @@ const Services = () => {
                 <h5 class="mt-4 mb-2">Craft Supplies for DIY Projects</h5>
                 <p>
                 Looking for high-quality craft supplies and materials? 
-                Paper is great for crafts like origami, paper flowers, collages
+                Paper is great for crafts like origami
                 </p>
               </div>
             </div>

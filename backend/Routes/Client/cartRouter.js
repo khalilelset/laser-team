@@ -13,4 +13,8 @@ router
   .route("/api/transaction/add/:email")
   .post(cartController.addToTransaction);
 
+router
+  .route("/api/transaction/getAll")
+  .get(cartController.getTransactionDetails);
+
 module.exports = router;
