@@ -12,10 +12,10 @@ const CraftownerPostCraft = require("./Routes/post page/OwnerPostCraft");
 const GetProducts = require("./Routes/store/StoreProduct");
 const GetCraft = require("./Routes/store/StoreCraft");
 const Contact = require("./Routes/Contact/contactRouter");
-const profileOwner = require("./Routes/CraftOwner/CraftOwner")
+const profileOwner = require("./Routes/CraftOwner/CraftOwner");
 const cookieParser = require("cookie-parser");
 const companyRouter = require("./Routes/company/companyRouter");
-const ProductOfOwner=require("./Routes/CraftOwner/CraftOwner")
+const ProductOfOwner = require("./Routes/CraftOwner/CraftOwner");
 const http = require("http");
 const port = 4000;
 const server = http.createServer(app);
@@ -52,14 +52,12 @@ app.use("/", clientRouter);
 // });
 app.get("/", (req, res) => {
   connectedUsers++;
-  res.send({  connectedUsers }).status(200);
+  res.send({ connectedUsers }).status(200);
 });
 
 io.on("connection", (socket) => {
-  
   connectedUsers++;
   socket.emit("connection", connectedUsers);
-
 });
 //Cart Routes
 app.use("/", cartRouter);
@@ -85,11 +83,9 @@ app.use("/", GetCraft);
 //Contact
 app.use("/", Contact);
 
-
 //profileOwner
 
 app.use("/", profileOwner);
-
 
 //ProductOfOwner
 app.use("/", ProductOfOwner);
@@ -97,7 +93,3 @@ app.use("/", ProductOfOwner);
 server.listen(4000, () => {
   console.log(`Server Started at \${4000}`);
 });
-
-
-
-
