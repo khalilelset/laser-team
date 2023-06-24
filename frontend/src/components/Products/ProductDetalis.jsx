@@ -24,6 +24,7 @@ const ProductDetalis = () => {
         original: `${pro10}`,
     },
 ];
+console.log(images);
 
   return (
 
