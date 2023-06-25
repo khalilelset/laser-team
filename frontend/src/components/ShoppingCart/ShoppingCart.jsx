@@ -19,11 +19,27 @@ const ShoppingCart = ({ show, onClose, products }) => {
       .then((response) => {
         const data = response.json();
         setResponseMsg(data.msg);
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Error adding Id:", error);
       });
-       window.location.reload();
+  };
+  const handleTransaction = () => {
+    const email = window.localStorage.getItem("email");
+    const cleanedEmail = email.replace(/^"(.*)"$/, "$1");
+    fetch(`http://localhost:4000/api/transaction/add/${cleanedEmail}`, {
+      method: "post",
+    })
+      .then((response) => {
+        const data = response.json();
+        console.log(data.msg);
+        window.location.reload();
+        alert("Purshase completed");
+      })
+      .catch((error) => {
+        console.error("Error adding Id:", error);
+      });
   };
 
   return (
@@ -102,7 +118,7 @@ const ShoppingCart = ({ show, onClose, products }) => {
           <Button variant="secondary" onClick={onClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={onClose}>
+          <Button variant="primary" onClick={() => handleTransaction()}>
             Buy Now
           </Button>
         </Modal.Footer>
