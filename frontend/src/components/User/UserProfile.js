@@ -110,7 +110,10 @@ const UserProfile = () => {
 
             <div className="user-address-card my-3 px-2">
                             
-<img src={unknow} alt=''style={{width:"200px",height:"200px",marginTop:"20px",marginLeft:"20px", borderRadius:"50%"}}/>
+            {client.image ? (
+ <img src={require(`./../../assets/image/profile/${client.image}`)} alt=''style={{width:"200px",height:"200px",marginTop:"20px",marginLeft:"20px", borderRadius:"50%"}}/>
+ ):(<img src={unknow} alt=''style={{width:"200px",height:"200px",marginTop:"20px",marginLeft:"20px", borderRadius:"50%"}}/>)}
+ 
             <Row className="d-flex justify-content-between pt-2">
   <Col xs="auto" className="d-flex align-items-center" style={{marginTop:"20px"}}>
     <div className="p-2">name:</div>
