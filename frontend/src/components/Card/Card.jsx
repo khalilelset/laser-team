@@ -26,7 +26,7 @@ const Card = ({ product }) => {
       .catch((error) => {
         console.error("Error adding ID:", error);
       });
-      window.location.reload();
+    window.location.reload();
   };
 
   var access = 0;
@@ -57,19 +57,23 @@ const Card = ({ product }) => {
 
           <div className="card" key={product.id}>
             <img
-               src={require(`./../../assets/image/product/productc/${product.mainProductImage}`)} 
-              className="card-img-top img-fluid"
+              src={require(`./../../assets/image/product/productc/${product.mainProductImage}`)}
+              className="card-img-top img-fluid image-card"
               alt="..."
               height="200px"
               width="150px"
             />
-            <div className="card-body" style={{height:'280px'}}>
-              <h5 className="productTitle" style={{height:'30px'}} >{product.productTitle}</h5>
-              <p className="card-text" style={{height:'70px'}}>
+            <div className="card-body" style={{ height: "280px" }}>
+              <h5 className="productTitle" style={{ height: "30px" }}>
+                {product.productTitle}
+              </h5>
+              <p className="card-text" style={{ height: "70px" }}>
                 {product.productDescription.substr(0, 55)}
               </p>
-              <h5 style={{height:'30px'}}>{product.price}$</h5>
-              <p style={{height:'30px'}}>{product.productAvailableQuantity} pieces</p>
+              <h5 style={{ height: "30px" }}>{product.price}$</h5>
+              <p style={{ height: "30px" }}>
+                {product.productAvailableQuantity} pieces
+              </p>
               {access === 0 ? (
                 <button
                   className="btn btn-primary"
@@ -85,7 +89,7 @@ const Card = ({ product }) => {
                   style={{ marginRight: "4rem" }}
                   onClick={handleButtonClick}
                 >
-                Add to cart
+                  Add to cart
                 </Link>
               ) : null}
               {access === 0 ? (
