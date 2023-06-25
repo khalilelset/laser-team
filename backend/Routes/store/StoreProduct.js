@@ -47,6 +47,7 @@ router.get("/api/craftowner/portfolio/productid/:id", async (req, res) => {
       ownerLocation: owner.ownerLocation,
       
       product: products.map((p) => ({
+        _id: p._id,
         productTitle: p.productTitle,
         mainProductImage:p.mainProductImage,
         productDescription:p.productDescription,
@@ -55,6 +56,7 @@ router.get("/api/craftowner/portfolio/productid/:id", async (req, res) => {
         
       })),
       craft: crafts.map((c) => ({
+        _id: c._id,
         craftTitle: c.craftTitle,
         mainCraftImage: c.mainCraftImage,
         craftDescription: c.craftDescription,

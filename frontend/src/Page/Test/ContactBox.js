@@ -28,6 +28,30 @@ const ContactBox = (props) => {
 
             
 
+            <Row className="mt-3" style={{height:"15px"}}>
+                <Col xs="12" className="d-flex">
+                    <div
+                        style={{
+                            color: "#555550",
+                            fontFamily: "Almarai",
+                            fontSize: "16px",
+                        }}>
+                         email:
+                    </div>
+
+                    <div
+                        style={{
+                            color: "#979797",
+                            fontFamily: "Almarai",
+                            fontSize: "16px",
+                        }}
+                        className="mx-2">
+                        {props.email}
+                    </div>
+                </Col>
+            </Row>
+
+
             <Row className="mt-3" style={{height:"30px"}}>
                 <Col xs="12" className="d-flex">
                     <div
@@ -59,7 +83,7 @@ const ContactBox = (props) => {
                             fontFamily: "Almarai",
                             fontSize: "16px",
                         }}>
-                        {props.message}
+                        subject:{props.message}
                     </div>
                 </Col>
             </Row>

@@ -9,7 +9,7 @@ const Card = ({ product }) => {
     const id = product._id;
     const email = window.localStorage.getItem("email");
     const cleanedEmail = email.replace(/^"(.*)"$/, "$1");
-
+    
     fetch(`http://localhost:4000/api/cart/add/${cleanedEmail}/${id}`, {
       method: "POST",
       headers: {
@@ -24,7 +24,9 @@ const Card = ({ product }) => {
       .catch((error) => {
         console.error("Error adding ID:", error);
       });
+      window.location.reload();
   };
+
   var access = 0;
   const status = window.localStorage.getItem("status");
 
@@ -78,7 +80,7 @@ const Card = ({ product }) => {
                   style={{ marginRight: "4rem" }}
                   onClick={handleButtonClick}
                 >
-                  Add to cart
+                Add to cart
                 </Link>
               ) : null}
               {access === 0 ? (

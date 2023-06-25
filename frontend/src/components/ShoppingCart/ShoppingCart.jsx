@@ -23,6 +23,7 @@ const ShoppingCart = ({ show, onClose, products }) => {
       .catch((error) => {
         console.error("Error adding Id:", error);
       });
+       window.location.reload();
   };
 
   return (
@@ -67,6 +68,7 @@ const ShoppingCart = ({ show, onClose, products }) => {
                           class="form-control "
                           value={product.numOfProduct}
                           min="1"
+                          readOnly
                         />
                       </td>
                       <td class="total">${subTotal}</td>
