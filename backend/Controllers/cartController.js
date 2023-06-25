@@ -28,17 +28,21 @@ const addProductToCart = async (req, res) => {
         cartId: cart._id,
         productId: productId,
       });
+      const product = await Product.findById(productId);
+
       if (existingProduct) {
         existingProduct.numOfProduct++;
+        product.productAvailableQuantity = product.productAvailableQuantity - 1;
+        await product.save();
         await existingProduct.save();
       } else {
-        const product = await Product.findById(productId);
-
         const newProductInCart = new ProductsInCart({
           cartId: cart._id,
           productId: productId,
           product: product,
         });
+        product.productAvailableQuantity = product.productAvailableQuantity - 1;
+        await product.save();
         await newProductInCart.save();
         cart.productsInCart.push(newProductInCart);
         await cart.save();

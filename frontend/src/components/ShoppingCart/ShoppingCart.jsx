@@ -35,7 +35,7 @@ const ShoppingCart = ({ show, onClose, products }) => {
         const data = response.json();
         console.log(data.msg);
         window.location.reload();
-        alert("Purshase completed");
+        alert("Purshase completed, Thank You");
       })
       .catch((error) => {
         console.error("Error adding Id:", error);
