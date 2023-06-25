@@ -23,7 +23,7 @@ const RatePost = () => {
         <div>
         <Row className="mt-3 ">
           <Col sm="12" className="me-5  d-flex">
-            <div className="rate-name  d-inline ms-3 mt-1 ">ahmad mohsen</div>
+            <div className="rate-name  d-inline ms-3 mt-1 "></div>
             <ReactStars {...setting} />
           </Col>
         </Row>

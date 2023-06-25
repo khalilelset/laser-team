@@ -16,6 +16,7 @@ import AllCategoryPage from "./Page/Category/AllCategoryPage";
 import ProductDetalisPage from "./Page/Products/ProductDetalisPage";
 import ShopProductsPage from "./Page/Products/ShopProductsPage";
 import Slider from "./components/Slider/Slider";
+import NotFound from "./Page/Reports/NotFound";
 //import profile
 
 import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
@@ -77,9 +78,9 @@ export default function App() {
 
         <Route path="/AllCraftsdetails" element={<><Navbar /> <CraftDetails /></>} />
         
-        <Route path="/ContactPage" element={<ContactPage/>} />
-        <Route path="/Transaction" element={<TransactionPage/>} />
-
+        <Route path="/ContactPage@100$" element={<ContactPage/>} />
+        <Route path="/Transaction@100$" element={<TransactionPage/>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

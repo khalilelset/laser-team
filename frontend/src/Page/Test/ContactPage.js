@@ -14,18 +14,19 @@ setCont(res.data.data)
     getAllCnt();
   },[])
   console.log(cont)
-
+ 
+  
   return (
     <Container >
        <Row className='py-3'>
       <Col sm="3" xs="2" md="2">
       <div className="sidebar">
             <div className="d-flex flex-column">
-                <Link to="/ContactPage" style={{ textDecoration: 'none' }}>
+                <Link to="/ContactPage@100$" style={{ textDecoration: 'none' }}>
                     <div className="admin-side-text mt-3 border-bottom p-2 mx-auto text-center">
                     Contact                    </div>
                 </Link>
-                <Link to="/Transaction" style={{ textDecoration: 'none' }}>
+                <Link to="/Transaction@100$" style={{ textDecoration: 'none' }}>
                     <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
                     Transaction                    </div>
                 </Link>
