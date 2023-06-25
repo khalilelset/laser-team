@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import ProductText from "./ProductText";
 import { Carousel } from 'react-bootstrap';
-//`"./../../assets/image/product/productd/${im}"`
+
 const ProductDetalis = ({ product }) => {
   const [imgp, setimgp] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import {Container,Row,Col}from 'reactstrap'
+import {Container, Row, Col} from 'reactstrap';
 import { useParams } from "react-router-dom";
-import w from "./../../images/Unknown_person.jpg"
-import ProductPortfolio from './ProductPortfolio'
+import w from "./../../images/Unknown_person.jpg";
+import ProductPortfolio from './ProductPortfolio';
 import CraftPortfolio from "./CraftPortfolio";
 
 const CraftOwnerPortfolio = () => {
@@ -41,7 +41,7 @@ const CraftOwnerPortfolio = () => {
 
   <Row className="text-left" style={{marginTop:"50px", marginLeft:'20px'}}>
     <Col md="2">
-    {portfolio ? (
+    {portfolio.ownerImage ? (
 <img src={require(`./../../assets/image/profile/${portfolio.ownerImage}`)} 
 alt=''style={{ width: "300px", height: "300px",borderRadius:"50%" }}/>
 ):(<img src={w} alt=''style={{ width: "300px", height: "300px",borderRadius:"50%" }}/>)}

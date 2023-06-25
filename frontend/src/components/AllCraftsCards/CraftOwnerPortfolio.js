@@ -39,7 +39,7 @@ const CraftOwnerPortfolio = ({ idd }) => {
   <Row className="text-left" style={{marginTop:"50px", marginLeft:'20px'}}>
     <Col md="2">
 
-      {portfolio ? (
+      {portfolio.ownerImage ? (
 <img src={require(`./../../assets/image/profile/${portfolio.ownerImage}`)} 
 alt=''style={{ width: "300px", height: "300px",borderRadius:"50%" }}/>
 ):(<img src={w} alt=''style={{ width: "300px", height: "300px",borderRadius:"50%" }}/>)}
