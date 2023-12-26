@@ -1,3 +1,4 @@
+import cookies from "js-cookie";
 const REGISTER_REQUEST = "REGISTER_REQUEST";
 const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 const REGISTER_FAILURE = "REGISTER_FAILURE";
@@ -11,23 +12,23 @@ const signupaction = (formData) => {
         headers: {
           "Content-Type": "application/json",
         },
+        
         body: JSON.stringify(formData),
       })
         .then((response) => response.json())
         .then((data) => {
           if (data.error) {
             console.log("data error");
-            
+
             console.log(data);
             // If there is an error in the response
-            dispatch(
-              { type: REGISTER_FAILURE, payload: data.error });
+            dispatch({ type: REGISTER_FAILURE, payload: data.error });
           } else {
+            cookies.set("token",data.token,{expires:7})
             localStorage.setItem("email", JSON.stringify(formData.email));
             localStorage.setItem("status", "client");
             // If the request was successful
             dispatch({ type: REGISTER_SUCCESS });
-            
           }
         });
     } catch (error) {

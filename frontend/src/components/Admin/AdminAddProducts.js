@@ -63,9 +63,9 @@ const AdminAddProducts = () => {
             {uploadedFile ? (
               <img src={URL.createObjectURL(uploadedFile)} alt="" onClick={onSelect}  />
              
-            ) : isDragActive ? (
-              <span></span>
-            ) : (
+            ) 
+              
+             : (
               <img
                 src={avatar}
                 alt=""

@@ -30,7 +30,7 @@ export default function ImagesProduct({ productTitle, productDescription, produc
     };
     
 
-    // Perform API fetch here with the formData
+    
     fetch(`http://localhost:4000/api/post/product/${email}`, {
       method: 'POST',
       body: JSON.stringify(formData),
@@ -40,7 +40,7 @@ export default function ImagesProduct({ productTitle, productDescription, produc
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the API response
+        
         navigate(0);
 
       })

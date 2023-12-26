@@ -16,6 +16,11 @@ const profileOwner = require("./Routes/CraftOwner/CraftOwner");
 const cookieParser = require("cookie-parser");
 const companyRouter = require("./Routes/company/companyRouter");
 const ProductOfOwner = require("./Routes/CraftOwner/CraftOwner");
+
+
+
+//socket
+
 const http = require("http");
 const port = 4000;
 const server = http.createServer(app);
@@ -50,6 +55,10 @@ app.use("/", clientRouter);
 // app.get("/profile", validateToken, (req, res) => {
 //   res.json("profile");
 // });
+
+
+//socket
+
 app.get("/", (req, res) => {
   connectedUsers++;
   res.send({ connectedUsers }).status(200);

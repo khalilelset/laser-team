@@ -28,7 +28,7 @@ const handlePhotoChange = (e) => {
   setownerImage(fileName);
 };
 
-console.log(ownerImage)
+
 const handleSubmit = (event) => {
   event.preventDefault();
   const formData = {
@@ -58,7 +58,7 @@ function togglePasswordVisibility() {
 
   {error && (
   <div className="alert alert-danger" role="alert">
-    {error.message}
+    {error.message.split(",")[0]}
     
   </div>)}
 
@@ -91,7 +91,7 @@ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',backgroundColor:"rgb(0,0,0,0.5)",color
        <input
           type="checkbox" style={{ width: "20px", height: "20px", color: 'white' }}
         onClick={togglePasswordVisibility}
-      />   show password 
+      />   show password
 </div>
 
 

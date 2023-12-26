@@ -26,16 +26,13 @@ const dataSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: [true, "Please enter a password"],
-    minlength: 8,
+    required: [true, "Please enter your password"],
   },
 
   status: {
     type: String,
-    default:"client"
-    
+    default: "client",
   },
-
 });
 
 module.exports = mongoose.model("client", dataSchema);

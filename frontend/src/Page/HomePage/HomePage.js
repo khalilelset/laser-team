@@ -14,9 +14,9 @@ const HomePage = () => {
       <HeroSection />
       <Services />
       <Features />
-      <Team />
-      <Socket/>
-      <Contact />
+      {/*<Team />*/}
+      {/*<Socket/>
+      <Contact />*/}
 
     </>
   );

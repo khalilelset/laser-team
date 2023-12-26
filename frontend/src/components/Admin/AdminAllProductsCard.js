@@ -17,7 +17,9 @@ const AdminAllProductsCard = ({_id,mainProductImage,price,productAvailableQuanti
         });
 
         const emailL= window.localStorage.getItem("email");
-        const email=emailL.slice(1, -1);                    
+        const email=emailL.slice(1, -1); 
+        
+        
         const deleteProduct = async () => {
 
             var answer = window.confirm("do you want really to delete your product");    

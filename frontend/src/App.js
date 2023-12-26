@@ -37,7 +37,7 @@ export default function App() {
   var access = false;
   const status = window.localStorage.getItem("status");
   if (status === "owner") { access = true }
-
+  
 
   return (
     <div>

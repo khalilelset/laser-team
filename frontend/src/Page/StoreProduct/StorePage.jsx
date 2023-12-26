@@ -11,9 +11,9 @@ const StorePage = () => {
     <div className='font' style={{ minHeight: '670px' }}>
 
       <Slider />
-      <DiscountSection text="Select a category to views its products" />
+     {/* <DiscountSection text="Select a category to views its products" />
       <HomeCategory />
-      <DiscountSection text="Click more to view our products" />
+      <DiscountSection text="Click more to view our products" />*/}
       <CardProductsContainer title=" Product" />
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
         <Link to="/products">

@@ -1,17 +1,17 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const validator = require("validator");
 
 const dataSchema = new mongoose.Schema({
   ownerFName: {
     type: String,
-    required: [true, "Please enter your first name"],  
-  },                                                   
+    required: [true, "Please enter your  first name "],
+  },
   ownerLName: {
     type: String,
     required: [true, "Please enter your last name"],
   },
   ownerImage: {
-    type: String
+    type: String,
   },
   email: {
     type: String,
@@ -35,27 +35,29 @@ const dataSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true,
     required: [true, "Please enter your password"],
   },
+
   ownerDescription: {
     type: String,
     required: [true, "Please tell as somthing about yourself"],
   },
   status: {
     type: String,
-    default:"Craft Owner"
-    
+    default: "Craft Owner",
   },
-  crafts: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Crafts' // Reference to the Crafts model
-  }],
-  product: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Product' // Reference to the Crafts model
-  }]
+  crafts: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Crafts", // Reference to the Crafts model
+    },
+  ],
+  product: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Product", // Reference to the Crafts model
+    },
+  ],
 });
 
-
-module.exports = mongoose.model('CraftsOwner', dataSchema);
+module.exports = mongoose.model("CraftsOwner", dataSchema);

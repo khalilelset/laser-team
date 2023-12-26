@@ -16,7 +16,6 @@ const loginaction = (formData) => {
         .then((response) => response.json())
         .then((data) => {
           if (data.error) {
-            
             // If there is an error in the response
             dispatch({ type: REGISTER_FAILURE, payload: data.error });
           } else {
@@ -24,7 +23,6 @@ const loginaction = (formData) => {
             localStorage.setItem("status", "client");
             // If the request was successful
             dispatch({ type: REGISTER_SUCCESS });
-            
           }
         });
     } catch (error) {
